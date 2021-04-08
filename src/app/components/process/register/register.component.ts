@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { SearchRequestComponent } from './../../utils/search-request/search-request.component';
 import { MatDialog } from "@angular/material/dialog";
 import {MatTableDataSource} from '@angular/material/table';

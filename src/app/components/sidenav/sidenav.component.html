@@ -1,7 +1,7 @@
 <mat-sidenav-container class="mat-drawer-transition sidenav-container" autosize>
   <mat-sidenav #sidenav [(opened)]="opened" [mode]="isLtMd ? 'over' : 'side'" role="navigation"
     class="sidenav sidenav-shell">
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="center center">
       <a routerLink="/">
         <img src="../../assets/gear.svg" class="logo" alt="PPSYNC" /><sub class="logo-sub"></sub>
       </a>
@@ -9,28 +9,115 @@
 
     <mat-nav-list>
       <mat-accordion class="app-nav-accordion-shell">
+
+
+        <!-- 
+          <mat-nav-list>
+            <a mat-list-item>Item One</a>
+            <h3 matSubheader>Section One</h3>
+            <a mat-list-item>Item Two</a>
+          </mat-nav-list> -->
+
+        <mat-nav-list>
+
+          <a mat-list-item>
+            <div fxFlex="25" class="icon" fxLayoutAlign="start center">
+              <mat-icon matSuffix>dashboard</mat-icon>
+            </div>
+            <div fxFlex="75"> DASHBOARD </div>
+          </a>
+        </mat-nav-list>
+
+
+        <mat-expansion-panel class="mat-elevation-z0">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+
+              <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+                <div fxFlex="25" class="icon" fxLayoutAlign="center center">
+                  <mat-icon matSuffix class="fa" fontSet="fas" fontIcon="fa-project-diagram"></mat-icon>
+                </div>
+                <div fxFlex="75"> PROCEDER </div>
+
+
+              </div>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+              <a mat-list-item routerLink="/register" >
+                <div fxFlex="25" class="icon" fxLayoutAlign="start center">
+                </div>
+                <div fxFlex="75"> ENREGISTRER </div>
+              </a>
+              <a mat-list-item  routerLink="/deliver" > 
+                <div fxFlex="25" class="icon" fxLayoutAlign="start center">
+                </div>
+                <div fxFlex="75"> DELIVRER </div>
+              </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+
+        <!-- <mat-list-item routerLink="/dashboard" routerLinkActive="active">
+          
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3%">
+            <div fxFlex="30" class="icon">
+              <mat-icon matSuffix>dashboard</mat-icon>
+            </div>
+            <div fxFlex="70"> DASHBOARD </div>
+          </div>
+
+        </mat-list-item>
+      
+      
+      
         <mat-expansion-panel>
           <mat-expansion-panel-header >
-            <mat-panel-title>
-              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
-                <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-file-signature"></mat-icon>
-                <span> PROCEDER </span>
-              </div>
+            <mat-panel-title >
+              
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3%">
+                  <div fxFlex="30" class="icon">
+                    <mat-icon matSuffix class="fa" fontSet="fas" fontIcon="fa-project-diagram"></mat-icon>
+                  </div>
+                  <div fxFlex="70"> PROCEDER </div>
+                </div>
+              
             </mat-panel-title>
           </mat-expansion-panel-header>
           <mat-divider></mat-divider>
 
           <mat-list-item routerLink="/register" >
-            <span class="submenu" routerLinkActive="active">ENREGISTRER</span>
+           
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3%">
+              <div fxFlex="30" class="icon" routerLinkActive="active">
+              </div>
+              <div fxFlex="70"> ENREGISTRER </div>
+            </div>
+            
             <mat-divider></mat-divider>
           </mat-list-item>
+
+          
           <mat-list-item routerLink="/deliver" routerLinkActive="active">
-            <span class="submenu" routerLinkActive="active">DELIVRER</span>
-            <mat-divider></mat-divider>
-          </mat-list-item>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3%">
+              <div fxFlex="30" class="icon" routerLinkActive="active">
+              </div>
+              <div fxFlex="70"> DELIVRER </div>
+            </div>
+            
+           <mat-divider></mat-divider>
+          </mat-list-item> 
+
         </mat-expansion-panel>
+
+-->
+
       </mat-accordion>
     </mat-nav-list>
+
+
+
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -39,16 +126,16 @@
         <button mat-icon-button (click)="sidenav.toggle()" matTooltip="BASCULER LE MENU" matTooltipPosition="above">
           <mat-icon>menu</mat-icon>
         </button>
-        <button mat-icon-button (click)="onToggleFullscreen()" matTooltip="BASCULER PLEIN D'ÉCRAN" matTooltipPosition="above">
+        <button mat-icon-button (click)="onToggleFullscreen()" matTooltip="BASCULER PLEIN D'ÉCRAN"
+          matTooltipPosition="above">
           <mat-icon *ngIf="fullscreenService.toggleFullscreenState()">fullscreen_exit</mat-icon>
           <mat-icon *ngIf="!fullscreenService.toggleFullscreenState()">fullscreen</mat-icon>
         </button>
       </div>
 
-      <div class="right-icon"  fxLayout="row" fxLayoutAlign="space-evenly center center" > 
-        <button mat-icon-button  matBadge="10+" matBadgePosition="after" matBadgeColor="warn"
-          matBadgeOverlap="true">
-          <mat-icon>home</mat-icon>
+      <div class="right-icon" fxLayout="row" fxLayoutAlign="space-evenly center center">
+        <button mat-icon-button matBadge="10+" matBadgePosition="after" matBadgeColor="warn" matBadgeOverlap="true">
+          <mat-icon>notification_important</mat-icon>
         </button>
 
         <span class="vertical-divider"></span>

@@ -3,9 +3,9 @@ font-size: 1rem;
 }
 
 .welcome .project{
-font-size: 0.95rem;
+// font-size: 0.95rem;
 text-transform: uppercase;
-// font-family: "Norican";
+font-family: "roboto";
 font-weight: bold;
 color:var(--primary-color)
 }
@@ -19,12 +19,6 @@ color:var(--primary-color);
 
 
 
-.msg-wrapper{
-display: flex;
-justify-content: center;
-// margin-top: 50px;
-}
-
 
 
  .msg{
@@ -34,8 +28,8 @@ justify-content: center;
   border-radius:4px;
   // background-color: #ef3829;
   // color:#fff;
-  background-color: #cccccc;
-  padding: 24px;
+  // background-color: #e6e3e3;
+  // padding: 1.5rem;
   }
 
 
