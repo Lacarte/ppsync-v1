@@ -1,8 +1,9 @@
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import { SearchRequestComponent } from './../../utils/search-request/search-request.component';
-import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import {MatTableDataSource} from '@angular/material/table';
 import { AddPassportComponent } from "./add-passport/add-passport.component";
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: "app-register",
@@ -25,6 +26,14 @@ export class RegisterComponent implements OnInit {
   constructor(private dialog: MatDialog) {}
 
   ngOnInit() {}
+
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+  
 
   public addPassport() {
     const dialogRef = this.dialog.open(AddPassportComponent, {
