@@ -1,0 +1,64 @@
+<div class="wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <div class="container box">
+    <div class="left-pane rounded" ngClass.lt-sm="hide-lt-sm" fxFlex="50">
+
+      <div class="project-name">{{projectName}}<span>{{projectVersion}}</span></div>
+      <div class="eula">By logging in you agree to {{projectName}} long terms & conditions.
+        <a href="#">READ</a>
+      </div>
+    </div>
+
+
+    <div class="right-pane rounded" fxFlex="50" fxFlex.lt-sm="100">
+
+      <form class="form mt-5 dark-theme">
+        <mat-form-field class="full-width-input mb-0">
+          <mat-label>Email</mat-label>
+          <input matInput name="email" type="email" value="carteasy@gmail.com" required>
+          <mat-error>
+            Please inform your email
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" name="password" value="internet" required>
+
+          <button mat-icon-button matSuffix type="button" (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+          <mat-error>
+            Please inform your password
+          </mat-error>
+        </mat-form-field>
+
+
+        <button mat-flat-button color="primary" type="submit" class="btn-block btn-round-corner mt-3" routerLink="/">
+                    LOGIN
+                </button>
+        <div class="row btn-center pt-2">
+          <button type="button" mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon" (click)="openBottomSheet()">
+                        <mat-icon>settings</mat-icon>
+          </button>
+
+
+          <mat-menu #menu="matMenu">
+
+            <button type="button" mat-menu-item>
+                            <span>Forget Password?</span>
+                    </button>
+
+            <button type="button" mat-menu-item>
+                            <span>Sign up for an Account</span>
+                        </button>
+
+          </mat-menu>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

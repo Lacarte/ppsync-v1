@@ -1,0 +1,22 @@
+<!-- {{notificationState | json}} -->
+<div class="wrapper">
+
+
+  <div fxLayout="column" *ngIf="notificationState.isVisible" class="p-3 rounded filter drop-shadow"
+    [style.background-color]="notificationState.bg">
+
+    <div fxLayout="row">
+      <div fxLayout="row" fxLayoutAlign="center center" fxFlex="3">
+        <mat-icon [style.color]="notificationState.iconColor">{{notificationState.icon}}</mat-icon>
+      </div>
+      <div fxFlex class="text-block" style="padding:8px">{{notificationState.message}}</div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+</div>

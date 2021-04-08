@@ -1,0 +1,17 @@
+
+ .footer{
+  position: sticky;
+  bottom: 0;
+  background-color: #e4e4e4;
+  font-size: .8rem;
+  padding-top: .25rem;
+  top: calc(100vh - 30px);
+}
+
+
+.footer-content {
+  text-align: center;
+  border-top: 2px solid #ffffff;
+  background-color: white;
+  color: rgb(52, 71, 156);
+}

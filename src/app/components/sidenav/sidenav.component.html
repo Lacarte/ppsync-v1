@@ -1,0 +1,80 @@
+<mat-sidenav-container class="mat-drawer-transition sidenav-container" autosize>
+  <mat-sidenav #sidenav [(opened)]="opened" [mode]="isLtMd ? 'over' : 'side'" role="navigation"
+    class="sidenav sidenav-shell">
+    <mat-toolbar color="primary">
+      <a routerLink="/">
+        <img src="../../assets/ppsync.svg" class="logo" alt="PPSYNC" /><sub class="logo-sub"></sub>
+      </a>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <mat-accordion class="app-nav-accordion-shell">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header >
+            <mat-panel-title>
+              <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+                <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-file-signature"></mat-icon>
+                <span> PROCEDER </span>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-divider></mat-divider>
+
+          <mat-list-item routerLink="/register" >
+            <span class="submenu" routerLinkActive="active">ENREGISTRER</span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <mat-list-item routerLink="/deliver" routerLinkActive="active">
+            <span class="submenu" routerLinkActive="active">DELIVRER</span>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" class="toolbar-shell" color="primary">
+      <div class="left-icon">
+        <button mat-icon-button (click)="sidenav.toggle()" matTooltip="BASCULER LE MENU" matTooltipPosition="above">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onToggleFullscreen()" matTooltip="BASCULER PLEIN D'ÉCRAN" matTooltipPosition="above">
+          <mat-icon *ngIf="fullscreenService.toggleFullscreenState()">fullscreen_exit</mat-icon>
+          <mat-icon *ngIf="!fullscreenService.toggleFullscreenState()">fullscreen</mat-icon>
+        </button>
+      </div>
+
+      <div class="right-icon"  fxLayout="row" fxLayoutAlign="space-evenly center center" > 
+        <button mat-icon-button  matBadge="10+" matBadgePosition="after" matBadgeColor="warn"
+          matBadgeOverlap="true">
+          <mat-icon>home</mat-icon>
+        </button>
+
+        <span class="vertical-divider"></span>
+
+        <button mat-button [matMenuTriggerFor]="menu" fxShow.lt-md="false" fxShow.gt-sm="true">
+          <mat-icon>account_circle</mat-icon>
+          <span class="ml-2">username</span>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" fxShow.lt-md="true" fxShow.gt-sm="false">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon mat-list-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
+            <span>Profile</span>
+          </button>
+
+          <button mat-menu-item>
+            <mat-icon mat-list-icon fontSet="fas" fontIcon="fa-sign-out-alt"></mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+
+    <app-outlet-wrapper></app-outlet-wrapper>
+  </mat-sidenav-content>
+</mat-sidenav-container>

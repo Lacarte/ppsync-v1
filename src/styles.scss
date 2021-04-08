@@ -1,0 +1,332 @@
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "./theme.scss";
+@import "./scss/normalize.scss";
+// @import "./scss/tailwind.min.css";
+
+// @import "./scss/bootstrap-utilities.scss";
+
+/* @import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "tailwindcss/base";
+ */
+
+html,
+body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  background-image: url("https://images.pexels.com/photos/1048022/pexels-photo-1048022.jpeg?cs=srgb&dl=pexels-scott-webb-1048022.jpg&fm=jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: "Roboto", Arial, sans-serif;
+  // font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #{mat-color($app-primary, default)};
+  --accent-color: #{mat-color($app-accent, default)};
+  --green-color: #17af12;
+  --red-color: #ff0000;
+  --yellow-color: #f0be0a;
+  --orange-color: #f7ac03;
+  --loading-shade: rgba(255, 255, 255, 0.95);
+  --toolbar-height: 64px;
+  --nav-width: 200px;
+}
+
+.btn-round-corner {
+  border-radius: 25px !important;
+}
+
+.success {
+  background-color: #2d735c !important;
+  color: white;
+  font-weight: 500;
+}
+
+.title-header {
+  font-weight: 700 !important;
+}
+
+:root {
+  //assign material color to css variable so no need to import in each scss
+  --primary-color: #{mat-color($app-primary, default)};
+  --primary-color-50: #{mat-color($app-primary, 50)};
+  --primary-color-300: #{mat-color($app-primary, 300)};
+  --primary-color-500: #{mat-color($app-primary, 500)};
+  --primary-color-900: #{mat-color($app-primary, 900)};
+  --secondary-color: #1976d2;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  background-color: #f5f5f5;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: mat-color($app-primary, default);
+}
+
+.mat-icon {
+  height: auto !important;
+}
+
+.mat-tab-body.mat-tab-body-active {
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo {
+  height: 32px;
+}
+
+.app-nav-accordion-shell {
+  .mat-expansion-panel {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    width: var(--nav-width);
+
+    &.mat-expansion-panel-spacing {
+      margin: 0px;
+    }
+
+    .mat-expansion-panel-body {
+      padding: 0px;
+    }
+
+    .mat-expansion-panel-header {
+      height: 40px;
+      padding: 0px 24px 0px 16px;
+      transition: all 500ms ease-out;
+
+      ::after {
+        border-color: #808080;
+      }
+    }
+    .mat-expansion-panel-header:hover {
+      // background-color: rgba(76, 146, 203, 0.37);
+    }
+
+    .mat-expansion-panel-header-title {
+      // text-transform: uppercase;
+      // color: rgb(255, 255, 255);
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .mat-list-item {
+      // color: rgb(255, 255, 255);
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+    .mat-list-item span {
+      padding-left: 2.5rem;
+    }
+
+    .mat-divider {
+      // border-top-color: rgb(0, 0, 0);
+      // border-top-width: 1px;
+      // border-top-style: dotted !important;
+    }
+
+    .mat-list-item:hover {
+      // background-color: rgba(76, 146, 203, 0.37);
+    }
+    .mat-list-item {
+      transition: all 500ms ease-out;
+    }
+
+   .active.submenu {
+      position: relative;
+
+      ::before {
+        content: "\2193";
+        /* color: #fff; */
+        /* display: inline-block; */
+        position: absolute;
+        /* right: 20px; */
+        /* top: 15px; */
+        pointer-events: none;
+        border: 1px solid #808080;
+        padding: 2px;
+      }
+    }
+
+
+
+    
+  }
+
+  .fas {
+    font-size: x-large;
+    line-height: 1.5;
+  }
+}
+
+.card-shell {
+  padding: 0 !important;
+
+  .mat-card-header .mat-card-title {
+    font-size: 0.8rem;
+  }
+
+  .mat-card-header .mat-card-title {
+    text-transform: uppercase;
+    margin: 8px;
+  }
+
+  .mat-card-header {
+    align-items: center;
+    align-content: center;
+    background-color: rgb(238, 238, 238);
+  }
+
+  .mat-card-content {
+    padding: 1rem;
+    margin-bottom: 0 !important;
+  }
+}
+
+.app-full-bleed-dialog .mat-dialog-container {
+  padding: 0 !important;
+  // min-width: 690px !important;
+  // width: 100vh !important;
+}
+
+.table-shell {
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  tr.mat-header-row {
+    height: 42px !important;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th.mat-header-cell {
+    text-align: left;
+    font-size: 0.75rem;
+    color: #131313;
+    text-transform: uppercase;
+  }
+
+  td.mat-cell {
+    text-align: left;
+  }
+
+  .mat-cell,
+  .mat-header-cell {
+    padding-left: 0.5rem;
+  }
+
+  .mat-cell {
+    // padding: 0 0.25rem !important;
+    border-left: 1px dotted #dadada;
+    border-right: 1px dotted #dadada;
+  }
+
+  .mat-header-row {
+    background-color: rgb(246 246 246);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    border-left: 1px dotted #dadada;
+    border-right: 1px dotted #dadada;
+  }
+
+  .mat-sort-header-container {
+    padding-left: 18px !important;
+  }
+
+  tr:hover {
+    background-color: rgba(76, 146, 203, 0.37);
+  }
+
+  tr {
+    transition: all 500ms ease-out;
+  }
+
+  tr:nth-child(even) {
+    border-color: #fffadd;
+    background-color: #f0f5f5;
+    color: black;
+  }
+
+  /*   .table-container {
+    width: 100%;
+    overflow-x: auto;
+  } */
+
+  .mat-row {
+    height: auto;
+  }
+
+  /* mat-table */
+  mat-footer-row mat-footer-cell {
+    justify-content: center;
+    font-style: italic;
+    // font-weight: bold;
+  }
+
+  .left-align-cell.mat-cell {
+    text-align: left;
+  }
+
+  .left-align-header > .mat-sort-header-container {
+    justify-content: flex-start !important;
+    padding-left: 0px !important;
+  }
+
+  .mat-paginator-page-size {
+    align-items: center;
+  }
+}
+
+.sidenav-shell {
+  .mat-list-base {
+    padding-top: 0;
+  }
+}
+
+.toolbar-shell {
+  /*   .mat-badge-content {
+    width: 30px;
+    height: 30px; 
+    line-height: 30px;
+  } */
+
+  .mat-badge-content {
+    // top: -20px;
+    //  right: -10px;
+    font-size: xx-small;
+  }
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}

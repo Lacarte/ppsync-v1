@@ -1,0 +1,128 @@
+<mat-card class="card-shell">
+  <mat-card-header color="primary">
+    <mat-card-title>{{title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div fxLayout="column">
+
+      <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+        <mat-form-field fxFlex color="accent">
+          <input   matInput type="text" placeholder="Nom"  required>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxFlex color="accent">
+          <input matInput type="text" placeholder="Prénom" required>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxFlex color="accent">
+          <input matInput type="text" placeholder="&#8470; Formulaire" required>
+          <mat-icon matSuffix>tag</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+        <mat-form-field fxFlex color="accent">
+          <input matInput type="text" placeholder="&#8470; Passport" >
+          <mat-icon matSuffix>tag</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxFlex color="accent">
+          <mat-label>Date de la Requête</mat-label>
+          <input matInput [matDatepicker]="picker"  (focus)="picker.open()" readonly required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <div fxFlex fxLayoutAlign="center center">
+          <mat-radio-group div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+            <mat-radio-button value="1" [checked]="true">Majeur</mat-radio-button>
+            <mat-radio-button value="2">Mineur</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+
+
+      </div>
+
+      <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+
+        <mat-form-field fxFlex color="accent">
+          <input matInput type="text" placeholder="NIF" >
+          <mat-icon matSuffix>tag</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field fxFlex color="accent">
+          <input matInput type="text" placeholder="Motif de la Demande" >
+          <mat-icon matSuffix>contact_support</mat-icon>
+        </mat-form-field>
+
+
+        <mat-form-field fxFlex color="accent">
+          <input matInput type="text" placeholder="Téléphone" >
+          <mat-icon matSuffix>phone_iphone</mat-icon>
+        </mat-form-field>
+
+      </div>
+
+
+      <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+
+
+        <mat-form-field fxFlex color="accent">
+          <input matInput type="text" placeholder="&#8470; du Nouveau Passport" >
+          <mat-icon matSuffix>tag</mat-icon>
+        </mat-form-field>
+
+        <div fxFlex></div>
+        <div fxFlex></div>
+
+
+      </div>
+      <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+        <mat-form-field fxFlex color="accent">
+          <mat-label>Status</mat-label>
+          <mat-select>
+            <mat-option>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex color="accent">
+          <mat-label>Personne Ayant Rempli la Demande</mat-label>
+          <mat-select>
+            <mat-option>
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+
+      </div>
+
+      <mat-form-field fxFlex color="accent">
+        <input matInput type="text" placeholder="Suggestions" >
+        <mat-icon matSuffix>speaker_notes</mat-icon>
+      </mat-form-field>
+
+    </div>
+
+<app-action-notification [actionNotification]="actionNotification"></app-action-notification>
+  </mat-card-content>
+  <mat-action-row class="action-shell py-3" fxLayout="row" fxLayoutAlign="end center">
+    <button mat-flat-button color="primary">SAUVEGARDER</button>
+    <button mat-button color="warn" (click)="onCancelClick()">SORTIR</button>
+  </mat-action-row>
+</mat-card>
+
+<mat-card class="card-shell loading">
+
+</mat-card>
