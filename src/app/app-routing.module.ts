@@ -1,3 +1,8 @@
+import { UserComponent } from './components/admin/user/user.component';
+import { MotiveComponent } from './components/admin/motive/motive.component';
+import { ProfileComponent } from './components/admin/profile/profile.component';
+import { DocumentComponent } from './components/admin/document/document.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
@@ -15,8 +20,14 @@ const routes: Routes = [
         path: "",
         component: WelcomeComponent
       },
-      { path: "register", component: RegisterComponent },
-      { path: "deliver", component: DeliverComponent }
+      { path: "process/register", component: RegisterComponent },
+      { path: "process/deliver", component: DeliverComponent },
+      { path: "process/dashboard", component: DashboardComponent } ,
+      { path: "admin/user", component: UserComponent },
+      { path: "admin/motive", component: MotiveComponent },
+      { path: "admin/profile", component: ProfileComponent  },
+      { path: "admin/doctype", component: DocumentComponent },
+      { path: "dashboard", component: DashboardComponent }
     ]
   },
   { path: "login", component: LoginComponent },

@@ -197,6 +197,40 @@ span.submenu.active ::before {
   }
 }
 
+.cardx-lg {
+  min-width: 80vw;
+}
+
+.cardx-md {
+  min-width: 55vw;
+}
+
+.cardx-sm {
+  min-width: 50vw;
+}
+
+.cardy-lg {
+  min-height: 80vw;
+}
+
+.cardy-md {
+  min-height: 50vw;
+}
+
+.cardy-sm {
+  min-height: 50vw;
+}
+
+.cardx-scrollable {
+  max-width: 80vw;
+  overflow-x: auto;
+}
+
+.cardy-scrollable {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
 .app-full-bleed-dialog .mat-dialog-container {
   padding: 0 !important;
   // min-width: 690px !important;

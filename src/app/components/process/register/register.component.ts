@@ -10,7 +10,7 @@ import {MatPaginator} from '@angular/material/paginator';
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.css"]
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit,AfterViewInit {
   title = "ENREGISTRER";
 
  displayedColumns: string[] = ['formId', 'passport','req_date','lastName', 'firstName', 'nif' , 'tel','status' ,'actions'];
@@ -22,13 +22,13 @@ export class RegisterComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private dialog: MatDialog) {}
 
   ngOnInit() {}
 
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;

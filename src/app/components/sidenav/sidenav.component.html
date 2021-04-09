@@ -10,15 +10,7 @@
     <mat-nav-list>
       <mat-accordion class="app-nav-accordion-shell">
 
-
-        <!-- 
-          <mat-nav-list>
-            <a mat-list-item>Item One</a>
-            <h3 matSubheader>Section One</h3>
-            <a mat-list-item>Item Two</a>
-          </mat-nav-list> -->
-
-        <mat-nav-list>
+        <mat-nav-list routerLink="/dashboard">
 
           <a mat-list-item>
             <div fxFlex="25" class="icon" fxLayoutAlign="start center">
@@ -28,7 +20,7 @@
           </a>
         </mat-nav-list>
 
-
+        <!-- PROCEED -->
         <mat-expansion-panel class="mat-elevation-z0">
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -45,73 +37,70 @@
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-              <a mat-list-item routerLink="/register" >
-                <div fxFlex="25" class="icon" fxLayoutAlign="start center">
-                </div>
-                <div fxFlex="75"> ENREGISTRER </div>
-              </a>
-              <a mat-list-item  routerLink="/deliver" > 
-                <div fxFlex="25" class="icon" fxLayoutAlign="start center">
-                </div>
-                <div fxFlex="75"> DELIVRER </div>
-              </a>
+            <a mat-list-item routerLink="process/register">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+              </div>
+              <div fxFlex="75"> ENREGISTRER </div>
+            </a>
+            <a mat-list-item routerLink="process/deliver">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+              </div>
+              <div fxFlex="75"> DELIVRER </div>
+            </a>
           </mat-nav-list>
         </mat-expansion-panel>
 
-        <!-- <mat-list-item routerLink="/dashboard" routerLinkActive="active">
-          
-          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3%">
-            <div fxFlex="30" class="icon">
-              <mat-icon matSuffix>dashboard</mat-icon>
-            </div>
-            <div fxFlex="70"> DASHBOARD </div>
-          </div>
 
-        </mat-list-item>
-      
-      
-      
-        <mat-expansion-panel>
-          <mat-expansion-panel-header >
-            <mat-panel-title >
-              
-                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3%">
-                  <div fxFlex="30" class="icon">
-                    <mat-icon matSuffix class="fa" fontSet="fas" fontIcon="fa-project-diagram"></mat-icon>
-                  </div>
-                  <div fxFlex="70"> PROCEDER </div>
+
+        <!-- ADMIN -->
+        <mat-expansion-panel class="mat-elevation-z0">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+
+              <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+                <div fxFlex="25" class="icon" fxLayoutAlign="center center">
+                  <mat-icon matSuffix>
+                      admin_panel_settings
+                  </mat-icon>
                 </div>
-              
+                <div fxFlex="75"> ADMIN </div>
+
+
+              </div>
             </mat-panel-title>
+
           </mat-expansion-panel-header>
-          <mat-divider></mat-divider>
-
-          <mat-list-item routerLink="/register" >
-           
-            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3%">
-              <div fxFlex="30" class="icon" routerLinkActive="active">
+          <mat-nav-list>
+            <a mat-list-item routerLink="/admin/user">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="70"> ENREGISTRER </div>
-            </div>
-            
-            <mat-divider></mat-divider>
-          </mat-list-item>
-
+              <div fxFlex="75"> UTILISATEUR </div>
+            </a>
+         
+            <a mat-list-item routerLink="/admin/motive">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+              </div>
+              <div fxFlex="75"> MOTIFS </div>
+            </a>
           
-          <mat-list-item routerLink="/deliver" routerLinkActive="active">
-
-            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="3%">
-              <div fxFlex="30" class="icon" routerLinkActive="active">
+          
+            <a mat-list-item routerLink="/admin/profile">
+            <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="70"> DELIVRER </div>
-            </div>
-            
-           <mat-divider></mat-divider>
-          </mat-list-item> 
+              <div fxFlex="75"> PROFILE </div>
+            </a>
+     
+            <a mat-list-item routerLink="/admin/doctype">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+              </div>
+              <div fxFlex="75"> TYPE DOCU. </div>
+            </a>
 
+
+          </mat-nav-list>
         </mat-expansion-panel>
 
--->
+
 
       </mat-accordion>
     </mat-nav-list>

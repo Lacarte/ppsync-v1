@@ -1,3 +1,8 @@
+import { MotiveComponent } from './components/admin/motive/motive.component';
+import { DocumentComponent } from "./components/admin/document/document.component";
+import { ProfileComponent } from "./components/admin/profile/profile.component";
+import { UserComponent } from "./components/admin/user/user.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { SearchRequestComponent } from "./components/utils/search-request/search-request.component";
 import { LOCALE_ID, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -37,6 +42,11 @@ import { TstComponent } from "./components/tst/tst.component";
     DeliverComponent,
     AddPassportComponent,
     SearchRequestComponent,
+    DashboardComponent,
+    MotiveComponent,
+    UserComponent,
+    ProfileComponent,
+    DocumentComponent,
     TstComponent,
   ],
   entryComponents: [AddPassportComponent, SearchRequestComponent],

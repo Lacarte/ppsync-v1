@@ -1,4 +1,4 @@
-import { FullscreenService } from './../../shared/services/fullscreen/fullscreen.service';
+import { FullscreenService } from '../../shared/services/ui/fullscreen/fullscreen.service';
 import {
   MatDialog,
   MatDialogRef,
