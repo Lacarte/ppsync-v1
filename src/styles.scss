@@ -1,4 +1,4 @@
-@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+// @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "./theme.scss";
 @import "./scss/normalize.scss";
 // @import "./scss/tailwind.min.css";
@@ -13,29 +13,23 @@
 html,
 body {
   height: 100%;
-  -webkit-font-smoothing: antialiased;
-  font-size: 16px;
-  // background-image: url("https://images.pexels.com/photos/1048022/pexels-photo-1048022.jpeg?cs=srgb&dl=pexels-scott-webb-1048022.jpg&fm=jpg") !important;
-  // background-position: center;
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  width: 100%;
   min-height: 100vh;
-  font-family: "Roboto", Arial, sans-serif;
-  // font-family: "Helvetica Neue", sans-serif;
-  margin: 0;
+  background-image: url("/src/assets/pp8.jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+
+
 :root {
-  --primary-color: #{mat-color($app-primary, default)};
-  --accent-color: #{mat-color($app-accent, default)};
-  --green-color: #17af12;
-  --red-color: #ff0000;
-  --yellow-color: #f0be0a;
-  --orange-color: #f7ac03;
-  --loading-shade: rgba(255, 255, 255, 0.95);
-  --toolbar-height: 64px;
+  --loading-shade: rgba(255, 255, 255, 0.95); 
   --nav-width: 200px;
-}
+  --toolbar-height: 64px;
+  --footer-height:30px;
+  }
+
 
 .btn-round-corner {
   border-radius: 25px !important;
@@ -51,15 +45,7 @@ body {
   font-weight: 700 !important;
 }
 
-:root {
-  //assign material color to css variable so no need to import in each scss
-  --primary-color: #{mat-color($app-primary, default)};
-  --primary-color-50: #{mat-color($app-primary, 50)};
-  --primary-color-300: #{mat-color($app-primary, 300)};
-  --primary-color-500: #{mat-color($app-primary, 500)};
-  --primary-color-900: #{mat-color($app-primary, 900)};
-  --secondary-color: #1976d2;
-}
+
 
 *::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -72,7 +58,7 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: mat-color($app-primary, default);
+  background-color: var(--primary-color);
 }
 
 .mat-icon {
@@ -338,12 +324,7 @@ span.submenu.active ::before {
 }
 
 .toolbar-shell {
-  /*   .mat-badge-content {
-    width: 30px;
-    height: 30px; 
-    line-height: 30px;
-  } */
-
+  
   .mat-badge-content {
     // top: -20px;
     //  right: -10px;
@@ -358,4 +339,14 @@ a:active {
   text-decoration: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
+}
+
+
+
+.outlet-wrapper {
+  background-image: url("/assets/pp9.jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100% - (var(--toolbar-height) + var(--footer-height )));
 }
