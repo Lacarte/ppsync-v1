@@ -1,3 +1,5 @@
+import { Subscription, Observable } from 'rxjs';
+import { OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { timer } from 'rxjs';
 
@@ -6,26 +8,31 @@ import { timer } from 'rxjs';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit,OnDestroy {
 
    title="Dashboard"
+   timer$: Subscription; 
+
 
   constructor() { }
 
+
   ngOnInit() {
-    let timer$  = timer(0,  2000);
-  
-    timer$.subscribe((x)=>{
+/*     this.timer$ = timer(0,  2000);
+    this.timer$.subscribe((x)=>{
           console.log('timer',x);
           },(err)=>{
           console.log('error',err);
         });
-    
+     */
 
 
   }
 
  
-  
+
+  ngOnDestroy(): void {
+    // this.timer$.unsubscribe();
+  }
 
 }

@@ -10,7 +10,7 @@ import { MatPaginator } from "@angular/material/paginator";
   templateUrl: "./user.component.html",
   styleUrls: ["./user.component.css"],
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit,AfterViewInit {
   title = "UTILISATEUR";
 
   displayedColumns: string[] = [
@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
     "docType",
     "documentNumber",
     "status",
+    "createAt",
     "actions",
   ];
 
@@ -67,6 +68,13 @@ export class UserComponent implements OnInit {
 }
 
 const ELEMENT_DATA: userData[] = [
+
+/*   Active
+  Banned
+  Inactive
+  Pending */
+  
+
   {
     id: 0,
     idter: 0,
@@ -77,6 +85,8 @@ const ELEMENT_DATA: userData[] = [
     profile: { id: 0, description: "Admin" },
     docType: { id: 0, description: "Passport" },
     status: { id: 0, description: "Active" },
+    createAt: 	"01/01/2021",
+
   },
   {
     id: 1,
@@ -87,7 +97,33 @@ const ELEMENT_DATA: userData[] = [
     documentNumber: "0000000",
     profile: { id: 0, description: "Admin" },
     docType: { id: 0, description: "Passport" },
+    status: { id: 0, description: "Inactive" },
+    createAt: 	"01/01/2021",
+  },
+  {
+    id: 1,
+    idter: 1,
+    firstName: "Prophete",
+    lastName: "Djerry",
+    tel: "8093099342",
+    documentNumber: "0000000",
+    profile: { id: 0, description: "Admin" },
+    docType: { id: 0, description: "Passport" },
+    status: { id: 0, description: "Pending" },
+    createAt: 	"01/01/2021",
+  },
+
+  {
+    id: 1,
+    idter: 1,
+    firstName: "Prophete",
+    lastName: "Djerry",
+    tel: "8093099342",
+    documentNumber: "0000000",
+    profile: { id: 0, description: "Admin" },
+    docType: { id: 0, description: "Passport" },
     status: { id: 0, description: "Active" },
+    createAt: 	"01/01/2021",
   },
 ];
 
@@ -101,4 +137,5 @@ export interface userData {
   status: { id: number; description: string };
   docType: { id: number; description: string };
   profile: { id: number; description: string };
+  createAt: string ;
 }

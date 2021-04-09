@@ -58,6 +58,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
   }
   
 
+  logout(){
+  }
 
 
   /* 
