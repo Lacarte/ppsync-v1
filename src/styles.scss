@@ -214,23 +214,32 @@ span.submenu.active ::before {
 
 .app-full-bleed-dialog .mat-dialog-container {
   padding: 0 !important;
-  // min-width: 690px !important;
-  // width: 100vh !important;
+}
+
+.app-dialog .mat-dialog-container {
+  padding: 0 !important;
 }
 
 .table-shell {
+  overflow-x: auto;
+  
+.mat-column-actions {
+  min-width: 150px;
+}
+
+/*   
+.table{
+  min-width: 1024px;
+} */
+
   .mat-form-field {
     font-size: 14px;
-    width: 100%;
   }
 
   tr.mat-header-row {
     height: 42px !important;
   }
 
-  table {
-    width: 100%;
-  }
 
   th.mat-header-cell {
     text-align: left;
@@ -350,4 +359,53 @@ a:active {
 .mat-icon-hover:hover {
   color: var(--primary-lighter-color);
   cursor: pointer;
+}
+
+
+
+
+.redred{
+  font-size: 2rem !important;
+  color:red;
+  border: 1px solid red;
+
+
+}
+
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width:767px) {
+  body {
+    // font-size: 3rem !important;
+    // border: 1px solid red;
+  }
+  .inner-outlet {
+     padding: 0!important;
+  }
+  
+.app-full-bleed-dialog .mat-dialog-container {
+  padding: 0 !important;
+
+}
+.app-full-bleed-dialog  {
+  min-width: 90vw !important;
+  min-height: 90vh !important;
+}
+
+  
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width:768px) {
+  body {font-size: 10px;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:992px) {
+  body {font-size: 20px;}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width:1200px) {
+  body {font-size: 30px;}
 }

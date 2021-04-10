@@ -18,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { OutletWrapperComponent } from "./components/outlet-wrapper/outlet-wrapper.component";
 import { RegisterComponent } from "./components/process/register/register.component";
 import { DeliverComponent } from "./components/process/deliver/deliver.component";
-import { AddPassportComponent } from "./components/process/register/add-passport/add-passport.component";
+import { AddRequestComponent } from "./components/process/register/add-request/add-request.component";
 import { TstComponent } from "./components/tst/tst.component";
 
 @NgModule({
@@ -40,7 +40,7 @@ import { TstComponent } from "./components/tst/tst.component";
     SidenavComponent,
     OutletWrapperComponent,
     DeliverComponent,
-    AddPassportComponent,
+    AddRequestComponent,
     SearchRequestComponent,
     DashboardComponent,
     MotiveComponent,
@@ -49,7 +49,7 @@ import { TstComponent } from "./components/tst/tst.component";
     DocumentComponent,
     TstComponent,
   ],
-  entryComponents: [AddPassportComponent, SearchRequestComponent],
+  entryComponents: [AddRequestComponent, SearchRequestComponent],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [AppComponent],
 })

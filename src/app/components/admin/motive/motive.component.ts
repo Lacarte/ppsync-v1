@@ -1,5 +1,5 @@
 import { SearchRequestComponent } from './../../utils/search-request/search-request.component';
-import { AddPassportComponent } from './../../process/register/add-passport/add-passport.component';
+import { AddRequestComponent } from '../../process/register/add-request/add-request.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from "@angular/material/dialog";
@@ -15,7 +15,7 @@ export class MotiveComponent implements OnInit {
    title = "Mofif de la demande";
 
   displayedColumns: string[] = [
-    "description",
+    "description","actions"
    ];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -36,7 +36,7 @@ export class MotiveComponent implements OnInit {
   }
 
   addUser() {
-    const dialogRef = this.dialog.open(AddPassportComponent, {
+    const dialogRef = this.dialog.open(AddRequestComponent, {
       panelClass: "app-full-bleed-dialog",
       disableClose: true,
     });
@@ -49,7 +49,7 @@ export class MotiveComponent implements OnInit {
 
   searchUser() {
     const dialogRef = this.dialog.open(SearchRequestComponent, {
-      panelClass: "app-full-bleed-dialog",
+      panelClass: "app-dialog",
       disableClose: true,
     });
 

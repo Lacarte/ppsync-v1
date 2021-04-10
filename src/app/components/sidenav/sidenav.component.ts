@@ -1,3 +1,4 @@
+import { BreakpointsService } from './../../shared/services/ui/breakpoints.service';
 import { FullscreenService } from '../../shared/services/ui/fullscreen/fullscreen.service';
 import {
   MatDialog,
@@ -40,6 +41,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
   isLtMd: boolean;
 
   constructor(
+    public breakpointService: BreakpointsService,
     public menuTogglerService: MenuTogglerService,
     public dialog: MatDialog,
      public uiService: UIService,
@@ -49,12 +51,14 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    
-    
-    this.isLtMdSub = this.uiService.getIsLtMd().subscribe((x) => {
+       this.isLtMdSub = this.uiService.getIsLtMd().subscribe((x) => {
       this.opened = !x;
       this.isLtMd = x;
     });
+
+
+ 
+
   }
   
 

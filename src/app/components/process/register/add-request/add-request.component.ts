@@ -6,11 +6,11 @@ import {
 } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-add-passport',
-  templateUrl: './add-passport.component.html',
-  styleUrls: ['./add-passport.component.css']
+  selector: 'app-add-request',
+  templateUrl: './add-request.component.html',
+  styleUrls: ['./add-request.component.css']
 })
-export class AddPassportComponent implements OnInit {
+export class AddRequestComponent implements OnInit {
 
   title= "ENREGISTRER UN REQUÊTE";
 
@@ -22,7 +22,7 @@ export class AddPassportComponent implements OnInit {
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
-      public dialogRef: MatDialogRef<AddPassportComponent>,
+      public dialogRef: MatDialogRef<AddRequestComponent>,
 
 ) { }
 
@@ -30,7 +30,7 @@ export class AddPassportComponent implements OnInit {
   }
 
 
- onCancelClick(): void {
+ onClickCancel(): void {
     this.dialogRef.close({isRefresh:false});
   }
 

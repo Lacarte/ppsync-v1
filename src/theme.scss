@@ -249,6 +249,7 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 // LCRT 
 
 
+
 .theme-alternate .mat-form-field.mat-accent .mat-input-element {
   caret-color: #f8c215 !important;
 }
@@ -266,7 +267,6 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 
 
  .theme-alternate .mat-focused .mat-form-field-underline {
-
   color: #f8c215 !important;
   caret-color: #f8c215 !important;
  }

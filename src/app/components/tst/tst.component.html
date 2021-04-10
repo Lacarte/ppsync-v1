@@ -9,17 +9,17 @@
       <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
 
         <mat-form-field fxFlex color="accent">
-          <input   matInput type="text" placeholder="Nom"  required>
+          <input autocomplete="off"   matInput type="text" placeholder="Nom"  required>
           <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
 
         <mat-form-field fxFlex color="accent">
-          <input matInput type="text" placeholder="Prénom" required>
+          <input autocomplete="off"  matInput type="text" placeholder="Prénom" required>
           <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
 
         <mat-form-field fxFlex color="accent">
-          <input matInput type="text" placeholder="&#8470; Formulaire" required>
+          <input autocomplete="off"  matInput type="text" placeholder="&#8470; Formulaire" required>
           <mat-icon matSuffix>tag</mat-icon>
         </mat-form-field>
       </div>
@@ -27,7 +27,7 @@
       <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
 
         <mat-form-field fxFlex color="accent">
-          <input matInput type="text" placeholder="&#8470; Passport" >
+          <input autocomplete="off"  matInput type="text" placeholder="&#8470; Passport" >
           <mat-icon matSuffix>tag</mat-icon>
         </mat-form-field>
 
@@ -53,19 +53,19 @@
 
 
         <mat-form-field fxFlex color="accent">
-          <input matInput type="text" placeholder="NIF" >
+          <input autocomplete="off"  matInput type="text" placeholder="NIF" >
           <mat-icon matSuffix>tag</mat-icon>
         </mat-form-field>
 
 
         <mat-form-field fxFlex color="accent">
-          <input matInput type="text" placeholder="Motif de la Demande" >
+          <input autocomplete="off"  matInput type="text" placeholder="Motif de la Demande" >
           <mat-icon matSuffix>contact_support</mat-icon>
         </mat-form-field>
 
 
         <mat-form-field fxFlex color="accent">
-          <input matInput type="text" placeholder="Téléphone" >
+          <input autocomplete="off"  matInput type="text" placeholder="Téléphone" >
           <mat-icon matSuffix>phone_iphone</mat-icon>
         </mat-form-field>
 
@@ -77,7 +77,7 @@
 
 
         <mat-form-field fxFlex color="accent">
-          <input matInput type="text" placeholder="&#8470; du Nouveau Passport" >
+          <input autocomplete="off"  matInput type="text" placeholder="&#8470; du Nouveau Passport" >
           <mat-icon matSuffix>tag</mat-icon>
         </mat-form-field>
 
@@ -109,7 +109,7 @@
       </div>
 
       <mat-form-field fxFlex color="accent">
-        <input matInput type="text" placeholder="Suggestions" >
+        <input autocomplete="off" matInput type="text" placeholder="Suggestions" >
         <mat-icon matSuffix>speaker_notes</mat-icon>
       </mat-form-field>
 
@@ -119,7 +119,7 @@
   </mat-card-content>
   <mat-action-row class="action-shell py-3" fxLayout="row" fxLayoutAlign="end center">
     <button mat-flat-button color="primary">SAUVEGARDER</button>
-    <button mat-button color="warn" (click)="onCancelClick()">SORTIR</button>
+    <button mat-button color="warn" (click)="onClickCancel()">SORTIR</button>
   </mat-action-row>
 </mat-card>
 

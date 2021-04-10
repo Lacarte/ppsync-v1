@@ -8,6 +8,8 @@ import { Component, OnInit } from "@angular/core";
 export class TstComponent implements OnInit {
   constructor() {}
   
+ title="test";
+
   actionNotification = {
   isVisible: true,
   messageType: 'success',
@@ -16,4 +18,9 @@ export class TstComponent implements OnInit {
 
 
   ngOnInit() {}
+
+  onClickCancel(){
+
+}
+
 }

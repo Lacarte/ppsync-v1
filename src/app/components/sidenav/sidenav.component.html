@@ -1,6 +1,8 @@
 <mat-sidenav-container class="mat-drawer-transition sidenav-container" autosize>
-  <mat-sidenav #sidenav [(opened)]="opened" [mode]="isLtMd ? 'over' : 'side'" role="navigation"
-    class="sidenav sidenav-shell">
+  <mat-sidenav  #sidenav [opened]="!breakpointService.isLtMdLtSm"
+  [mode]="breakpointService.isLtMdLtSm ? 'over' : 'side'" role="navigation"
+   
+  class="sidenav sidenav-shell">
     <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="center center">
       <a routerLink="/">
         <img src="../../assets/ppsync.svg" class="logo" alt="PPSYNC" /><sub class="logo-sub"></sub>
@@ -10,7 +12,7 @@
     <mat-nav-list>
       <mat-accordion class="app-nav-accordion-shell">
 
-        <mat-nav-list routerLink="/dashboard">
+        <mat-nav-list routerLink="/dashboard"  (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
 
           <a mat-list-item>
             <div fxFlex="25" class="icon" fxLayoutAlign="start center">
@@ -37,15 +39,15 @@
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLink="process/register">
+            <a mat-list-item routerLink="process/register"  (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="75"> ENREGISTRER </div>
+              <div fxFlex="75"> Enregistrer </div>
             </a>
-            <a mat-list-item routerLink="process/deliver">
+            <a mat-list-item routerLink="process/deliver" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="75"> DELIVRER </div>
+              <div fxFlex="75"> Delivrer </div>
             </a>
           </mat-nav-list>
         </mat-expansion-panel>
@@ -71,35 +73,69 @@
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLink="/admin/user">
+            <a mat-list-item routerLink="/admin/user" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="75"> UTILISATEUR </div>
+              <div fxFlex="75"> Utilisateur </div>
             </a>
          
-            <a mat-list-item routerLink="/admin/motive">
+            <a mat-list-item routerLink="/admin/motive" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="75"> MOTIFS </div>
+              <div fxFlex="75"> Motifs </div>
             </a>
           
           
-            <a mat-list-item routerLink="/admin/profile">
+            <a mat-list-item routerLink="/admin/profile" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
             <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="75"> PROFILE </div>
+              <div fxFlex="75"> Profil Util. </div>
             </a>
      
-            <a mat-list-item routerLink="/admin/doctype">
+            <a mat-list-item routerLink="/admin/doctype" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="75"> TYPE DOCU. </div>
+              <div fxFlex="75"> Type Docu. </div>
             </a>
 
 
           </mat-nav-list>
         </mat-expansion-panel>
 
+        <!-- RAPORT -->
+        <mat-expansion-panel class="mat-elevation-z0">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+
+              <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
+                <div fxFlex="25" class="icon" fxLayoutAlign="center center">
+                  <mat-icon matSuffix>
+                      analytics
+                  </mat-icon>
+                </div>
+                <div fxFlex="75"> RAPPORT </div>
+
+              </div>
+            </mat-panel-title>
+
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item routerLink="/admin/user" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+              </div>
+              <div fxFlex="75"> Passport </div>
+            </a>
+         
+          </mat-nav-list>
+          <mat-nav-list>
+            <a mat-list-item routerLink="/admin/user" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+              </div>
+              <div fxFlex="75"> Log </div>
+            </a>
+         
+          </mat-nav-list>
+        </mat-expansion-panel>
 
 
       </mat-accordion>

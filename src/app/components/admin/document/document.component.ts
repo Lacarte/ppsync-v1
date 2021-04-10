@@ -1,6 +1,6 @@
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { AddPassportComponent } from './../../process/register/add-passport/add-passport.component';
+import { AddRequestComponent } from '../../process/register/add-request/add-request.component';
 import { SearchRequestComponent } from './../../utils/search-request/search-request.component';
 import { MatDialog } from "@angular/material/dialog";
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -12,10 +12,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class DocumentComponent implements OnInit {
 
-  title = "MOFIF DE LA DEMANDE";
+  title = "TYPE DE DOCUMENT";
 
   displayedColumns: string[] = [
-    "description",
+    "description","actions"
    ];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -36,7 +36,7 @@ export class DocumentComponent implements OnInit {
   }
 
   addUser() {
-    const dialogRef = this.dialog.open(AddPassportComponent, {
+    const dialogRef = this.dialog.open(AddRequestComponent, {
       panelClass: "app-full-bleed-dialog",
       disableClose: true,
     });
@@ -49,7 +49,7 @@ export class DocumentComponent implements OnInit {
 
   searchUser() {
     const dialogRef = this.dialog.open(SearchRequestComponent, {
-      panelClass: "app-full-bleed-dialog",
+      panelClass: "app-dialog",
       disableClose: true,
     });
 

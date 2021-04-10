@@ -6,7 +6,7 @@ export class BreakpointsService {
 
 private _mqAlias: string;
 
-  constructor() { }
+constructor() { }
 
 get mqAlias(): string{
  return this._mqAlias;

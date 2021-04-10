@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { BreakpointsService } from './shared/services/ui/breakpoints.service';
 import { Component, VERSION } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
@@ -12,14 +13,20 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
-
+  private mediaSub: Subscription;
  projectName = environment.projectName;
+
+
 
   public constructor(private titleService: Title,
     private breakpointService: BreakpointsService,
     private mediaObserver: MediaObserver) { 
    this.setTitle(this.projectName);
-   console.log(">>>",this.name)
+   //console.log(">>>",this.name)
+   this.mediaSub = this.mediaObserver.asObservable().subscribe((change) => {
+    this.breakpointService.mqAlias = change[1].mqAlias;
+    console.log('this.breakpointService.mqAlias',this.breakpointService.mqAlias);
+    });
   }
 
     public setTitle(newTitle: string) {

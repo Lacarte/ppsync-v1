@@ -16,7 +16,7 @@ export class SearchRequestComponent implements OnInit {
 
   ngOnInit() {}
 
-  onCancelClick(): void {
+  onClickCancel(): void {
     this.dialogRef.close({ isRefresh: false });
   }
 }

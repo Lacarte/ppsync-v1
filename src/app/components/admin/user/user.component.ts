@@ -1,5 +1,5 @@
 import { SearchRequestComponent } from "./../../utils/search-request/search-request.component";
-import { AddPassportComponent } from "./../../process/register/add-passport/add-passport.component";
+import { AddRequestComponent } from "../../process/register/add-request/add-request.component";
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { MatTableDataSource } from "@angular/material/table";
@@ -43,7 +43,7 @@ export class UserComponent implements OnInit,AfterViewInit {
   }
 
   addUser() {
-    const dialogRef = this.dialog.open(AddPassportComponent, {
+    const dialogRef = this.dialog.open(AddRequestComponent, {
       panelClass: "app-full-bleed-dialog",
       disableClose: true,
     });
@@ -56,7 +56,7 @@ export class UserComponent implements OnInit,AfterViewInit {
 
   searchUser() {
     const dialogRef = this.dialog.open(SearchRequestComponent, {
-      panelClass: "app-full-bleed-dialog",
+      panelClass: "app-dialog",
       disableClose: true,
     });
 

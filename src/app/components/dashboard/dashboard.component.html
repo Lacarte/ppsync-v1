@@ -1,12 +1,16 @@
-<div class="wrapper-title">
-  <div class="dashboard-title">{{title}}</div>
-</div>
 
+<div fxLayout="row"    fxLayoutAlign="space-between center">
+  <div class="wrapper-title">
+    <div class="dashboard-title">{{title}}</div>
+  </div>
+
+  <button mat-icon-button color="primary"> <mat-icon>autorenew</mat-icon></button>
+</div>
 
 
 <!-- Disponible -->
 <div fxLayout="column">
-  <div fxLayout="row" fxLayoutGap="16px">
+  <div fxLayout="row" fxLayout.lt-md="column"  fxLayoutGap="16px">
 
     <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
       <div fxFlex="80px" fxLayoutAlign="center center">
@@ -21,8 +25,6 @@
         </div>
       </div>
     </div>
-
-
 
   
 
@@ -73,7 +75,7 @@
       <div fxFlex="75" fxLayoutAlign="start center">
         <div>
           <div class="qt text-xl font-medium  text-purple-600">2545</div>
-          <span class="description text-xs	font-medium uppercase text-gray-400">Envoyé a Washington </span>
+          <span class="description text-xs	font-medium uppercase text-gray-400">Requête Envoyée a Washington </span>
         </div>
       </div>
     </div>

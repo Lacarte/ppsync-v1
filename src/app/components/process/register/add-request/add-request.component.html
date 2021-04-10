@@ -1,4 +1,4 @@
-<mat-card class="card-shell">
+<mat-card class="card-shell mat-elevation-z0">
   <mat-card-header color="primary">
     <mat-card-title>{{title}}</mat-card-title>
   </mat-card-header>
@@ -10,17 +10,17 @@
         <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
 
           <mat-form-field fxFlex color="accent">
-            <input matInput type="text" placeholder="Nom" required>
+            <input  autocomplete="off"  matInput type="text" placeholder="Nom" required>
             <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
 
           <mat-form-field fxFlex color="accent">
-            <input matInput type="text" placeholder="Prénom" required>
+            <input autocomplete="off"  matInput type="text" placeholder="Prénom" required>
             <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
 
           <mat-form-field fxFlex color="accent">
-            <input matInput type="text" placeholder="&#8470; Formulaire" required>
+            <input  autocomplete="off"  matInput  type="number" placeholder="&#8470; Formulaire" required>
             <mat-icon matSuffix>tag</mat-icon>
           </mat-form-field>
         </div>
@@ -28,13 +28,13 @@
         <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
 
           <mat-form-field fxFlex color="accent">
-            <input matInput type="text" placeholder="&#8470; Passport">
+            <input autocomplete="off"  matInput type="text" placeholder="&#8470; Passport">
             <mat-icon matSuffix>tag</mat-icon>
           </mat-form-field>
 
           <mat-form-field fxFlex color="accent">
             <mat-label>Date de la Requête</mat-label>
-            <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly required>
+            <input matInput [matDatepicker]="picker" (focus)="picker.open()"   type="text" readonly required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
@@ -52,7 +52,7 @@
 
 
           <mat-form-field fxFlex color="accent">
-            <input matInput type="text" placeholder="NIF">
+            <input autocomplete="off"  matInput  type="number" placeholder="NIF">
             <mat-icon matSuffix>tag</mat-icon>
           </mat-form-field>
 
@@ -80,7 +80,7 @@
 
 
           <mat-form-field fxFlex color="accent">
-            <input matInput type="text" placeholder="Téléphone">
+            <input autocomplete="off"  matInput  type="tel" placeholder="Téléphone">
             <mat-icon matSuffix>phone_iphone</mat-icon>
           </mat-form-field>
 
@@ -92,7 +92,7 @@
 
 
           <mat-form-field fxFlex color="accent">
-            <input matInput type="text" placeholder="&#8470; du Nouveau Passport">
+            <input autocomplete="off"  matInput type="text" placeholder="&#8470; du Nouveau Passport">
             <mat-icon matSuffix>tag</mat-icon>
           </mat-form-field>
 
@@ -111,10 +111,10 @@
                   <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
                 </span>
               </mat-option>
-              <mat-option>Envoie a Washington</mat-option>
+              <mat-option>Requête Envoyée a Washington</mat-option>
               <mat-option>Passport Disponible</mat-option>
               <mat-option>Requête Annulée</mat-option>
-              <mat-option>Abandoné</mat-option>
+              <mat-option>Passport Abandoné</mat-option>
               <mat-option>Passport Livré</mat-option>
               <mat-option></mat-option>
             </mat-select>
@@ -139,7 +139,7 @@
         </div>
 
         <mat-form-field fxFlex color="accent">
-          <input matInput type="text" placeholder="Suggestions">
+          <input autocomplete="off"  matInput type="text" placeholder="Suggestions">
           <mat-icon matSuffix>speaker_notes</mat-icon>
         </mat-form-field>
 
@@ -150,7 +150,7 @@
       <app-action-notification [actionNotification]="actionNotification"></app-action-notification>
       <mat-action-row class="action-shell py-3" fxLayout="row" fxLayoutAlign="end center">
         <button mat-flat-button color="primary">SAUVEGARDER</button>
-        <button mat-stroked-button color="warn" (click)="onCancelClick()">SORTIR</button>
+        <button mat-stroked-button color="warn" (click)="onClickCancel()">SORTIR</button>
       </mat-action-row>
     </div>
 

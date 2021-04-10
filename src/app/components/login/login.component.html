@@ -6,7 +6,7 @@
     <div class="left-pane rounded" ngClass.lt-sm="hide-lt-sm" fxFlex="50">
 
       <!-- <div class="project-name">{{projectName}}<span>{{projectVersion}}</span></div> -->
-      <div class="project-name"><img src="../../../assets/ppsync-black.svg"></div>
+      <div class="project-name"><img src="../../../assets/ppsync-black.svg" ></div>
       <div class="eula">By logging in you agree to {{projectName}} long terms & conditions.
       </div>
     </div>
@@ -25,7 +25,7 @@
 
         <mat-form-field  color="accent" class="full-width-input">
           <mat-label>Password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" name="password" value="internet" required>
+          <input autocomplete="off"  matInput [type]="hide ? 'password' : 'text'" name="password" value="internet" required>
 
           <button color="accent"  mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide">

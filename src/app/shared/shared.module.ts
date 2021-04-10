@@ -1,3 +1,4 @@
+import { MatPaginatorIntl } from '@angular/material/paginator';
 import { BreakpointsService } from './services/ui/breakpoints.service';
 import { LoaderInterceptor } from './services/ui/loader.interceptor';
 import { FullscreenService } from './services/ui/fullscreen/fullscreen.service';
@@ -12,6 +13,7 @@ import { UIService } from "./services/ui/ui.service";
 import { MenuTogglerService } from "./services/ui/menu-toggler.service";
 import { ActionNotificationComponent } from './components/action-notification/action-notification.component';
 import { LoadingComponentComponent } from './components/loading-component/loading-component.component';
+import { getFrenchPaginatorIntl } from './components/utils/french-paginator-intl';
 
 @NgModule({
   imports: [CommonModule, MaterialModule, FlexLayoutModule],
@@ -19,7 +21,9 @@ import { LoadingComponentComponent } from './components/loading-component/loadin
   declarations: [LoaderComponent, LoaderComponent, ActionNotificationComponent, LoadingComponentComponent],
   providers: [
     LoaderService,UIService,MenuTogglerService,FullscreenService,BreakpointsService,
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    { provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl() },
+
   ]
 })
 export class SharedModule {}
