@@ -1,9 +1,12 @@
+<app-loader></app-loader>
+
 <div class="wrapper" fxLayout="row" fxLayoutAlign="center center">
 
   <div class="container box">
     <div class="left-pane rounded" ngClass.lt-sm="hide-lt-sm" fxFlex="50">
 
-      <div class="project-name">{{projectName}}<span>{{projectVersion}}</span></div>
+      <!-- <div class="project-name">{{projectName}}<span>{{projectVersion}}</span></div> -->
+      <div class="project-name"><img src="../../../assets/ppsync-black.svg"></div>
       <div class="eula">By logging in you agree to {{projectName}} long terms & conditions.
       </div>
     </div>
@@ -38,9 +41,8 @@
           LOGIN
         </button>
         <div class="row btn-center pt-2">
-          <button color="accent" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon"
-            (click)="openBottomSheet()">
-            <mat-icon>settings</mat-icon>
+          <button color="accent" type="button" mat-icon-button    (click)="openBottomSheet()">
+            <mat-icon class="mat-icon-hover">settings</mat-icon>
           </button>
 
 

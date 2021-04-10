@@ -71,7 +71,7 @@
           </ng-container> 
 
           <ng-container matColumnDef="createAt">
-            <th mat-header-cell *matHeaderCellDef> Enregister</th>
+            <th mat-header-cell *matHeaderCellDef> Date Enreg.</th>
             <td mat-cell *matCellDef="let element"> {{element.createAt}} </td>
           </ng-container> 
 
@@ -79,14 +79,14 @@
           <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
-              <button mat-icon-button  matTooltip="VISUALIZER" matTooltipPosition="above">
-                <mat-icon>visibility</mat-icon>
+              <button mat-icon-button  matTooltip="PLUS INFO" matTooltipPosition="above">
+                <mat-icon>more_vert</mat-icon>
             </button>
               <button mat-icon-button matTooltip="EDITER" matTooltipPosition="above">
                 <mat-icon >edit</mat-icon>
             </button>
               <button  mat-icon-button color="warn" matTooltip="ANNULER" matTooltipPosition="above">
-                <mat-icon>block</mat-icon>
+                <mat-icon>delete_outline</mat-icon>
             </button>
             </td>
 

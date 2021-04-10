@@ -61,9 +61,20 @@
             <mat-label>Motif de la Demande</mat-label>
             <mat-select>
               <mat-option>
+                <mat-option class="border-b-2 border-gray-600 ">
+                  <span mat-button>
+                    <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
+                  </span>
+                </mat-option>
               </mat-option>
+              <mat-option>Changement Renseignements</mat-option>
+              <mat-option>Demande de Passeport</mat-option>
+              <mat-option>Passport Perdu</mat-option>
+              <mat-option>Renouvellement</mat-option>
             </mat-select>
             <mat-icon matSuffix>contact_support</mat-icon>
+            <!-- <mat-icon matSuffix  style="color:#4caf50">add_circle_outline</mat-icon> -->
+
           </mat-form-field>
 
 
@@ -93,22 +104,37 @@
         <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
 
           <mat-form-field fxFlex color="accent">
-            <mat-label>Status</mat-label>
+            <mat-label>Status De la Requête</mat-label>
             <mat-select>
-              <mat-option>
+              <mat-option class="border-b-2 border-gray-600 ">
+                <span mat-button>
+                  <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
+                </span>
               </mat-option>
+              <mat-option>Envoie a Washington</mat-option>
+              <mat-option>Passport Disponible</mat-option>
+              <mat-option>Requête Annulée</mat-option>
+              <mat-option>Abandoné</mat-option>
+              <mat-option>Passport Livré</mat-option>
+              <mat-option></mat-option>
             </mat-select>
           </mat-form-field>
 
           <mat-form-field fxFlex color="accent">
             <mat-label>Personne Ayant Rempli la Demande</mat-label>
             <mat-select>
-              <mat-option>
+              <mat-option class="border-b-2 border-gray-600 ">
+                <span mat-button>
+                  <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
+                </span>
               </mat-option>
+              <mat-option>0000 - Djerry Prophete</mat-option>
+              <mat-option>1111 - Midoin Anderson</mat-option>
+              <mat-option>2222 - Jean Marc Duvers</mat-option>
+              <mat-option>3333 - Jean Philipe</mat-option>
             </mat-select>
             <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
-
 
         </div>
 
@@ -118,7 +144,7 @@
         </mat-form-field>
 
       </div>
-<!--       <div style="height: 500px; border: 1px solid;">
+      <!--       <div style="height: 500px; border: 1px solid;">
 
       </div> -->
       <app-action-notification [actionNotification]="actionNotification"></app-action-notification>

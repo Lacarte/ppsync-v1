@@ -6,13 +6,13 @@ import { timer } from 'rxjs';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit,OnDestroy {
 
    title="Dashboard"
    timer$: Subscription; 
-
+   disp=10002342424234;
 
   constructor() { }
 
