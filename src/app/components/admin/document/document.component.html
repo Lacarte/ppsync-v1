@@ -10,7 +10,7 @@
       <div fxLayout="row"  fxLayoutGap="16px"  fxLayoutAlign="space-between center">
         
         <div fxLayoutGap="10px">
-           <button mat-stroked-button color="secondary"   (click)="addUser()">
+           <button mat-stroked-button color="secondary"   (click)="add()">
             <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-plus"></mat-icon>
           CRÉER UN TYPE DOC.
             </button>
@@ -21,9 +21,24 @@
 
         
           <div>
-            <button mat-stroked-button color="secondary" >
+            <button mat-stroked-button color="secondary" [matMenuTriggerFor]="menu">
                <mat-icon>more_vert</mat-icon> 
             </button>
+
+            <mat-menu #menu="matMenu">
+                   
+              <button mat-menu-item>
+                <mat-icon color="accent" >published_with_changes</mat-icon>
+                <span>CHANGEMENT DE STATUS</span>
+              </button>
+
+              <button mat-menu-item  color="warn">
+                <mat-icon color="warn" >delete_outline</mat-icon>
+                <span>ANNULER</span>
+              </button>
+         
+            </mat-menu>
+
           </div>
   
   
@@ -48,15 +63,20 @@
             <td mat-cell *matCellDef="let element"> {{element.description}} </td>
           </ng-container>
 
-
+            
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
 
 
           <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
-              <button mat-icon-button  matTooltip="PLUS INFO" matTooltipPosition="above">
-                <mat-icon class="text-green-600">info</mat-icon>
-            </button>
+             
+              <button mat-icon-button  matTooltip="DETAILS" matTooltipPosition="above">
+                <mat-icon>description</mat-icon>           
+              </button>
               <button mat-icon-button matTooltip="EDITER" matTooltipPosition="above">
                 <mat-icon >edit</mat-icon>
             </button>

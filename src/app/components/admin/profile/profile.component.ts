@@ -1,5 +1,5 @@
+import { AddProfileComponent } from './addProfile/addProfile.component';
 import { SearchRequestComponent } from './../../utils/search-request/search-request.component';
-import { AddRequestComponent } from '../../process/register/add-request/add-request.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -10,10 +10,10 @@ import { MatDialog } from "@angular/material/dialog";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  title = "PROFILE";
+  title = "PROFIL";
 
   displayedColumns: string[] = [
-    "description","actions"
+    "description","status","actions"
    ];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -33,8 +33,8 @@ export class ProfileComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  addUser() {
-    const dialogRef = this.dialog.open(AddRequestComponent, {
+  add() {
+    const dialogRef = this.dialog.open(AddProfileComponent, {
       panelClass: "app-full-bleed-dialog",
       disableClose: true,
     });
@@ -45,7 +45,7 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  searchUser() {
+  search() {
     const dialogRef = this.dialog.open(SearchRequestComponent, {
       panelClass: "app-dialog",
       disableClose: true,
@@ -62,12 +62,14 @@ const ELEMENT_DATA: data[] = [
 
   {
     id: 0,
-    description: "description",
+    status:"Actif",
+    description: "Admin",
 
   },
 ];
 
 export interface data {
   id: number;
+  status: string;
   description: string;
 }

@@ -15,11 +15,11 @@ body {
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  background-image: url("/src/assets/pp8.jpg") !important;
+/*   background-image: url("/src/assets/pp8.jpg") !important;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat;*/
+} 
 
 :root {
   --loading-shade: rgba(255, 255, 255, 0.95);
@@ -222,12 +222,13 @@ span.submenu.active ::before {
 
 .table-shell {
   overflow-x: auto;
-  
-.mat-column-actions {
-  min-width: 150px;
-}
 
-/*   
+  .mat-column-actions {
+    min-width: 150px;
+    padding: 0 !important;
+  }
+
+  /*   
 .table{
   min-width: 1024px;
 } */
@@ -239,7 +240,6 @@ span.submenu.active ::before {
   tr.mat-header-row {
     height: 42px !important;
   }
-
 
   th.mat-header-cell {
     text-align: left;
@@ -276,7 +276,7 @@ span.submenu.active ::before {
   }
 
   tr:hover {
-    background-color: rgba(76, 146, 203, 0.37);
+    background-color: var(--primary-lighter-color);
   }
 
   tr {
@@ -325,6 +325,10 @@ span.submenu.active ::before {
   .mat-list-base {
     padding-top: 0;
   }
+
+  .mat-list-item.active {
+    background-color: var(--primary-lighter-color);
+  }
 }
 
 .toolbar-shell {
@@ -361,51 +365,57 @@ a:active {
   cursor: pointer;
 }
 
-
-
-
-.redred{
+.redred {
   font-size: 2rem !important;
-  color:red;
+  color: red;
   border: 1px solid red;
-
-
 }
 
-
 /* Extra small devices (phones, less than 768px) */
-@media (max-width:767px) {
+@media (max-width: 767px) {
   body {
     // font-size: 3rem !important;
     // border: 1px solid red;
   }
   .inner-outlet {
-     padding: 0!important;
+    padding: 0 !important;
   }
-  
-.app-full-bleed-dialog .mat-dialog-container {
-  padding: 0 !important;
 
-}
-.app-full-bleed-dialog  {
-  min-width: 90vw !important;
-  min-height: 90vh !important;
-}
-
-  
+  .app-full-bleed-dialog .mat-dialog-container {
+    padding: 0 !important;
+  }
+  .app-full-bleed-dialog {
+    min-width: 90vw !important;
+    min-height: 90vh !important;
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width:768px) {
-  body {font-size: 10px;}
+@media (min-width: 768px) {
+  body {
+    font-size: 10px;
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width:992px) {
-  body {font-size: 20px;}
+@media (min-width: 992px) {
+  body {
+    font-size: 20px;
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width:1200px) {
-  body {font-size: 30px;}
+@media (min-width: 1200px) {
+  body {
+    font-size: 30px;
+  }
 }
+
+/* 
+.mat-menu-content{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+ */
+
+

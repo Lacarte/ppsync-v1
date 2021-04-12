@@ -26,7 +26,10 @@ export class RegisterComponent implements OnInit,AfterViewInit {
 
   constructor(private dialog: MatDialog) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    
+  }
 
 
 

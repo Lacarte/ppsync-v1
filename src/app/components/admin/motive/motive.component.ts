@@ -1,3 +1,4 @@
+import { AddMotiveComponent } from './addMotive/addMotive.component';
 import { SearchRequestComponent } from './../../utils/search-request/search-request.component';
 import { AddRequestComponent } from '../../process/register/add-request/add-request.component';
 import { MatPaginator } from '@angular/material/paginator';
@@ -15,7 +16,7 @@ export class MotiveComponent implements OnInit {
    title = "Mofif de la demande";
 
   displayedColumns: string[] = [
-    "description","actions"
+    "description","status","actions"
    ];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -35,8 +36,8 @@ export class MotiveComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  addUser() {
-    const dialogRef = this.dialog.open(AddRequestComponent, {
+  add() {
+    const dialogRef = this.dialog.open(AddMotiveComponent, {
       panelClass: "app-full-bleed-dialog",
       disableClose: true,
     });
@@ -47,7 +48,7 @@ export class MotiveComponent implements OnInit {
     });
   }
 
-  searchUser() {
+  search() {
     const dialogRef = this.dialog.open(SearchRequestComponent, {
       panelClass: "app-dialog",
       disableClose: true,
@@ -64,12 +65,34 @@ const ELEMENT_DATA: data[] = [
 
   {
     id: 0,
-    description: "description",
+    status:"Actif",
+    description: "Passport Perdu",
+
+  },
+  {
+    id: 0,
+    status:"Actif",
+    description: "Changement Renseignements",
+
+  },
+  {
+    id: 0,
+    status:"Actif",
+    description: "Demande de Passeport",
+
+  },
+  {
+    id: 0,
+    status:"Actif",
+    description: "Renouvellement",
 
   },
 ];
 
+
+
 export interface data {
   id: number;
+  status: string;
   description: string;
 }

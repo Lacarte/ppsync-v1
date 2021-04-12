@@ -1,5 +1,5 @@
+import { AddUserComponent } from './addUser/addUser.component';
 import { SearchRequestComponent } from "./../../utils/search-request/search-request.component";
-import { AddRequestComponent } from "../../process/register/add-request/add-request.component";
 import { AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { MatTableDataSource } from "@angular/material/table";
@@ -20,6 +20,7 @@ export class UserComponent implements OnInit,AfterViewInit {
     "profile",
     "docType",
     "documentNumber",
+    "email",
     "status",
     "createAt",
     "actions",
@@ -36,14 +37,17 @@ export class UserComponent implements OnInit,AfterViewInit {
 
   constructor(private dialog: MatDialog) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('test link click');
+    
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
 
-  addUser() {
-    const dialogRef = this.dialog.open(AddRequestComponent, {
+  add() {
+    const dialogRef = this.dialog.open(AddUserComponent, {
       panelClass: "app-full-bleed-dialog",
       disableClose: true,
     });
@@ -54,7 +58,7 @@ export class UserComponent implements OnInit,AfterViewInit {
     });
   }
 
-  searchUser() {
+  search() {
     const dialogRef = this.dialog.open(SearchRequestComponent, {
       panelClass: "app-dialog",
       disableClose: true,
@@ -82,6 +86,7 @@ const ELEMENT_DATA: userData[] = [
     lastName: "Francois",
     tel: "8093099340",
     documentNumber: "000000",
+    email:"francois@gmail.com",
     profile: { id: 0, description: "Admin" },
     docType: { id: 0, description: "Passport" },
     status: { id: 0, description: "Actif" },
@@ -95,6 +100,7 @@ const ELEMENT_DATA: userData[] = [
     lastName: "Louis",
     tel: "8093099342",
     documentNumber: "111111",
+    email: "jean@gmail.com",
     profile: { id: 0, description: "Admin" },
     docType: { id: 0, description: "Passport" },
     status: { id: 0, description: "Inactif" },
@@ -107,6 +113,7 @@ const ELEMENT_DATA: userData[] = [
     lastName: "Privers",
     tel: "8093099342",
     documentNumber: "22222222",
+    email: "lafont@gmail.com",
     profile: { id: 0, description: "Admin" },
     docType: { id: 0, description: "Passport" },
     status: { id: 0, description: "Annulé" },
@@ -120,6 +127,7 @@ const ELEMENT_DATA: userData[] = [
     lastName: "Duvers",
     tel: "8093099342",
     documentNumber: "3333333",
+    email: "duvers@gmail.com",
     profile: { id: 0, description: "Admin" },
     docType: { id: 0, description: "Passport" },
     status: { id: 0, description: "Actif" },
@@ -134,6 +142,7 @@ export interface userData {
   lastName: string;
   tel: string;
   documentNumber: string;
+  email: string;
   status: { id: number; description: string };
   docType: { id: number; description: string };
   profile: { id: number; description: string };

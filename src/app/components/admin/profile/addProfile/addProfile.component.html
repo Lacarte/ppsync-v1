@@ -1,0 +1,128 @@
+<mat-card class="card-shell mat-elevation-z0">
+  <mat-card-header color="primary">
+    <mat-card-title>{{title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="cardx-md cardy-scrollable">
+    <div fxLayout="column" class="wrapper-card">
+
+      <div fxLayout="column" class="form">
+
+        <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+          <mat-form-field fxFlex color="accent">
+            <input autocomplete="off" matInput type="text" placeholder="Description" required>
+            <mat-error>Ce Champ est Obligatoire.</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex color="accent">
+            <mat-label>État</mat-label>
+            <mat-select required>
+                <mat-option class="border-b-2 border-gray-600 ">
+                  <span mat-button>
+                    <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
+                  </span>
+              </mat-option>
+              <mat-option>Actif</mat-option>
+              <mat-option>Inactif</mat-option>
+            </mat-select>
+            <mat-error>Ce Champ est Obligatoire.</mat-error>
+          </mat-form-field>
+
+        </div>
+
+      </div>
+
+
+      <!--    
+    {{this.menuForm.value| json}} 
+     <br>Dirty: {{ menuForm.dirty }}
+     <br>Touched: {{ menuForm.touched }}
+     <br>Valid: {{ menuForm.valid }}
+ -->
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="border-dotted border-b-2">
+        <div class="wrapper-title ">
+          <div class="dashboard-title font-medium uppercase">Menus</div>
+        </div>
+
+        <button mat-icon-button color="primary" matTooltip="AJOUTER" matTooltipPosition="above" (click)="addMenu()" class="super-user">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+
+
+      <div fxLayout="column">
+
+        <mat-form-field class="pt-2">
+          <mat-label>Filtrer</mat-label>
+          <input autocomplete="off" matInput  #inputFilter >
+          <button mat-button *ngIf="inputFilter.value" matSuffix mat-icon-button aria-label="Clear" (click)="inputFilter.value=''">
+            <mat-icon>clear</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <div class="table-shell">
+
+          <div class="formArray pb-5">
+            <form [formGroup]="menuForm">
+              <div formArrayName="menuFields"
+                *ngFor="let info of menuForm.get('menuFields')['controls'] | filterProfile:inputFilter.value; let i = index;" fxLayout="column">
+                <div [formGroupName]="i" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+
+                  <mat-checkbox formControlName="isSelected" ></mat-checkbox>
+
+                  <mat-form-field fxFlex class="super-user">
+                    <mat-label>Code</mat-label>
+                    <input formControlName="code" matInput required>
+                    <mat-error>Ce Champ est Obligatoire.</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field fxFlex>
+                    <mat-label>Description</mat-label>
+                    <input formControlName="description" matInput>
+                    <mat-error>Ce Champ est Obligatoire.</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field color="accent" fxFlex class="super-user">
+                    <mat-label>Type de Menu </mat-label>
+                    <mat-select formControlName="menuType" [compareWith]="compareFn">
+                      <mat-option *ngFor="let menuType of menuTypes" [value]="menuType">
+                        {{menuType.name}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error>Ce Champ est Obligatoire.</mat-error>
+                  </mat-form-field>
+
+                  <button mat-icon-button color="accent" (click)="activateMenuField(i)">
+                    <mat-icon *ngIf="!menuForm.get('menuFields')['controls'][i].enabled" >lock</mat-icon>
+                    <mat-icon *ngIf="menuForm.get('menuFields')['controls'][i].enabled">lock_open</mat-icon>
+                  </button>
+
+                  <button mat-icon-button color="primary" (click)="removeMenuField(i)" class="super-user">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <app-action-notification [actionNotification]="actionNotification"></app-action-notification>
+      <mat-action-row class="action-shell py-3" fxLayout="row" fxLayoutAlign="end center">
+        <button mat-flat-button color="primary">SAUVEGARDER</button>
+        <button mat-stroked-button color="warn" (click)="onClickCancel()">SORTIR</button>
+      </mat-action-row>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
+<mat-card class="card-shell loading">
+
+</mat-card>

@@ -6,75 +6,78 @@
 
     <div fxLayout="column">
 
-      <div fxLayout="row" fxLayoutGap="16px"  fxLayoutAlign="space-between center">
-        
-        <div fxLayoutGap="10px">
-        
-        <button mat-stroked-button color="secondary"   (click)="addUser()">
-            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-plus"></mat-icon>
-          CRÉER UN PROFIL
-            </button>
-        <button mat-stroked-button color="secondary"   (click)="searchUser()" matTooltip="EFFECTUER UNE RECHERCHE" matTooltipPosition="above">
-            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-search"></mat-icon>
-            </button>
-          </div>
+      <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
 
-        
-          <div>
-            <button mat-stroked-button color="secondary"   >
-               <mat-icon>more_vert</mat-icon> 
-            </button>
-          </div>
-  
-  
+        <div fxLayoutGap="10px">
+
+          <button mat-stroked-button color="secondary" (click)="add()">
+            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-plus"></mat-icon>
+            CRÉER UN PROFIL
+          </button>
+          <button mat-stroked-button color="secondary" (click)="search()" matTooltip="EFFECTUER UNE RECHERCHE"
+            matTooltipPosition="above">
+            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-search"></mat-icon>
+          </button>
         </div>
+
+        <div>
+
+        </div>
+
+
+
+      </div>
 
       <div fxLayout="column">
 
-        <!-- <mat-form-field style="font-size:14px"> -->
 
         <mat-form-field class="pt-2">
           <mat-label>Filtrer</mat-label>
-          <input  autocomplete="off" matInput (keyup)="applyFilter($event)"  #input>
+          <input autocomplete="off" matInput (keyup)="applyFilter($event)" #input>
         </mat-form-field>
 
         <div class="table-shell">
-        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z0 table">
-    
-
-          <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef> Description </th>
-            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-          </ng-container>
+          <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z0 table">
 
 
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+            </ng-container>
 
 
-          <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let element">
-              <button mat-icon-button  matTooltip="PLUS INFO" matTooltipPosition="above">
-                <mat-icon class="text-green-600">info</mat-icon>
-            </button>
-              <button mat-icon-button matTooltip="EDITER" matTooltipPosition="above">
-                <mat-icon >edit</mat-icon>
-            </button>
-              <button  mat-icon-button color="warn" matTooltip="ANNULER" matTooltipPosition="above">
-                <mat-icon>delete_outline</mat-icon>
-            </button>
-            </td>
 
-          </ng-container>
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-          <!-- Row shown when there is no matching data. -->
-          <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="4">Données Non Retrouvées pour : "{{input.value}}"</td>
-          </tr>
-        </table>
-      </div>
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button matTooltip="DETAILS" matTooltipPosition="above">
+                  <mat-icon>description</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="EDITER" matTooltipPosition="above">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" matTooltip="ANNULER" matTooltipPosition="above">
+                  <mat-icon>delete_outline</mat-icon>
+                </button>
+              </td>
+
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Données Non Retrouvées pour : "{{input.value}}"</td>
+            </tr>
+          </table>
+        </div>
         <mat-paginator [pageSizeOptions]="[ 10,5,2, 20,50,100,200]"></mat-paginator>
 
 

@@ -1,4 +1,12 @@
-import { MotiveComponent } from './components/admin/motive/motive.component';
+import { AddProfileComponent } from "./components/admin/profile/addProfile/addProfile.component";
+import { AddRequestStatusComponent } from "./components/admin/request-status/addRequest-status/addRequest-status.component";
+import { AddDocumentComponent } from "./components/admin/document/addDocument/addDocument.component";
+import { AddMotiveComponent } from "./components/admin/motive/addMotive/addMotive.component";
+import { RequestStatusComponent } from "./components/admin/request-status/request-status.component";
+import { LogComponent } from "./components/report/log/log.component";
+import { RequestComponent } from "./components/report/request/request.component";
+import { AddUserComponent } from "./components/admin/user/addUser/addUser.component";
+import { MotiveComponent } from "./components/admin/motive/motive.component";
 import { DocumentComponent } from "./components/admin/document/document.component";
 import { ProfileComponent } from "./components/admin/profile/profile.component";
 import { UserComponent } from "./components/admin/user/user.component";
@@ -19,7 +27,8 @@ import { OutletWrapperComponent } from "./components/outlet-wrapper/outlet-wrapp
 import { RegisterComponent } from "./components/process/register/register.component";
 import { DeliverComponent } from "./components/process/deliver/deliver.component";
 import { AddRequestComponent } from "./components/process/register/add-request/add-request.component";
-import { TstComponent } from "./components/tst/tst.component";
+import { TstComponent } from "./experimental/tst/tst.component";
+import { FilterProfile } from "./pipes/ListFilter.pipe";
 
 @NgModule({
   imports: [
@@ -47,9 +56,26 @@ import { TstComponent } from "./components/tst/tst.component";
     UserComponent,
     ProfileComponent,
     DocumentComponent,
+    AddUserComponent,
+    RequestComponent,
+    LogComponent,
+    RequestStatusComponent,
+    AddMotiveComponent,
+    AddDocumentComponent,
+    AddProfileComponent,
+    AddRequestStatusComponent,
     TstComponent,
+    FilterProfile,
   ],
-  entryComponents: [AddRequestComponent, SearchRequestComponent],
+  entryComponents: [
+    AddRequestComponent,
+    SearchRequestComponent,
+    AddUserComponent,
+    AddMotiveComponent,
+    AddDocumentComponent,
+    AddRequestStatusComponent,
+    AddProfileComponent,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [AppComponent],
 })

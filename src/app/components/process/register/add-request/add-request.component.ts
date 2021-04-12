@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {
-  MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA
 } from '@angular/material/dialog';
@@ -15,9 +14,9 @@ export class AddRequestComponent implements OnInit {
   title= "ENREGISTRER UN REQUÊTE";
 
   actionNotification = {
-  isVisible: true,
+  isVisible: false,
   messageType: 'success',
-  message: "Savegarder avec succes."
+  message: "Savegardé avec succès."
   }
 
 
@@ -27,6 +26,11 @@ export class AddRequestComponent implements OnInit {
 ) { }
 
   ngOnInit() {
+    this.dialogRef.keydownEvents().subscribe(event => {
+      if (event.key === "Escape") {
+          this.onClickCancel();
+      }
+  });
   }
 
 

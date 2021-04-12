@@ -12,9 +12,8 @@
     <mat-nav-list>
       <mat-accordion class="app-nav-accordion-shell">
 
-        <mat-nav-list routerLink="/dashboard"  (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
-
-          <a mat-list-item>
+        <mat-nav-list routerLink="/dashboard" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+          <a mat-list-item routerLinkActive="active">
             <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               <mat-icon matSuffix>dashboard</mat-icon>
             </div>
@@ -32,23 +31,25 @@
                   <mat-icon matSuffix class="fa" fontSet="fas" fontIcon="fa-project-diagram"></mat-icon>
                 </div>
                 <div fxFlex="75"> PROCEDER </div>
-
-
               </div>
             </mat-panel-title>
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLink="process/register"  (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
-              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+            <a mat-list-item routerLinkActive="active" routerLink="process/register"  (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> Enregistrer </div>
             </a>
-            <a mat-list-item routerLink="process/deliver" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
-              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+           
+           
+            <!-- <a mat-list-item routerLinkActive="active" routerLink="process/deliver" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> Delivrer </div>
-            </a>
+            </a> -->
+
+
           </mat-nav-list>
         </mat-expansion-panel>
 
@@ -66,34 +67,39 @@
                   </mat-icon>
                 </div>
                 <div fxFlex="75"> ADMIN </div>
-
-
               </div>
             </mat-panel-title>
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLink="/admin/user" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
-              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+            <a mat-list-item routerLinkActive="active" routerLink="/admin/user" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> Utilisateur </div>
             </a>
          
-            <a mat-list-item routerLink="/admin/motive" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
-              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+            <a mat-list-item  routerLinkActive="active"routerLink="/admin/motive" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
-              <div fxFlex="75"> Motifs </div>
+              <div fxFlex="75"> Motif </div>
             </a>
           
           
-            <a mat-list-item routerLink="/admin/profile" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
-            <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+            <a mat-list-item  routerLinkActive="active"routerLink="/admin/request-status" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
-              <div fxFlex="75"> Profil Util. </div>
+              <div fxFlex="75"> État de Requête </div>
+            </a>
+          
+          
+            <a mat-list-item routerLinkActive="active" routerLink="/admin/profile" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+            <div fxFlex="25" class="icon" fxLayoutAlign="start center">
+              </div>
+              <div fxFlex="75"> Profil </div>
             </a>
      
-            <a mat-list-item routerLink="/admin/doctype" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
-              <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
+            <a mat-list-item  routerLinkActive="active" routerLink="/admin/doctype" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> Type Docu. </div>
             </a>
@@ -120,15 +126,15 @@
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLink="/admin/user" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+            <a mat-list-item routerLinkActive="active" routerLink="/report/request" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
-              <div fxFlex="75"> Passport </div>
+              <div fxFlex="75"> Requête </div>
             </a>
          
           </mat-nav-list>
           <mat-nav-list>
-            <a mat-list-item routerLink="/admin/user" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+            <a mat-list-item  routerLinkActive="active" routerLink="/report/log" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
               <div fxFlex="75"> Log </div>

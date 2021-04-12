@@ -1,3 +1,6 @@
+import { RequestStatusComponent } from './components/admin/request-status/request-status.component';
+import { RequestComponent } from './components/report/request/request.component';
+import { LogComponent } from './components/report/log/log.component';
 import { UserComponent } from './components/admin/user/user.component';
 import { MotiveComponent } from './components/admin/motive/motive.component';
 import { ProfileComponent } from './components/admin/profile/profile.component';
@@ -9,7 +12,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { DeliverComponent } from "./components/process/deliver/deliver.component";
 import { RegisterComponent } from "./components/process/register/register.component";
 import { ShellComponent } from "./components/shell/shell.component";
-import { TstComponent } from "./components/tst/tst.component";
+import { TstComponent } from "./experimental/tst/tst.component";
 import { WelcomeComponent } from "./components/welcome/welcome.component";
 const routes: Routes = [
   {
@@ -26,7 +29,10 @@ const routes: Routes = [
       { path: "admin/user", component: UserComponent },
       { path: "admin/motive", component: MotiveComponent },
       { path: "admin/profile", component: ProfileComponent  },
+      { path: "admin/request-status", component: RequestStatusComponent  },
       { path: "admin/doctype", component: DocumentComponent },
+      { path: "report/request", component: RequestComponent },
+      { path: "report/log", component: LogComponent },
       { path: "dashboard", component: DashboardComponent }
     ]
   },

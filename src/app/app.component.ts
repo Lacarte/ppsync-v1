@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { BreakpointsService } from './shared/services/ui/breakpoints.service';
+import { BreakpointsService } from './shared/services/breakpoints.service';
 import { Component, VERSION } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { Title } from '@angular/platform-browser';

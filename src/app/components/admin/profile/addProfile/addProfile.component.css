@@ -1,0 +1,16 @@
+.formArray {
+  width: 100%;
+}
+
+::ng-deep .mat-input-element:disabled, ::ng-deep.mat-select-value {
+    color: #000!important;
+  }
+
+
+  .super-user{
+    display: none;
+  }
+
+  button.mat-focus-indicator.mat-icon-button.mat-button-base.mat-accent {
+    margin-right: 16px;
+}

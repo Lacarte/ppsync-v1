@@ -13,7 +13,7 @@ export class ActionNotificationComponent implements OnInit {
   constructor() {}
 
   notificationState = {
-    isVisible: true,
+    isVisible: false,
     message: 'default',
     icon: 'error',
     iconColor: '#ffc300',
@@ -91,4 +91,7 @@ export class ActionNotificationComponent implements OnInit {
     return Object.keys(obj).length === 0;
   }
 
+ hide(){
+   this.notificationState.isVisible = false;
+ }
 }

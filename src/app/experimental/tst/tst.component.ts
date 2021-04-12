@@ -11,9 +11,9 @@ export class TstComponent implements OnInit {
  title="test";
 
   actionNotification = {
-  isVisible: true,
+  isVisible: false,
   messageType: 'success',
-  message: "Savegarder avec succes."
+  message: "Savegardé avec succès."
   }
 
 

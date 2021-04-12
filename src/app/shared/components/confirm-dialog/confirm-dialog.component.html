@@ -1,0 +1,30 @@
+<mat-card class="card-shell mat-elevation-z0">
+  <mat-card-header color="primary">
+    <mat-card-title>{{data.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="cardx-xs">
+    <div fxLayout="column" class="wrapper-card">
+
+      <div fxLayout="column" >
+
+        <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+          <p class="dialog-message">{{ data.message }}</p>
+
+        </div>
+      </div>
+
+      <!-- <app-action-notification [actionNotification]="actionNotification"></app-action-notification> -->
+      <mat-action-row class="action-shell py-3" fxLayout="row" fxLayoutAlign="end center">
+        <button mat-flat-button color="primary" *ngIf="isEnabledCancelButton" (click)="cancel()">{{ data.cancelText }}</button>
+        <button mat-stroked-button color="warn" (click)="confirm()">{{ data.confirmText }}</button>
+      </mat-action-row>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="card-shell loading">
+
+</mat-card>

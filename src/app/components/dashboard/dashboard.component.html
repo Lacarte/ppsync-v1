@@ -4,7 +4,7 @@
     <div class="dashboard-title">{{title}}</div>
   </div>
 
-  <button mat-icon-button color="primary"> <mat-icon>autorenew</mat-icon></button>
+  <button mat-icon-button color="primary" matTooltip="ACTUALISER" matTooltipPosition="left"> <mat-icon>autorenew</mat-icon></button>
 </div>
 
 
@@ -13,16 +13,17 @@
   <div fxLayout="row" fxLayout.lt-md="column"  fxLayoutGap="16px">
 
     <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
-      <div fxFlex="80px" fxLayoutAlign="center center">
-        <div class="radius bg-green-100 border-2 border-green-200">
-          <i class="icon-indicator text-green-600 fas fa-passport"></i>
+        <div fxFlex="80px" fxLayoutAlign="center center">
+          <div class="radius bg-green-100 border-2 border-green-200">
+            <i class="icon-indicator text-green-600 fas fa-passport"></i>
+          </div>
         </div>
-      </div>
-      <div fxFlex="75" fxLayoutAlign="start center">
-        <div>
-          <div class="qt text-xl text-green-600">345</div>
-          <span class="description  text-xs	 font-medium uppercase text-gray-400"> Passport Disponible </span>
-        </div>
+        <div fxFlex="75" fxLayoutAlign="start center">
+          <div>
+            <div class="qt text-xl text-green-600">345</div>
+            <span class="description  text-xs	 font-medium uppercase text-gray-400"> Passport Disponible </span>
+          </div>
+          
       </div>
     </div>
 

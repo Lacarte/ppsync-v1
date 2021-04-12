@@ -1,0 +1,110 @@
+<mat-card class="card-shell mat-elevation-z0">
+  <mat-card-header color="primary">
+    <mat-card-title>{{title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="cardx-md cardy-scrollable">
+    <div fxLayout="column" class="wrapper-card">
+
+      <div fxLayout="column" class="form">
+
+        <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+          <mat-form-field fxFlex color="accent">
+            <input autocomplete="off" matInput type="text" placeholder="Nom" required>
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field fxFlex color="accent">
+            <input autocomplete="off" matInput type="text" placeholder="Prénom" required>
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field fxFlex color="accent">
+            <input autocomplete="off" matInput type="email" placeholder="Email">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+
+        </div>
+
+        <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+
+
+
+          <mat-form-field fxFlex color="accent">
+            <mat-label>Profil</mat-label>
+            <mat-select>
+                <mat-option class="border-b-2 border-gray-600 ">
+                  <span mat-button>
+                    <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
+                  </span>
+                </mat-option>
+              <mat-option>Admin</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>supervisor_account</mat-icon>
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex color="accent">
+            <mat-label>Type Document</mat-label>
+            <mat-select>
+                <mat-option class="border-b-2 border-gray-600 ">
+                  <span mat-button>
+                    <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
+                  </span>
+                </mat-option>
+              <mat-option>Carte d'identite</mat-option>
+              <mat-option>Passport</mat-option>
+              <mat-option>Identifiant</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>assignment_ind</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field fxFlex color="accent">
+            <input autocomplete="off" matInput type="text" placeholder="ID">
+            <mat-icon matSuffix>tag</mat-icon>
+          </mat-form-field>
+
+        </div>
+
+        <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+          <mat-form-field fxFlex color="accent">
+            <input autocomplete="off" matInput type="tel" placeholder="Téléphone">
+            <mat-icon matSuffix>phone_iphone</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field fxFlex color="accent">
+            <mat-label>Status</mat-label>
+            <mat-select>
+                <mat-option class="border-b-2 border-gray-600 ">
+                  <span mat-button>
+                    <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
+                  </span>
+              </mat-option>
+              <mat-option>Actif</mat-option>
+              <mat-option>Inactif</mat-option>
+              <mat-option>Annulé</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+  
+
+      <app-action-notification [actionNotification]="actionNotification"></app-action-notification>
+      <mat-action-row class="action-shell py-3" fxLayout="row" fxLayoutAlign="end center">
+        <button mat-flat-button color="primary">SAUVEGARDER</button>
+        <button mat-stroked-button color="warn" (click)="onClickCancel()">SORTIR</button>
+      </mat-action-row>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
+<mat-card class="card-shell loading">
+
+</mat-card>

@@ -1,3 +1,4 @@
+import { AddDocumentComponent } from './addDocument/addDocument.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { AddRequestComponent } from '../../process/register/add-request/add-request.component';
@@ -15,7 +16,7 @@ export class DocumentComponent implements OnInit {
   title = "TYPE DE DOCUMENT";
 
   displayedColumns: string[] = [
-    "description","actions"
+    "description","status","actions"
    ];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -35,8 +36,8 @@ export class DocumentComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  addUser() {
-    const dialogRef = this.dialog.open(AddRequestComponent, {
+  add() {
+    const dialogRef = this.dialog.open(AddDocumentComponent, {
       panelClass: "app-full-bleed-dialog",
       disableClose: true,
     });
@@ -47,7 +48,7 @@ export class DocumentComponent implements OnInit {
     });
   }
 
-  searchUser() {
+  search() {
     const dialogRef = this.dialog.open(SearchRequestComponent, {
       panelClass: "app-dialog",
       disableClose: true,
@@ -64,12 +65,32 @@ const ELEMENT_DATA: data[] = [
 
   {
     id: 0,
-    description: "description",
+    status:"Actif",
+    description: "Carte d'identité",
+
+  },
+
+  {
+    id: 0,
+    status:"Actif",
+    description: "#Identifiant au Travail",
+
+  },
+
+  {
+    id: 0,
+    status:"Actif",
+    description: "Passport",
 
   },
 ];
 
+
+
+
+
 export interface data {
   id: number;
+  status: string;
   description: string;
 }

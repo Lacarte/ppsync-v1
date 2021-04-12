@@ -10,13 +10,10 @@
         <mat-icon [style.color]="notificationState.iconColor">{{notificationState.icon}}</mat-icon>
       </div>
       <div fxFlex class="text-block" style="padding:8px">{{notificationState.message}}</div>
+      <div fxLayout="row" fxLayoutAlign="center center" fxFlex="3">
+        <button mat-icon-button (click)="hide()" ><mat-icon>highlight_off</mat-icon></button> 
+      </div>
     </div>
-
-
-
-
   </div>
-
-
 
 </div>
