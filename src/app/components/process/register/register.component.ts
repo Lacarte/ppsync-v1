@@ -4,6 +4,7 @@ import { MatDialog } from "@angular/material/dialog";
 import {MatTableDataSource} from '@angular/material/table';
 import { AddRequestComponent } from "./add-request/add-request.component";
 import {MatPaginator} from '@angular/material/paginator';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: "app-register",
@@ -13,9 +14,10 @@ import {MatPaginator} from '@angular/material/paginator';
 export class RegisterComponent implements OnInit,AfterViewInit {
   title = "ENREGISTRER";
 
- displayedColumns: string[] = ['formId', 'passport','req_date','lastName', 'firstName', 'nif' , 'tel','status' ,'actions'];
+ displayedColumns: string[] = ['select','formId', 'passport','req_date','lastName', 'firstName', 'nif' , 'tel','status' ,'actions'];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  selection = new SelectionModel<any>(true, []);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -66,6 +68,71 @@ export class RegisterComponent implements OnInit,AfterViewInit {
 
 
 
+
+
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = ELEMENT_DATA.length;
+    return numSelected === numRows;
+  }
+
+  masterToggle() {
+ /*    this.isAllSelected()
+      ? this.selection.clear()
+      : this.interaccionData.forEach((row) => {
+          if (this.isEnableCheckbox(row)) {
+            this.selection.select(row);
+          }
+         // console.log('row > ', row);
+        }); */
+
+    //this.selectedRowData = this.selection.selected;
+   // this.isSpecialButtonEnabled =
+    //this.selection.selected.length > 0 ? true : false;
+
+    //console.log(' this.selectedRowData', this.selectedRowData.length);
+  }
+
+  singleSelection(row: any) {
+  /*   this.selection.toggle(row);
+    this.selectedRowData = this.selection.selected;
+    this.isSpecialButtonEnabled =
+      this.selection.selected.length > 0 ? true : false;
+    //console.log(' this.selectedRowData', this.selectedRowData.length);
+    console.log('row > ', row); */
+  }
+
+
+  checkboxLabel(row?): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
+      row.id + 1
+    }`;
+  }
+
+  isEnableCheckbox(row): boolean {
+    if (row) {
+      return !(
+        row?.state.toLocaleLowerCase() === 'cancelado)' ||
+        row?.state.toLocaleLowerCase() === 'completado'
+      );
+    }
+    return true;
+  }
+
+  isEnabledTimeRemaining(row): boolean {
+    if (row) {
+      return !(
+        row.minutesRemaining <= 0 ||
+        row?.state.toLocaleLowerCase() === 'cancelado)' ||
+        row?.state.toLocaleLowerCase() === 'completado'
+      );
+    }
+    return true;
+  }
 
 }
 

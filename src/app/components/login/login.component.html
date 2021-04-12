@@ -6,8 +6,8 @@
     <div class="left-pane rounded" ngClass.lt-sm="hide-lt-sm" fxFlex="50">
 
       <!-- <div class="project-name">{{projectName}}<span>{{projectVersion}}</span></div> -->
-      <div class="project-name"><img src="../../../assets/ppsync-black.svg" ></div>
-      <div class="eula">By logging in you agree to {{projectName}} long terms & conditions.
+      <div class="project-name"><img src="../../../assets/ppsync-black.svg"></div>
+      <div class="eula">En vous connectant, vous acceptez les conditions générales de {{projectName}} .
       </div>
     </div>
 
@@ -19,29 +19,30 @@
           <mat-label>Email</mat-label>
           <input matInput name="email" type="email" value="carteasy@gmail.com" required>
           <mat-error>
-            Please inform your email
+            Veuillez Entrer votre email
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field  color="accent" class="full-width-input">
-          <mat-label>Password</mat-label>
-          <input autocomplete="off"  matInput [type]="hide ? 'password' : 'text'" name="password" value="internet" required>
+        <mat-form-field color="accent" class="full-width-input">
+          <mat-label>Mot de passe</mat-label>
+          <input autocomplete="off" matInput [type]="hide ? 'password' : 'text'" name="password" value="internet"
+            required>
 
-          <button color="accent"  mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
+          <button color="accent" mat-icon-button matSuffix type="button" (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
           <mat-error>
-            Please inform your password
+            Veuillez Entrer Mot de passe
           </mat-error>
         </mat-form-field>
 
 
         <button mat-flat-button color="accent" type="submit" class="btn-block rounded-lg  mt-3" routerLink="/">
-          LOGIN
+          CONNECTION
         </button>
         <div class="row btn-center pt-2">
-          <button color="accent" type="button" mat-icon-button    (click)="openBottomSheet()">
+          <button color="accent" type="button" mat-icon-button (click)="openBottomSheet()">
             <mat-icon class="mat-icon-hover">settings</mat-icon>
           </button>
 

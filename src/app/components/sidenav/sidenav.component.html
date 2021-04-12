@@ -1,8 +1,6 @@
 <mat-sidenav-container class="mat-drawer-transition sidenav-container" autosize>
-  <mat-sidenav  #sidenav [opened]="!breakpointService.isLtMdLtSm"
-  [mode]="breakpointService.isLtMdLtSm ? 'over' : 'side'" role="navigation"
-   
-  class="sidenav sidenav-shell">
+  <mat-sidenav #sidenav [opened]="!breakpointService.isLtMdLtSm" [mode]="breakpointService.isLtMdLtSm ? 'over' : 'side'"
+    role="navigation" class="sidenav sidenav-shell">
     <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="center center">
       <a routerLink="/">
         <img src="../../assets/ppsync.svg" class="logo" alt="PPSYNC" /><sub class="logo-sub"></sub>
@@ -17,7 +15,7 @@
             <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               <mat-icon matSuffix>dashboard</mat-icon>
             </div>
-            <div fxFlex="75"> DASHBOARD </div>
+            <div fxFlex="75"> TABLEAU DE BORD </div>
           </a>
         </mat-nav-list>
 
@@ -30,19 +28,20 @@
                 <div fxFlex="25" class="icon" fxLayoutAlign="center center">
                   <mat-icon matSuffix class="fa" fontSet="fas" fontIcon="fa-project-diagram"></mat-icon>
                 </div>
-                <div fxFlex="75"> PROCEDER </div>
+                <div fxFlex="75"> PROCÉDER </div>
               </div>
             </mat-panel-title>
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLinkActive="active" routerLink="process/register"  (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+            <a mat-list-item routerLinkActive="active" routerLink="process/register"
+              (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
-              <div fxFlex="75"> Enregistrer </div>
+              <div fxFlex="75"> Requête </div>
             </a>
-           
-           
+
+
             <!-- <a mat-list-item routerLinkActive="active" routerLink="process/deliver" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
@@ -63,7 +62,7 @@
               <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
                 <div fxFlex="25" class="icon" fxLayoutAlign="center center">
                   <mat-icon matSuffix>
-                      admin_panel_settings
+                    admin_panel_settings
                   </mat-icon>
                 </div>
                 <div fxFlex="75"> ADMIN </div>
@@ -72,33 +71,38 @@
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLinkActive="active" routerLink="/admin/user" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+            <a mat-list-item routerLinkActive="active" routerLink="/admin/user"
+              (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> Utilisateur </div>
             </a>
-         
-            <a mat-list-item  routerLinkActive="active"routerLink="/admin/motive" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+
+            <a mat-list-item routerLinkActive="active" routerLink="/admin/motive"
+              (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> Motif </div>
             </a>
-          
-          
-            <a mat-list-item  routerLinkActive="active"routerLink="/admin/request-status" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+
+
+            <a mat-list-item routerLinkActive="active" routerLink="/admin/request-status"
+              (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> État de Requête </div>
             </a>
-          
-          
-            <a mat-list-item routerLinkActive="active" routerLink="/admin/profile" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
-            <div fxFlex="25" class="icon" fxLayoutAlign="start center">
+
+
+            <a mat-list-item routerLinkActive="active" routerLink="/admin/profile"
+              (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+              <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> Profil </div>
             </a>
-     
-            <a mat-list-item  routerLinkActive="active" routerLink="/admin/doctype" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+
+            <a mat-list-item routerLinkActive="active" routerLink="/admin/doctype"
+              (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center">
               </div>
               <div fxFlex="75"> Type Docu. </div>
@@ -116,7 +120,7 @@
               <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
                 <div fxFlex="25" class="icon" fxLayoutAlign="center center">
                   <mat-icon matSuffix>
-                      analytics
+                    analytics
                   </mat-icon>
                 </div>
                 <div fxFlex="75"> RAPPORT </div>
@@ -126,26 +130,28 @@
 
           </mat-expansion-panel-header>
           <mat-nav-list>
-            <a mat-list-item routerLinkActive="active" routerLink="/report/request" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+            <a mat-list-item routerLinkActive="active" routerLink="/report/request"
+              (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
               <div fxFlex="75"> Requête </div>
             </a>
-         
+
           </mat-nav-list>
           <mat-nav-list>
-            <a mat-list-item  routerLinkActive="active" routerLink="/report/log" (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
+            <a mat-list-item routerLinkActive="active" routerLink="/report/log"
+              (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
               <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
               </div>
               <div fxFlex="75"> Log </div>
             </a>
-         
+
           </mat-nav-list>
         </mat-expansion-panel>
 
-
       </mat-accordion>
     </mat-nav-list>
+
 
 
 
@@ -159,7 +165,7 @@
         </button>
         <button mat-icon-button (click)="onToggleFullscreen()" matTooltip="BASCULER PLEIN D'ÉCRAN"
           matTooltipPosition="above">
-          <mat-icon  class="mat-icon-hover" *ngIf="fullscreenService.toggleFullscreenState()">fullscreen_exit</mat-icon>
+          <mat-icon class="mat-icon-hover" *ngIf="fullscreenService.toggleFullscreenState()">fullscreen_exit</mat-icon>
           <mat-icon class="mat-icon-hover" *ngIf="!fullscreenService.toggleFullscreenState()">fullscreen</mat-icon>
         </button>
       </div>
@@ -167,8 +173,11 @@
       <div class="right-icon" fxLayout="row" fxLayoutAlign="space-evenly center center" fxLayoutGap="16px">
 
 
-        <mat-icon  matTooltip="NOTIFICATION NON LUE"
-        matTooltipPosition="above" class="mat-icon-hover notification" matBadgePosition="after" matBadgeOverlap="true" matBadgeColor="warn" matBadge="15"  [matBadgeHidden]="false"> notification_important</mat-icon>
+        <mat-icon matTooltip="NOTIFICATION NON LUE" matTooltipPosition="above" class="mat-icon-hover notification"
+          matBadgePosition="after" matBadgeOverlap="true" matBadgeColor="warn" matBadge="15" [matBadgeHidden]="false">
+          notification_important
+          <div class="notification-ring"></div>
+        </mat-icon>
 
 
         <button mat-button [matMenuTriggerFor]="menu" fxShow.lt-md="false" fxShow.gt-sm="true">
@@ -182,14 +191,20 @@
         <mat-menu #menu="matMenu">
           <button mat-menu-item>
             <mat-icon mat-list-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
-            <span>Profile</span>
+            <span>Profil</span>
           </button>
 
-          <button mat-menu-item  routerLink="/login" >
+          <button mat-menu-item routerLink="/login">
             <mat-icon mat-list-icon fontSet="fas" fontIcon="fa-sign-out-alt"></mat-icon>
-            <span>Logout</span>
+            <span>Se Déconnecter</span>
           </button>
         </mat-menu>
+
+        <button mat-icon-button>
+          <mat-icon mat-list-icon fontSet="fas" fontIcon="fa-info"></mat-icon>
+        </button>
+
+
       </div>
     </mat-toolbar>
 

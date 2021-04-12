@@ -5,7 +5,7 @@
   <mat-card-content class="cardx-md cardy-scrollable">
     <div fxLayout="column" class="wrapper-card">
 
-      <div fxLayout="column" class="form">
+      <div fxLayout="column" class="form pb">
 
         <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
 
@@ -18,10 +18,10 @@
           <mat-form-field fxFlex color="accent">
             <mat-label>État</mat-label>
             <mat-select required>
-                <mat-option class="border-b-2 border-gray-600 ">
-                  <span mat-button>
-                    <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
-                  </span>
+              <mat-option class="border-b-2 border-gray-600 ">
+                <span mat-button>
+                  <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
+                </span>
               </mat-option>
               <mat-option>Actif</mat-option>
               <mat-option>Inactif</mat-option>
@@ -33,19 +33,19 @@
 
       </div>
 
-
       <!--    
     {{this.menuForm.value| json}} 
      <br>Dirty: {{ menuForm.dirty }}
      <br>Touched: {{ menuForm.touched }}
      <br>Valid: {{ menuForm.valid }}
  -->
-      <div fxLayout="row" fxLayoutAlign="space-between center" class="border-dotted border-b-2">
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="bg-gray-200 mt-3">
         <div class="wrapper-title ">
-          <div class="dashboard-title font-medium uppercase">Menus</div>
+          <div class="title font-medium uppercase">Configuration de Menus</div>
         </div>
 
-        <button mat-icon-button color="primary" matTooltip="AJOUTER" matTooltipPosition="above" (click)="addMenu()" class="super-user">
+        <button mat-icon-button color="primary" matTooltip="AJOUTER" matTooltipPosition="above" (click)="addMenu()"
+          class="super-user">
           <mat-icon>add</mat-icon>
         </button>
       </div>
@@ -56,8 +56,9 @@
 
         <mat-form-field class="pt-2">
           <mat-label>Filtrer</mat-label>
-          <input autocomplete="off" matInput  #inputFilter >
-          <button mat-button *ngIf="inputFilter.value" matSuffix mat-icon-button aria-label="Clear" (click)="inputFilter.value=''">
+          <input autocomplete="off" matInput #inputFilter>
+          <button mat-button *ngIf="inputFilter.value" matSuffix mat-icon-button aria-label="Clear"
+            (click)="inputFilter.value=''">
             <mat-icon>clear</mat-icon>
           </button>
         </mat-form-field>
@@ -67,10 +68,11 @@
           <div class="formArray pb-5">
             <form [formGroup]="menuForm">
               <div formArrayName="menuFields"
-                *ngFor="let info of menuForm.get('menuFields')['controls'] | filterProfile:inputFilter.value; let i = index;" fxLayout="column">
+                *ngFor="let info of menuForm.get('menuFields')['controls'] | filterProfile:inputFilter.value; let i = index;"
+                fxLayout="column">
                 <div [formGroupName]="i" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
 
-                  <mat-checkbox formControlName="isSelected" ></mat-checkbox>
+                  <mat-checkbox formControlName="isSelected"></mat-checkbox>
 
                   <mat-form-field fxFlex class="super-user">
                     <mat-label>Code</mat-label>
@@ -95,7 +97,7 @@
                   </mat-form-field>
 
                   <button mat-icon-button color="accent" (click)="activateMenuField(i)">
-                    <mat-icon *ngIf="!menuForm.get('menuFields')['controls'][i].enabled" >lock</mat-icon>
+                    <mat-icon *ngIf="!menuForm.get('menuFields')['controls'][i].enabled">lock</mat-icon>
                     <mat-icon *ngIf="menuForm.get('menuFields')['controls'][i].enabled">lock_open</mat-icon>
                   </button>
 

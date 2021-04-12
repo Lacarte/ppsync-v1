@@ -5,7 +5,7 @@
 export const environment = {
   projectName: 'PPSYNC',
   projectVersion: 'V1.0',
-  propertyOf: 'Embassy of Haiti In Chile',
+  propertyOf: 'AMBASSADE D\'HAÏTI AU CHILI',
   apiBaseUrl: '',
   production: false,
   apiUrl: 'https://en3sl760g2l8asb.m.pipedream.net',

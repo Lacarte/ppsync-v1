@@ -14,3 +14,15 @@
   button.mat-focus-indicator.mat-icon-button.mat-button-base.mat-accent {
     margin-right: 16px;
 }
+
+
+
+.wrapper-title {
+  text-transform: uppercase;
+  margin: 8px;
+}
+
+.title {
+  font-size: 0.8rem;
+  font-weight: 500;
+}

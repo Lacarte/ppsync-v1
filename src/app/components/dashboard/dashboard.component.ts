@@ -10,7 +10,7 @@ import { timer } from 'rxjs';
 })
 export class DashboardComponent implements OnInit,OnDestroy {
 
-   title="Dashboard"
+   title="Tableau de bord"
    timer$: Subscription; 
    disp=10002342424234;
 
