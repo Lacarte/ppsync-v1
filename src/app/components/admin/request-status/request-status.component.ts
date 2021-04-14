@@ -72,7 +72,7 @@ const ELEMENT_DATA: data[] = [
     {
     id: 0,
     status:"Actif",
-    description: "Passport Abandoné",
+    description: "Passport Abandonné",
 
   },
   {

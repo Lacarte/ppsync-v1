@@ -1,3 +1,68 @@
-<p>
-  app-info works!
-</p>
+<mat-card class="card-shell">
+  <mat-card-header color="primary">
+    <mat-card-title>{{title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div fxLayout="column" fxLayoutAlign="start center" class="pb-3" > 
+
+      <div class="py-3 border-b  border-gray-200">
+        <h2 style="color: #4d68a0;">
+          This Project Claims to Provide.
+        </h2>
+
+        <ul class="list">
+          <li>Mobile First (Responsive design desktop, tablet, Mobile)</li>
+          <li>Secure User login, control and security</li>
+          <li>Permission and User management</li>
+          <li>Effective manage of Passport request</li>
+          <li>Dashboard with detail about request
+            <ul class="sub-list">
+              <li>Passport Available</li>
+              <li>Passport Delivered</li>
+              <li>Passport Abandoned</li>
+              <li>Request Sent To Washington</li>
+            </ul>
+          </li>
+          <li>Report of Request and user log</li>
+          <li>Export Report in PDF</li>
+        </ul>
+
+      </div>
+
+
+
+      <!--       This project claims to provide :
+      Mobile First (Responsive design desktop, tablet, Mobile)
+      
+      Secure User login, control and security
+      
+      Permission and User management
+      
+      Effective manage of Passport request
+      
+      Dashboard with detail about request
+      Passport Available, 
+      Passport Delivered, 
+      Passport Abandoned, 
+      Request Sent To Washington
+      
+      Report of Request and user log
+      Export Report in PDF -->
+
+
+      <div fxLayout="row" fxLayoutAlign="center center" class="mt-3">
+        APP Develop by <span class="font-medium p-1">LCRTDEV</span>
+      </div>
+
+    </div>
+
+  </mat-card-content>
+  <mat-action-row class="action-shell" fxLayout="row" fxLayoutAlign="center center">
+    <button mat-stroked-button color="primary" (click)="onClickOK()">OK</button>
+  </mat-action-row>
+</mat-card>
+
+<mat-card class="card-shell loading">
+
+</mat-card>

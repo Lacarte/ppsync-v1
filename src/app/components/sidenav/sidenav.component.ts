@@ -1,9 +1,10 @@
+import { AppInfoComponent } from './../../shared/components/app-info/app-info.component';
 import { FullscreenService } from './../../shared/services/fullscreen/fullscreen.service';
 import { UIService } from './../../shared/services/ui.service';
 import { MenuTogglerService } from './../../shared/services/menu-toggler.service';
 import { Subscription } from 'rxjs';
 import { BreakpointsService } from './../../shared/services/breakpoints.service';
-import { Component, OnInit, OnDestroy, Inject } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import {
   MatDialog,
   MatDialogRef,
@@ -79,4 +80,18 @@ export class SidenavComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.isLtMdSub.unsubscribe();
   }
+
+  appInfo(){
+    const dialogRef = this.dialog.open(AppInfoComponent, {
+      panelClass: "app-dialog",
+      width:"480px",
+      disableClose: true,
+       });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (!!result.isRefresh) {
+      }
+    }); 
+  }
+
 }

@@ -1,3 +1,4 @@
+import { AppInfoComponent } from './shared/components/app-info/app-info.component';
 import { AddProfileComponent } from "./components/admin/profile/addProfile/addProfile.component";
 import { AddRequestStatusComponent } from "./components/admin/request-status/addRequest-status/addRequest-status.component";
 import { AddDocumentComponent } from "./components/admin/document/addDocument/addDocument.component";
@@ -66,6 +67,7 @@ import { FilterProfile } from "./pipes/ListFilter.pipe";
     AddRequestStatusComponent,
     TstComponent,
     FilterProfile,
+    AppInfoComponent
   ],
   entryComponents: [
     AddRequestComponent,
@@ -75,6 +77,7 @@ import { FilterProfile } from "./pipes/ListFilter.pipe";
     AddDocumentComponent,
     AddRequestStatusComponent,
     AddProfileComponent,
+    AppInfoComponent
   ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [AppComponent],

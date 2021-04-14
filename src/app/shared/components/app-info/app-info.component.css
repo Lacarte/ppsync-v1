@@ -1,0 +1,53 @@
+::ng-deep .mat-action-row {
+  padding: 10px;
+}
+
+/* .list li {
+  color: rgb(0, 0, 0);
+}
+
+.list li :before {
+  content: "\e5cc";
+  font-family: "Material Icons";
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+} */
+
+/* 
+.sub-list li {
+  color: rgb(0, 0, 0);
+}
+
+.sub-list li :before {
+  content: "\e5cc";
+  font-family: "Material Icons";
+  display: inline-block;
+}
+ */
+
+li:before {
+  content: "\e5ca";
+  font-family: "Material Icons";
+  display: inline-block;
+  color: #018d08;
+  font-size: 14px;
+}
+
+.sub-list li :before {
+  content: "\e5ca";
+  font-family: "Material Icons";
+  display: inline-block;
+  color: #018d08;
+  font-size: 14px;
+}
+
+.list li {
+  font-size: 0.80rem;
+  font-weight: 500;
+}
+.sub-list li {
+  padding-left: 1rem;
+  font-size: 0.65;
+  font-weight: 300;
+}
