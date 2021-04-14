@@ -14,6 +14,10 @@
               <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-plus"></mat-icon>
             CRÉER UNE REQUÊTE
               </button>
+          <button mat-stroked-button color="secondary"  matTooltip="IMPORTER UNE LISTE DE REQUÊTE FORMAT CSV OU EXCEL" matTooltipPosition="above">
+              <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-upload"></mat-icon>
+              IMPORTER
+            </button>
           <button mat-stroked-button color="secondary"   (click)="searchRequest()" matTooltip="EFFECTUER UNE RECHERCHE" matTooltipPosition="above">
               <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-search"></mat-icon>
               </button>
@@ -29,7 +33,7 @@
           
             <button mat-menu-item>
               <mat-icon>published_with_changes</mat-icon>
-              <span>CHANGEMENT DE STATUS</span>
+              <span>CHANGEMENT D'ÉTAT</span>
             </button>
           
             <button mat-menu-item  color="warn">
