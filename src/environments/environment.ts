@@ -3,11 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  production: false,
   projectName: 'PPSYNC',
   projectVersion: 'V1.0',
   propertyOf: 'AMBASSADE D\'HAÏTI AU CHILI',
   apiBaseUrl: '',
-  production: false,
   apiUrl: 'https://en3sl760g2l8asb.m.pipedream.net',
   mode: 'Local',
   };
