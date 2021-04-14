@@ -14,10 +14,10 @@
 
     <div class="right-pane rounded theme-alternate" fxFlex="50" fxFlex.lt-sm="100">
 
-      <form class="form mt-5">
+      <form class="form mt-5" [formGroup]="loginForm">
         <mat-form-field color="primary" class="full-width-input mb-0">
           <mat-label>Email</mat-label>
-          <input matInput name="email" type="email" value="carteasy@gmail.com" required>
+          <input matInput name="username" type="username" formControlName="username" required>
           <mat-error>
             Veuillez Entrer votre email
           </mat-error>
@@ -25,8 +25,8 @@
 
         <mat-form-field color="accent" class="full-width-input">
           <mat-label>Mot de passe</mat-label>
-          <input autocomplete="off" matInput [type]="hide ? 'password' : 'text'" name="password" value="internet"
-            required>
+          <input autocomplete="off" matInput [type]="hide ? 'password' : 'text'" name="password"
+            formControlName="password" required>
 
           <button color="accent" mat-icon-button matSuffix type="button" (click)="hide = !hide"
             [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -37,10 +37,12 @@
           </mat-error>
         </mat-form-field>
 
+        <div class="my-4">
+          <button mat-flat-button color="accent" type="submit" class="btn-block rounded-lg" (click)="onLogin()">
+            SE CONNECTER
+          </button>
+        </div>
 
-        <button mat-flat-button color="accent" type="submit" class="btn-block rounded-lg  mt-3" routerLink="/">
-          CONNECTION
-        </button>
         <div class="row btn-center pt-2">
           <button color="accent" type="button" mat-icon-button (click)="openBottomSheet()">
             <mat-icon class="mat-icon-hover">settings</mat-icon>
