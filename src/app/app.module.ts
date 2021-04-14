@@ -1,4 +1,4 @@
-import { AppInfoComponent } from './shared/components/app-info/app-info.component';
+import { AppInfoComponent } from "./shared/components/app-info/app-info.component";
 import { AddProfileComponent } from "./components/admin/profile/addProfile/addProfile.component";
 import { AddRequestStatusComponent } from "./components/admin/request-status/addRequest-status/addRequest-status.component";
 import { AddDocumentComponent } from "./components/admin/document/addDocument/addDocument.component";
@@ -30,6 +30,7 @@ import { DeliverComponent } from "./components/process/deliver/deliver.component
 import { AddRequestComponent } from "./components/process/register/add-request/add-request.component";
 import { TstComponent } from "./experimental/tst/tst.component";
 import { FilterProfile } from "./pipes/ListFilter.pipe";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 
 @NgModule({
   imports: [
@@ -67,7 +68,7 @@ import { FilterProfile } from "./pipes/ListFilter.pipe";
     AddRequestStatusComponent,
     TstComponent,
     FilterProfile,
-    AppInfoComponent
+    AppInfoComponent,
   ],
   entryComponents: [
     AddRequestComponent,
@@ -77,9 +78,12 @@ import { FilterProfile } from "./pipes/ListFilter.pipe";
     AddDocumentComponent,
     AddRequestStatusComponent,
     AddProfileComponent,
-    AppInfoComponent
+    AppInfoComponent,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
+  providers: [
+    { provide: LOCALE_ID, useValue: "fr-FR" },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
