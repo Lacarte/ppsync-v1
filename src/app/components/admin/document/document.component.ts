@@ -73,7 +73,7 @@ const ELEMENT_DATA: data[] = [
   {
     id: 0,
     status:"Actif",
-    description: "#Identifiant au Travail",
+    description: "RUT",
 
   },
 

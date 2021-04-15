@@ -34,7 +34,7 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
       id: 0,
       isSelected: true,
       code: "link_dashboard",
-      description: "Dashboard(Menu)",
+      description: "Tableau de Bord(Menu)",
       menuType: { name: "Link", id: 0 },
     },
     {
