@@ -1,0 +1,252 @@
+.
+├── angular.json
+├── dev
+│   ├── assets
+│   │   ├── auth.service.txt
+│   │   ├── functions.txt
+│   │   ├── info.txt
+│   │   ├── jsbin.dalusoh.7.html
+│   │   └── media
+│   │       ├── Haiti1 [Convertido].pdf
+│   │       ├── Raleway.zip
+│   │       ├── SVG
+│   │       │   └── Asset 4.svg
+│   │       ├── hp.jpg
+│   │       ├── hp.psd
+│   │       ├── passport.png
+│   │       ├── pp6.jpg
+│   │       ├── pp8-heavy.jpg
+│   │       ├── pp8.jpg
+│   │       ├── pp8.psd
+│   │       ├── pp82.psd
+│   │       ├── pp9.jpg
+│   │       ├── pp9.psd
+│   │       ├── ppsync-logo.ai
+│   │       ├── tinified.zip
+│   │       ├── washington.png
+│   │       └── washington.psd
+│   └── rest.http
+├── dist
+│   ├── 3rdpartylicenses.txt
+│   ├── assets
+│   │   ├── pp8.jpg
+│   │   ├── pp9.jpg
+│   │   ├── ppsync-black.svg
+│   │   └── ppsync.svg
+│   ├── index.html
+│   ├── main-es2015.d80145987f50620b5a8e.js
+│   ├── main-es5.d80145987f50620b5a8e.js
+│   ├── polyfills-es2015.b991e645bb28194e6a93.js
+│   ├── polyfills-es5.87e57557284a307d12fc.js
+│   ├── pp8.9dfdc35cc92efe88cc3d.jpg
+│   ├── runtime-es2015.a4dadbc03350107420a4.js
+│   ├── runtime-es5.a4dadbc03350107420a4.js
+│   └── styles.91c6d885ecea9e29933f.css
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── components
+│   │   │   ├── admin
+│   │   │   │   ├── document
+│   │   │   │   │   ├── addDocument
+│   │   │   │   │   │   ├── addDocument.component.css
+│   │   │   │   │   │   ├── addDocument.component.html
+│   │   │   │   │   │   ├── addDocument.component.spec.ts
+│   │   │   │   │   │   └── addDocument.component.ts
+│   │   │   │   │   ├── document.component.css
+│   │   │   │   │   ├── document.component.html
+│   │   │   │   │   ├── document.component.spec.ts
+│   │   │   │   │   └── document.component.ts
+│   │   │   │   ├── motive
+│   │   │   │   │   ├── addMotive
+│   │   │   │   │   │   ├── addMotive.component.css
+│   │   │   │   │   │   ├── addMotive.component.html
+│   │   │   │   │   │   ├── addMotive.component.spec.ts
+│   │   │   │   │   │   └── addMotive.component.ts
+│   │   │   │   │   ├── motive.component.css
+│   │   │   │   │   ├── motive.component.html
+│   │   │   │   │   ├── motive.component.spec.ts
+│   │   │   │   │   └── motive.component.ts
+│   │   │   │   ├── profile
+│   │   │   │   │   ├── addProfile
+│   │   │   │   │   │   ├── addProfile.component.css
+│   │   │   │   │   │   ├── addProfile.component.html
+│   │   │   │   │   │   ├── addProfile.component.spec.ts
+│   │   │   │   │   │   └── addProfile.component.ts
+│   │   │   │   │   ├── profile.component.css
+│   │   │   │   │   ├── profile.component.html
+│   │   │   │   │   ├── profile.component.spec.ts
+│   │   │   │   │   └── profile.component.ts
+│   │   │   │   ├── request-status
+│   │   │   │   │   ├── addRequest-status
+│   │   │   │   │   │   ├── addRequest-status.component.css
+│   │   │   │   │   │   ├── addRequest-status.component.html
+│   │   │   │   │   │   ├── addRequest-status.component.spec.ts
+│   │   │   │   │   │   └── addRequest-status.component.ts
+│   │   │   │   │   ├── request-status.component.css
+│   │   │   │   │   ├── request-status.component.html
+│   │   │   │   │   ├── request-status.component.spec.ts
+│   │   │   │   │   └── request-status.component.ts
+│   │   │   │   └── user
+│   │   │   │       ├── addUser
+│   │   │   │       │   ├── addUser.component.css
+│   │   │   │       │   ├── addUser.component.html
+│   │   │   │       │   ├── addUser.component.spec.ts
+│   │   │   │       │   └── addUser.component.ts
+│   │   │   │       ├── user.component.css
+│   │   │   │       ├── user.component.html
+│   │   │   │       ├── user.component.spec.ts
+│   │   │   │       └── user.component.ts
+│   │   │   ├── dashboard
+│   │   │   │   ├── dashboard.component.html
+│   │   │   │   ├── dashboard.component.scss
+│   │   │   │   ├── dashboard.component.spec.ts
+│   │   │   │   └── dashboard.component.ts
+│   │   │   ├── login
+│   │   │   │   ├── login.component.html
+│   │   │   │   ├── login.component.scss
+│   │   │   │   └── login.component.ts
+│   │   │   ├── not-found
+│   │   │   │   ├── not-found.component.html
+│   │   │   │   ├── not-found.component.scss
+│   │   │   │   ├── not-found.component.spec.ts
+│   │   │   │   └── not-found.component.ts
+│   │   │   ├── outlet-wrapper
+│   │   │   │   ├── outlet-wrapper.component.css
+│   │   │   │   ├── outlet-wrapper.component.html
+│   │   │   │   └── outlet-wrapper.component.ts
+│   │   │   ├── process
+│   │   │   │   ├── deliver
+│   │   │   │   │   ├── deliver.component.css
+│   │   │   │   │   ├── deliver.component.html
+│   │   │   │   │   └── deliver.component.ts
+│   │   │   │   └── register
+│   │   │   │       ├── add-request
+│   │   │   │       │   ├── add-request.component.css
+│   │   │   │       │   ├── add-request.component.html
+│   │   │   │       │   └── add-request.component.ts
+│   │   │   │       ├── register.component.css
+│   │   │   │       ├── register.component.html
+│   │   │   │       └── register.component.ts
+│   │   │   ├── report
+│   │   │   │   ├── log
+│   │   │   │   │   ├── log.component.css
+│   │   │   │   │   ├── log.component.html
+│   │   │   │   │   ├── log.component.spec.ts
+│   │   │   │   │   └── log.component.ts
+│   │   │   │   └── request
+│   │   │   │       ├── request.component.css
+│   │   │   │       ├── request.component.html
+│   │   │   │       ├── request.component.spec.ts
+│   │   │   │       └── request.component.ts
+│   │   │   ├── shell
+│   │   │   │   ├── shell.component.css
+│   │   │   │   ├── shell.component.html
+│   │   │   │   └── shell.component.ts
+│   │   │   ├── sidenav
+│   │   │   │   ├── sidenav.component.html
+│   │   │   │   ├── sidenav.component.scss
+│   │   │   │   ├── sidenav.component.spec.ts
+│   │   │   │   ├── sidenav.component.ts
+│   │   │   │   └── sidenav.service.ts
+│   │   │   ├── utils
+│   │   │   │   └── search-request
+│   │   │   │       ├── search-request.component.html
+│   │   │   │       ├── search-request.component.scss
+│   │   │   │       ├── search-request.component.spec.ts
+│   │   │   │       └── search-request.component.ts
+│   │   │   └── welcome
+│   │   │       ├── welcome.component.html
+│   │   │       ├── welcome.component.scss
+│   │   │       └── welcome.component.ts
+│   │   ├── experimental
+│   │   │   ├── base-form
+│   │   │   └── tst
+│   │   │       ├── tst.component.css
+│   │   │       ├── tst.component.html
+│   │   │       └── tst.component.ts
+│   │   ├── interfaces
+│   │   │   └── login.ts
+│   │   ├── pipes
+│   │   │   └── ListFilter.pipe.ts
+│   │   ├── services
+│   │   └── shared
+│   │       ├── components
+│   │       │   ├── action-notification
+│   │       │   │   ├── action-notification.component.css
+│   │       │   │   ├── action-notification.component.html
+│   │       │   │   └── action-notification.component.ts
+│   │       │   ├── app-info
+│   │       │   │   ├── app-info.component.html
+│   │       │   │   ├── app-info.component.scss
+│   │       │   │   ├── app-info.component.spec.ts
+│   │       │   │   └── app-info.component.ts
+│   │       │   ├── confirm-dialog
+│   │       │   │   ├── confirm-dialog.component.html
+│   │       │   │   ├── confirm-dialog.component.scss
+│   │       │   │   └── confirm-dialog.component.ts
+│   │       │   ├── loader
+│   │       │   │   ├── loader.component.css
+│   │       │   │   ├── loader.component.html
+│   │       │   │   └── loader.component.ts
+│   │       │   ├── loading-component
+│   │       │   │   ├── loading-component.component.css
+│   │       │   │   ├── loading-component.component.html
+│   │       │   │   └── loading-component.component.ts
+│   │       │   ├── tutorials
+│   │       │   │   ├── tutorials.component.css
+│   │       │   │   ├── tutorials.component.html
+│   │       │   │   ├── tutorials.component.spec.ts
+│   │       │   │   └── tutorials.component.ts
+│   │       │   └── utils
+│   │       │       └── french-paginator-intl.ts
+│   │       ├── interfaces
+│   │       │   └── action-notification.ts
+│   │       ├── material-module
+│   │       │   └── material.module.ts
+│   │       ├── pipes
+│   │       ├── services
+│   │       │   ├── breakpoints.service.ts
+│   │       │   ├── confirm-dialog.service.ts
+│   │       │   ├── fullscreen
+│   │       │   │   ├── fullscreen.service.spec.ts
+│   │       │   │   └── fullscreen.service.ts
+│   │       │   ├── loader.interceptor.ts
+│   │       │   ├── loader.service.ts
+│   │       │   ├── log-service
+│   │       │   │   ├── log.service.spec.ts
+│   │       │   │   ├── log.service.ts
+│   │       │   │   └── logLevel.enum.ts
+│   │       │   ├── menu-toggler.service.ts
+│   │       │   └── ui.service.ts
+│   │       └── shared.module.ts
+│   ├── assets
+│   │   ├── pp8.jpg
+│   │   ├── pp9.jpg
+│   │   ├── ppsync-black.svg
+│   │   └── ppsync.svg
+│   ├── environments
+│   │   ├── environment.dev.ts
+│   │   ├── environment.prod.ts
+│   │   └── environment.ts
+│   ├── index.html
+│   ├── karma.conf.js
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── scss
+│   │   ├── normalize.scss
+│   │   └── tailwind.min.css
+│   ├── styles.scss
+│   ├── theme.scss
+│   ├── tsconfig.app.json
+│   └── tsconfig.spec.json
+├── tree.txt
+└── tsconfig.json
+
+60 directories, 189 files

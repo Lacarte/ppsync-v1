@@ -1,3 +1,4 @@
+import { LogService } from './services/log-service/log.service';
 import { ConfirmDialogService } from "./services/confirm-dialog.service";
 import { LoaderInterceptor } from "./services/loader.interceptor";
 import { BreakpointsService } from "./services/breakpoints.service";
@@ -42,6 +43,7 @@ import { ConfirmDialogComponent } from "./components/confirm-dialog/confirm-dial
     FullscreenService,
     BreakpointsService,
     ConfirmDialogService,
+    LogService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     { provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl() },
     
