@@ -1,0 +1,25 @@
+
+
+GET http://localhost:1337/motives
+###
+GET http://localhost:1337/motives?_limit=2
+###
+GET http://localhost:1337/motives?_sort=description
+###
+
+GET http://localhost:1337/motives?_sort=id:desc
+###
+
+GET http://localhost:1337/motives/count
+###
+
+POST http://localhost:1337/motives/
+content-type: application/json
+
+{
+    "description": "sample",
+    "state": "active"
+}
+
+
+# auth

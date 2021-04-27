@@ -1,4 +1,4 @@
-<mat-card class="card-shell">
+<!-- <mat-card class="card-shell">
   <mat-card-header color="primary">
     <mat-card-title>{{title}}</mat-card-title>
   </mat-card-header>
@@ -125,4 +125,27 @@
 
 <mat-card class="card-shell loading">
 
-</mat-card>
+</mat-card> -->
+
+<button (click)="testLog()">
+  Test Log
+</button> 
+
+<button (click)="clearLog()">
+  Clear Log
+</button> 
+
+<button (click)="objectLog()">
+  Log an Object
+</button> 
+
+<br />
+<button (click)="getLocalStorage()">
+  Get from Local Storage
+</button>
+<br />
+<ul>
+  <li *ngFor="let log of logEntries">
+    {{log.message}}
+  </li>
+</ul>

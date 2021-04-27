@@ -13,7 +13,7 @@
 }
 
 .dashboard-title {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -44,11 +44,16 @@
   transition: all 250ms ease-out;
 }
 
+.description{
+  font-size: 0.90rem;
+  text-transform: capitalize;
+}
+
 .mini-card:hover {
   // background-color: rgba(141, 141, 141, 0.5);
 
 
   .description {
-    color: black;
+    // color: black;
   }
 }

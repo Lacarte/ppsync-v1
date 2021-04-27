@@ -1,4 +1,5 @@
-import { LogService } from './services/log-service/log.service';
+import { LogPublishersService } from './services/log-publishers/log-publishers.service';
+import { LogService } from "./services/log-publishers/log.service";
 import { ConfirmDialogService } from "./services/confirm-dialog.service";
 import { LoaderInterceptor } from "./services/loader.interceptor";
 import { BreakpointsService } from "./services/breakpoints.service";
@@ -17,7 +18,7 @@ import { ActionNotificationComponent } from "./components/action-notification/ac
 import { LoadingComponentComponent } from "./components/loading-component/loading-component.component";
 import { getFrenchPaginatorIntl } from "./components/utils/french-paginator-intl";
 import { ConfirmDialogComponent } from "./components/confirm-dialog/confirm-dialog.component";
-
+  
 @NgModule({
   imports: [CommonModule, MaterialModule, FlexLayoutModule],
   exports: [
@@ -44,9 +45,9 @@ import { ConfirmDialogComponent } from "./components/confirm-dialog/confirm-dial
     BreakpointsService,
     ConfirmDialogService,
     LogService,
+    LogPublishersService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     { provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl() },
-    
   ],
 })
 export class SharedModule {}

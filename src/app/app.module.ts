@@ -1,3 +1,4 @@
+import { TestComponent } from './experimental/test/test.component';
 import { AppInfoComponent } from "./shared/components/app-info/app-info.component";
 import { AddProfileComponent } from "./components/admin/profile/addProfile/addProfile.component";
 import { AddRequestStatusComponent } from "./components/admin/request-status/addRequest-status/addRequest-status.component";
@@ -28,9 +29,9 @@ import { OutletWrapperComponent } from "./components/outlet-wrapper/outlet-wrapp
 import { RegisterComponent } from "./components/process/register/register.component";
 import { DeliverComponent } from "./components/process/deliver/deliver.component";
 import { AddRequestComponent } from "./components/process/register/add-request/add-request.component";
-import { TstComponent } from "./experimental/tst/tst.component";
 import { FilterProfile } from "./pipes/ListFilter.pipe";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { HashLocationStrategy, LocationStrategy } from "@angular/common";
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -66,9 +68,11 @@ import { HashLocationStrategy, LocationStrategy } from "@angular/common";
     AddDocumentComponent,
     AddProfileComponent,
     AddRequestStatusComponent,
-    TstComponent,
+    TestComponent,
     FilterProfile,
-    AppInfoComponent,
+    AppInfoComponent
+
+    
   ],
   entryComponents: [
     AddRequestComponent,

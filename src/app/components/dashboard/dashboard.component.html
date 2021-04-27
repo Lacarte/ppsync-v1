@@ -1,93 +1,95 @@
-
-<div fxLayout="row"    fxLayoutAlign="space-between center" class="bg-gray-200 mb-3">
+<div fxLayout="row" fxLayoutAlign="space-between center" class="mb-3">
   <div class="wrapper-title">
     <div class="dashboard-title">{{title}}</div>
   </div>
 
-  <button mat-icon-button color="primary" matTooltip="ACTUALISER" matTooltipPosition="left"> <mat-icon>autorenew</mat-icon></button>
+<!--   <button mat-icon-button color="primary" matTooltip="ACTUALISER" matTooltipPosition="left">
+    <mat-icon>autorenew</mat-icon>
+  </button> -->
 </div>
 
-<div fxLayout="row" class="month-title">
-   AVRIL
-</div>
-
-<!-- Disponible -->
-<div fxLayout="column">
 
 
 
-  <div fxLayout="row" fxLayout.lt-md="column"  fxLayoutGap="16px">
+    <!-- Disponible -->
+    <div fxLayout="column">
+      <mat-card-title class="month-title">AVRIL</mat-card-title>
 
-    <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
-        <div fxFlex="80px" fxLayoutAlign="center center">
-          <div class="radius bg-green-100 border-2 border-green-200">
-            <i class="icon-indicator text-green-600 fas fa-passport"></i>
+
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px">
+
+        <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
+          <div fxFlex="60px" fxLayoutAlign="center center">
+            <div class="radius bg-green-100 border-2 border-green-200">
+              <i class="icon-indicator text-green-600 fas fa-passport"></i>
+            </div>
+          </div>
+          <div fxFlex="75" fxLayoutAlign="start center">
+            <div>
+              <span class="description font-medium uppercase text-gray-500"> Passport Disponible </span>
+              <div class="qt text-xl text-green-600">345</div>
+            </div>
+
           </div>
         </div>
-        <div fxFlex="75" fxLayoutAlign="start center">
-          <div>
-            <div class="qt text-xl text-green-600">345</div>
-            <span class="description  text-xs	 font-medium uppercase text-gray-400"> Passport Disponible </span>
+
+
+        <!-- Livré -->
+
+        <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
+          <div fxFlex="60px" fxLayoutAlign="center center">
+            <div class="radius bg-blue-100  border-2 border-blue-200">
+              <i class="icon-indicator text-blue-600 fas fa-passport"></i>
+            </div>
           </div>
-          
+          <div fxFlex="75" fxLayoutAlign="start center">
+            <div>
+              <span class="description font-medium uppercase text-gray-500"> Passport Livré </span>
+              <div class="qt text-xl font-medium text-blue-600 ">4600</div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ABANONé -->
+
+        <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
+          <div fxFlex="60px" fxLayoutAlign="center center">
+            <div class="radius bg-yellow-100 border-2 border-yellow-200">
+              <i class="icon-indicator text-yellow-600 fas fa-passport"></i>
+            </div>
+          </div>
+          <div fxFlex="75" fxLayoutAlign="start center">
+            <div>
+              <span class="description text-xs	 font-medium uppercase text-gray-500"> Passport Abandonné </span>
+              <div class="qt text-xl font-medium text-yellow-600">152</div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Envoie -->
+
+
+        <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
+          <div fxFlex="60px" fxLayoutAlign="center center">
+            <div class="radius bg-purple-100  border-2 border-purple-200">
+              <i class="icon-indicator text-purple-600 fas fa-passport"></i>
+            </div>
+          </div>
+          <div fxFlex="75" fxLayoutAlign="start center">
+            <div>
+              <span class="description text-xs	font-medium uppercase text-gray-500">Envoyée a Washington </span>
+              <div class="qt text-xl font-medium  text-purple-600">2545</div>
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
     </div>
 
-  
-
-    <!-- Livré -->
-
-    <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
-      <div fxFlex="80px" fxLayoutAlign="center center">
-        <div class="radius bg-blue-100  border-2 border-blue-200">
-          <i class="icon-indicator text-blue-600 fas fa-passport"></i>
-        </div>
-      </div>
-      <div fxFlex="75" fxLayoutAlign="start center">
-        <div>
-          <div class="qt text-xl font-medium text-blue-600 ">4600</div>
-          <span class="description  text-xs	 font-medium uppercase text-gray-400"> Passport Livré </span>
-        </div>
-      </div>
-    </div>
 
 
-      <!-- ABANONé -->
-
-      <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
-        <div fxFlex="80px" fxLayoutAlign="center center">
-          <div class="radius bg-yellow-100 border-2 border-yellow-200" >
-            <i class="icon-indicator text-yellow-600 fas fa-passport"></i>
-          </div>
-        </div>
-        <div fxFlex="75" fxLayoutAlign="start center">
-          <div>
-            <div class="qt text-xl font-medium text-yellow-600">152</div>
-            <span class="description text-xs	 font-medium uppercase text-gray-400"> Passport Abandonné </span>
-          </div>
-        </div>
-      </div>
-
-
-
-    <!-- Envoie -->
-
-
-    <div fxFlex class="mini-card p-3 bg-white rounded shadow-md">
-      <div fxFlex="80px" fxLayoutAlign="center center">
-        <div class="radius bg-purple-100  border-2 border-purple-200">
-          <i class="icon-indicator text-purple-600 fas fa-passport"></i>
-        </div>
-      </div>
-      <div fxFlex="75" fxLayoutAlign="start center">
-        <div>
-          <div class="qt text-xl font-medium  text-purple-600">2545</div>
-          <span class="description text-xs	font-medium uppercase text-gray-400">Requête Envoyée a Washington </span>
-        </div>
-      </div>
-    </div>
-
-
-
-  </div>
-</div>

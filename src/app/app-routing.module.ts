@@ -12,7 +12,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { DeliverComponent } from "./components/process/deliver/deliver.component";
 import { RegisterComponent } from "./components/process/register/register.component";
 import { ShellComponent } from "./components/shell/shell.component";
-import { TstComponent } from "./experimental/tst/tst.component";
+import { TestComponent } from "./experimental/test/test.component";
 import { WelcomeComponent } from "./components/welcome/welcome.component";
 const routes: Routes = [
   {
@@ -37,7 +37,7 @@ const routes: Routes = [
     ]
   },
   { path: "login", component: LoginComponent },
-  { path: "tst", component: TstComponent },
+  { path: "test", component: TestComponent },
   {
     path: "**",
     redirectTo: "/login",

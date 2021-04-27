@@ -39,12 +39,12 @@
                 </mat-panel-title>
 
               </mat-expansion-panel-header>
-              <mat-nav-list>
+              <mat-nav-list class="nv-list">
                 <a mat-list-item routerLinkActive="active" routerLink="process/register"
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
                   <div fxFlex="25" class="icon" fxLayoutAlign="start center">
                   </div>
-                  <div fxFlex="75"> Requête </div>
+                  <div fxFlex="75" class="sub"> Requête </div>
                 </a>
 
 
@@ -62,7 +62,7 @@
 
             <!-- ADMIN -->
             <mat-expansion-panel class="mat-elevation-z0">
-              <mat-expansion-panel-header>
+              <mat-expansion-panel-header  [expandedHeight]="'38px'"  [collapsedHeight]="'50px'">
                 <mat-panel-title>
 
                   <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
@@ -76,19 +76,19 @@
                 </mat-panel-title>
 
               </mat-expansion-panel-header>
-              <mat-nav-list>
+              <mat-nav-list class="nv-list">
                 <a mat-list-item routerLinkActive="active" routerLink="/admin/user"
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
                   <div fxFlex="25" class="icon" fxLayoutAlign="start center">
                   </div>
-                  <div fxFlex="75"> Utilisateur </div>
+                  <div fxFlex="75" class="sub"> Utilisateur </div>
                 </a>
 
                 <a mat-list-item routerLinkActive="active" routerLink="/admin/motive"
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
                   <div fxFlex="25" class="icon" fxLayoutAlign="start center">
                   </div>
-                  <div fxFlex="75"> Motif </div>
+                  <div fxFlex="75" class="sub"> Motif </div>
                 </a>
 
 
@@ -96,7 +96,7 @@
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
                   <div fxFlex="25" class="icon" fxLayoutAlign="start center">
                   </div>
-                  <div fxFlex="75"> État de Requête </div>
+                  <div fxFlex="75" class="sub"> État de Requête </div>
                 </a>
 
 
@@ -104,14 +104,14 @@
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
                   <div fxFlex="25" class="icon" fxLayoutAlign="start center">
                   </div>
-                  <div fxFlex="75"> Profil </div>
+                  <div fxFlex="75" class="sub"> Profil </div>
                 </a>
 
                 <a mat-list-item routerLinkActive="active" routerLink="/admin/doctype"
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
                   <div fxFlex="25" class="icon" fxLayoutAlign="start center">
                   </div>
-                  <div fxFlex="75"> Type Docu. </div>
+                  <div fxFlex="75" class="sub"> Type Docu. </div>
                 </a>
 
 
@@ -135,21 +135,19 @@
                 </mat-panel-title>
 
               </mat-expansion-panel-header>
-              <mat-nav-list>
+              <mat-nav-list class="nv-list">
                 <a mat-list-item routerLinkActive="active" routerLink="/report/request"
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
                   <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
                   </div>
-                  <div fxFlex="75"> Requête </div>
+                  <div fxFlex="75" class="sub"> Requête </div>
                 </a>
 
-              </mat-nav-list>
-              <mat-nav-list>
                 <a mat-list-item routerLinkActive="active" routerLink="/report/log"
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
                   <div fxFlex="25" class="icon" fxLayoutAlign="start center" routerLinkActive="active">
                   </div>
-                  <div fxFlex="75"> Log </div>
+                  <div fxFlex="75" class="sub"> Log </div>
                 </a>
 
               </mat-nav-list>
@@ -164,7 +162,7 @@
       <div class="row nav-footer">
         <div fxLayout="row" fxLayoutAlign="center center">
           <button mat-icon-button (click)="appInfo()">
-            <mat-icon class="mat-icon-hover">info</mat-icon>
+            <mat-icon class="mat-icon-hover" fontSet="fas" fontIcon="fa-info"></mat-icon>
           </button>
         </div>
       </div>

@@ -121,7 +121,7 @@ body {
       // background-color: rgba(76, 146, 203, 0.37);
     }
     .mat-list-item {
-      transition: all 500ms ease-out;
+      transition: all 350ms ease-out;
     }
   }
 
@@ -327,7 +327,10 @@ span.submenu.active ::before {
   }
 
   .mat-list-item.active {
-    background-color: var(--primary-lighter-color);
+    background-color: #fff4cb;
+    // background-color: var(--primary-lighter-color);
+    // border-left: 4px solid var(--primary-color);
+    border-left: 4px solid #f4c215;
   }
 }
 
