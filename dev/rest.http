@@ -23,3 +23,6 @@ content-type: application/json
 
 
 # auth
+###
+GET http://localhost:1337/users/count
+###

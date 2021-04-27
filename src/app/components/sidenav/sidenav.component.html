@@ -27,7 +27,7 @@
 
             <!-- PROCEED -->
             <mat-expansion-panel class="mat-elevation-z0">
-              <mat-expansion-panel-header>
+              <mat-expansion-panel-header  [expandedHeight]="'38px'"  [collapsedHeight]="'50px'">
                 <mat-panel-title>
 
                   <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
@@ -120,7 +120,7 @@
 
             <!-- RAPORT -->
             <mat-expansion-panel class="mat-elevation-z0">
-              <mat-expansion-panel-header>
+              <mat-expansion-panel-header  [expandedHeight]="'38px'"  [collapsedHeight]="'50px'">
                 <mat-panel-title>
 
                   <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px">
@@ -134,7 +134,7 @@
                   </div>
                 </mat-panel-title>
 
-              </mat-expansion-panel-header>
+              </mat-expansion-panel-header >
               <mat-nav-list class="nv-list">
                 <a mat-list-item routerLinkActive="active" routerLink="/report/request"
                   (click)="breakpointService.isLtMdLtSm && sidenav.toggle()">
