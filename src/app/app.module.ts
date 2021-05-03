@@ -1,3 +1,4 @@
+import { UserProfileRepositoryService } from './components/admin/profile/repository/user-profile-repository.service';
 import { DoctypeRepositoryService } from './components/admin/document/repository/doctype-repository.service';
 import { MotiveRepositoryService } from './components/admin/motive/repository/motive-repository.service';
 import { LoginRepositoryService } from './components/login/repository/login-repository.service';
@@ -94,7 +95,8 @@ import { RequestStatusRepositoryService } from './components/admin/request-statu
     LoginRepositoryService,
     RequestStatusRepositoryService,
     MotiveRepositoryService,
-    DoctypeRepositoryService
+    DoctypeRepositoryService,
+    UserProfileRepositoryService
   ],
   bootstrap: [AppComponent],
 })

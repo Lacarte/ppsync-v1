@@ -20,6 +20,7 @@ export class MotiveComponent implements OnInit {
 
   dataSource = new MatTableDataSource([]);
   isLoadingData: boolean;
+  data: any[] = [];
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -60,6 +61,7 @@ export class MotiveComponent implements OnInit {
     this.isLoadingData = true;
     this.motiveRepositoryService.findAll().subscribe((data: any[]) => {
       this.dataSource.data = data;
+      this.data = data;
       this.dataSource.paginator = this.paginator;
       this.isLoadingData = false;
     });

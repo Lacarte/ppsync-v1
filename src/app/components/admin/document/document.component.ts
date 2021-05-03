@@ -22,6 +22,7 @@ export class DocumentComponent implements OnInit {
 
   dataSource = new MatTableDataSource([]);
   isLoadingData: boolean;
+  data: any[] = [];
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -64,6 +65,7 @@ export class DocumentComponent implements OnInit {
     this.isLoadingData = true;
     this.doctypeRepositoryService.findAll().subscribe((data: any[]) => {
       this.dataSource.data = data;
+      this.data = data;
       this.dataSource.paginator = this.paginator;
       this.isLoadingData = false;
     });

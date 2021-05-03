@@ -27,7 +27,7 @@ export class UserComponent implements OnInit,AfterViewInit {
   ];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-
+  data= [];
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

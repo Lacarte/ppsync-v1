@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit,AfterViewInit {
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   selection = new SelectionModel<any>(true, []);
+  data = [];
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

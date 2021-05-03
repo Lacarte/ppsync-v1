@@ -1,3 +1,4 @@
+import { UserProfileRepositoryService } from './../repository/user-profile-repository.service';
 import { ConfirmDialogService } from "./../../../../shared/services/confirm-dialog.service";
 import {
   FormBuilder,
@@ -8,6 +9,8 @@ import {
 } from "@angular/forms";
 import { AfterViewInit, Component,ChangeDetectorRef, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { STATES } from "src/app/core/enums/states.enum";
+
 
 @Component({
   selector: "app-addProfile",
@@ -16,10 +19,28 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 })
 export class AddProfileComponent implements OnInit, AfterViewInit {
   title = "ENREGISTRER PROFIL";
+  states = STATES;
+  id = 0;
+  public statekeys = Object.keys(this.states);
+  isRefresh: boolean;
+
+  
+
+  public formGroup: FormGroup = this.fb.group({
+    description: ["", [Validators.required]],
+    state: [this.statekeys[0], Validators.required],
+  });
 
   public menuForm: FormGroup = this.fb.group({
     menuFields: this.fb.array([]),
   });
+
+
+  stateCtrl = this.formGroup.get("state");
+  descriptionCtrl = this.formGroup.get("description");
+  isOneTimeSaving: boolean;
+
+
 
   menuFields: FormArray = new FormArray([]);
 
@@ -122,6 +143,7 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<AddProfileComponent>,
     private confirmDialogService: ConfirmDialogService,
+    private userProfileRepositoryService: UserProfileRepositoryService,
     private fb: FormBuilder,
     private cdr: ChangeDetectorRef
 
@@ -129,6 +151,12 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.menuFields.clear();
     
+
+    if(this.data){
+      this.stateCtrl.setValue(this.data?.state);
+      this.descriptionCtrl.setValue(this.data?.description);
+      }      
+  
     
     //Loading menu
     this.menuForm.setControl(
@@ -238,7 +266,59 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
     return o1.name === o2.name;
   }
 
+
+
+  onClickSave() {
+    this.isRefresh = false;
+    this.isOneTimeSaving = true;
+    if (this.formGroup.valid) {
+      if (!this.data) {
+        //Save
+        this.userProfileRepositoryService.save(this.formGroup.value).subscribe(
+          (res) => {
+            this.onSuccess();
+          },
+          (error) => {
+            this.onError(error);
+          }
+        );
+      } else {
+        //Update
+        this.userProfileRepositoryService
+          .update(this.formGroup.value, this.data?.id)
+          .subscribe(
+            (res) => {
+              this.onSuccess();
+            },
+            (error) => {
+              this.onError(error);
+            }
+          );
+      }
+    }
+  }
+
+  private onSuccess() {
+    this.isRefresh = true;
+    this.dialogRef.close({ isRefresh: this.isRefresh });
+  }
+
+  private onError(error: any) {
+    console.error(error);
+    this.isOneTimeSaving = false;
+    this.actionNotification = {
+      isVisible: true,
+      messageType: "error",
+      message: `${error.errorMessage}`,
+    };
+  }
+
+  logThrottledClick() {
+    console.log("logThrottledClick");
+  }
+
   onClickCancel(): void {
     this.dialogRef.close({ isRefresh: false });
   }
+ 
 }
