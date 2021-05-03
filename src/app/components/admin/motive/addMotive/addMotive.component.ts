@@ -15,13 +15,14 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
   states = STATES;
   id = 0;
   public statekeys = Object.keys(this.states);
+  isRefresh: boolean;
 
   actionNotification = {
     isVisible: false,
     messageType: "success",
     message: "Savegardé avec succès.",
   };
-  isRefresh: boolean;
+  
 
   public formGroup: FormGroup = this.fb.group({
     description: ["", [Validators.required]],
@@ -63,7 +64,7 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
     if (this.formGroup.valid) {
       if (!this.data) {
         //Save
-        this.motiveRepositoryService.saveMotive(this.formGroup.value).subscribe(
+        this.motiveRepositoryService.save(this.formGroup.value).subscribe(
           (res) => {
             this.onSuccess();
           },
@@ -74,7 +75,7 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
       } else {
         //Update
         this.motiveRepositoryService
-          .updateMotive(this.formGroup.value, this.data?.id)
+          .update(this.formGroup.value, this.data?.id)
           .subscribe(
             (res) => {
               this.onSuccess();

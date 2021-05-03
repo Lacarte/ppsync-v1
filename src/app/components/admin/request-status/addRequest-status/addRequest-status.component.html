@@ -7,41 +7,40 @@
 
       <div fxLayout="column" class="form">
 
-        <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+        <div fxLayout="row" [formGroup]="formGroup" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
 
           <mat-form-field fxFlex color="accent">
-            <input autocomplete="off" matInput type="text" placeholder="Description" required>
+            <input autocomplete="off" matInput type="text" placeholder="Description" formControlName="description"
+              required>
           </mat-form-field>
 
-          
           <mat-form-field fxFlex color="accent">
             <mat-label>État</mat-label>
-            <mat-select required>
-                <mat-option class="border-b-2 border-gray-600 ">
-                  <span mat-button>
-                    <mat-icon matSuffix>add_circle_outline</mat-icon>Ajouter
-                  </span>
-              </mat-option>
-              <mat-option>Actif</mat-option>
-              <mat-option>Inactif</mat-option>
+            <mat-select formControlName="state" required>
+              <mat-option *ngFor="let statekey of statekeys" [value]="statekey">{{states[statekey]}}</mat-option>
             </mat-select>
           </mat-form-field>
 
+          <!-- 
+          <br>Dirty: {{ formGroup.dirty }}
+          <br>Touched: {{ formGroup.touched }}
+          <br>Valid: {{ formGroup.valid }}
+          <br>Value: {{ formGroup.value | json }} \
+        -->
         </div>
-    
       </div>
-  
 
       <app-action-notification [actionNotification]="actionNotification"></app-action-notification>
+
       <mat-action-row class="action-shell py-3" fxLayout="row" fxLayoutAlign="end center">
-        <button mat-flat-button color="primary">SAUVEGARDER</button>
+        <button mat-flat-button color="primary"   [class.spinner]="isOneTimeSaving && !isRefresh"  [disabled]="formGroup.invalid || isOneTimeSaving" 
+         (click)="onClickSave()" preventDoubleClick (throttledClick)="logThrottledClick()" >SAUVEGARDER</button>
         <button mat-stroked-button color="warn" (click)="onClickCancel()">SORTIR</button>
       </mat-action-row>
     </div>
 
   </mat-card-content>
 </mat-card>
-
 
 
 

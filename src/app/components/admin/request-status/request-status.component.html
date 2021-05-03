@@ -14,19 +14,14 @@
             <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-plus"></mat-icon>
             CRÉER ÉTAT DE LA REQUÊTE
           </button>
-          <button mat-stroked-button color="secondary" (click)="search()" matTooltip="EFFECTUER UNE RECHERCHE"
-            matTooltipPosition="above">
-            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-search"></mat-icon>
-          </button>
         </div>
 
         <div>
-
         </div>
 
       </div>
 
-      <div fxLayout="column">
+      <div fxLayout="column" *ngIf="!isLoadingData">
 
         <mat-form-field class="pt-2">
           <mat-label>Filtrer</mat-label>
@@ -38,31 +33,30 @@
 
 
             <ng-container matColumnDef="description">
-              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
               <td mat-cell *matCellDef="let element"> {{element.description}} </td>
             </ng-container>
 
 
 
             <ng-container matColumnDef="status">
-              <th mat-header-cell *matHeaderCellDef> État </th>
-              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> État </th>
+              <td mat-cell *matCellDef="let element"> {{element.state}} </td>
             </ng-container>
 
 
             <ng-container matColumnDef="actions">
               <th mat-header-cell *matHeaderCellDef> </th>
               <td mat-cell *matCellDef="let element">
-                <button mat-icon-button matTooltip="DETAILS" matTooltipPosition="above">
-                  <mat-icon>description</mat-icon>
-                </button>
-                <button mat-icon-button matTooltip="EDITER" matTooltipPosition="above">
+                  <button mat-icon-button matTooltip="EDITER" matTooltipPosition="above"  (click)="update(element)">
                   <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="warn" matTooltip="ANNULER" matTooltipPosition="above">
+                <button mat-icon-button color="warn" matTooltip="ELIMINER" matTooltipPosition="above"
+                  (click)="delete(element)">
                   <mat-icon>delete_outline</mat-icon>
                 </button>
               </td>
+
 
             </ng-container>
 
@@ -77,13 +71,12 @@
         </div>
         <mat-paginator [pageSizeOptions]="[ 10,5,2, 20,50,100,200]"></mat-paginator>
 
-
       </div>
-
-
-
-
     </div>
+
+    <app-data-loader *ngIf="isLoadingData"></app-data-loader>
+
+        <!-- <button mat-button color="primary" (click)="loadData()">Load </button> -->
 
   </mat-card-content>
 </mat-card>

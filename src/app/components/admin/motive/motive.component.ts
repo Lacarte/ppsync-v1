@@ -3,12 +3,10 @@ import { ConfirmDialogComponent } from "./../../../shared/components/confirm-dia
 import { MotiveRepositoryService } from "./repository/motive-repository.service";
 import { AddMotiveComponent } from "./addMotive/addMotive.component";
 import { SearchRequestComponent } from "./../../utils/search-request/search-request.component";
-import { AddRequestComponent } from "../../process/register/add-request/add-request.component";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatDialog } from "@angular/material/dialog";
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
-import { STATES } from "src/app/core/enums/states.enum";
 import { MatSort } from "@angular/material/sort";
 
 @Component({
@@ -19,7 +17,6 @@ import { MatSort } from "@angular/material/sort";
 export class MotiveComponent implements OnInit {
   title = "Mofif de la demande";
   displayedColumns: string[] = ["description", "status", "actions"];
-  states = STATES;
 
   dataSource = new MatTableDataSource([]);
   isLoadingData: boolean;
@@ -27,6 +24,9 @@ export class MotiveComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   @ViewChild(MatPaginator, { static: false })
@@ -46,7 +46,7 @@ export class MotiveComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private motiveRepositoryService: MotiveRepositoryService,
-    private cd: ChangeDetectorRef,
+    private cRef: ChangeDetectorRef,
     private confirmDialogService: ConfirmDialogService
   ) {}
 
@@ -63,7 +63,7 @@ export class MotiveComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.isLoadingData = false;
     });
-    this.cd.detectChanges();
+    this.cRef.detectChanges();
   }
 
   add() {
@@ -75,6 +75,10 @@ export class MotiveComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result?.isRefresh) {
         this.loadData();
+        this.dataSource.filter = "";
+        if (this.dataSource.paginator) {
+          this.dataSource.paginator.firstPage();
+        }
       }
     });
   }

@@ -34,6 +34,7 @@ import { AddRequestComponent } from "./components/process/register/add-request/a
 import { FilterProfile } from "./pipes/ListFilter.pipe";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
+import { RequestStatusRepositoryService } from './components/admin/request-status/repository/request-status-repository.service';
 
 @NgModule({
   imports: [
@@ -75,7 +76,6 @@ import { HttpClientModule } from "@angular/common/http";
     AppInfoComponent,
     
     
-    
   ],
   entryComponents: [
     AddRequestComponent,
@@ -91,7 +91,7 @@ import { HttpClientModule } from "@angular/common/http";
     { provide: LOCALE_ID, useValue: "fr-FR" },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     LoginRepositoryService,
-    MotiveRepositoryService
+    RequestStatusRepositoryService
   ],
   bootstrap: [AppComponent],
 })
