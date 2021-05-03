@@ -1,3 +1,4 @@
+import { DoctypeRepositoryService } from './components/admin/document/repository/doctype-repository.service';
 import { MotiveRepositoryService } from './components/admin/motive/repository/motive-repository.service';
 import { LoginRepositoryService } from './components/login/repository/login-repository.service';
 import { TestComponent } from './experimental/test/test.component';
@@ -91,7 +92,9 @@ import { RequestStatusRepositoryService } from './components/admin/request-statu
     { provide: LOCALE_ID, useValue: "fr-FR" },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     LoginRepositoryService,
-    RequestStatusRepositoryService
+    RequestStatusRepositoryService,
+    MotiveRepositoryService,
+    DoctypeRepositoryService
   ],
   bootstrap: [AppComponent],
 })
