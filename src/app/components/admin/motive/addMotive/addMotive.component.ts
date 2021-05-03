@@ -1,6 +1,6 @@
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MotiveRepositoryService } from "./../repository/motive-repository.service";
-import { AfterViewInit, Component, Inject, OnInit } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit } from "@angular/core";
 
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { STATES } from "src/app/core/enums/states.enum";
@@ -37,7 +37,8 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<AddMotiveComponent>,
     public motiveRepositoryService: MotiveRepositoryService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private cRef: ChangeDetectorRef,
   ) {}
 
   ngAfterViewInit(): void {
@@ -45,8 +46,9 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
     if(this.data){
     this.stateCtrl.setValue(this.data?.state);
     this.descriptionCtrl.setValue(this.data?.description);
-    }      
+    }       
 
+    this.cRef.detectChanges();
 
   }
 

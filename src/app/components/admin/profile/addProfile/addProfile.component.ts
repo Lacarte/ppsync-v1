@@ -145,13 +145,12 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
     private confirmDialogService: ConfirmDialogService,
     private userProfileRepositoryService: UserProfileRepositoryService,
     private fb: FormBuilder,
-    private cdr: ChangeDetectorRef
+    private cRef: ChangeDetectorRef,
 
   ) {}
   ngAfterViewInit(): void {
     this.menuFields.clear();
-    
-
+   
     if(this.data){
       this.stateCtrl.setValue(this.data?.state);
       this.descriptionCtrl.setValue(this.data?.description);
@@ -167,7 +166,7 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
       this.menuForm.get("menuFields")["controls"].forEach((control) => {
         control.disable();
       });
-      this.cdr.detectChanges();
+      this.cRef.detectChanges();
 
     setTimeout(() => {
       

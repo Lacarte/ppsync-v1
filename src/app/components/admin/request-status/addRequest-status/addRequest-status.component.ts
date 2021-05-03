@@ -1,5 +1,5 @@
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Component, Inject, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { RequestStatusRepositoryService } from "../repository/request-status-repository.service";
 import { STATES } from "src/app/core/enums/states.enum";
@@ -35,7 +35,9 @@ export class AddRequestStatusComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<AddRequestStatusComponent>,
     public requestStatusRepositoryService: RequestStatusRepositoryService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private cRef: ChangeDetectorRef,
+
   ) {}
 
   ngAfterViewInit(): void {
@@ -43,6 +45,9 @@ export class AddRequestStatusComponent implements OnInit {
       this.stateCtrl.setValue(this.data?.state);
       this.descriptionCtrl.setValue(this.data?.description);
     }
+
+    this.cRef.detectChanges();
+
   }
 
   ngOnInit() {

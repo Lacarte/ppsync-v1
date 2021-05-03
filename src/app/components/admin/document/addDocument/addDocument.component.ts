@@ -1,7 +1,7 @@
 import { DoctypeRepositoryService } from './../repository/doctype-repository.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { STATES } from "src/app/core/enums/states.enum";
-import { AfterViewInit, Component, Inject, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
 import {
   MatDialogRef,
   MAT_DIALOG_DATA
@@ -41,6 +41,7 @@ export class AddDocumentComponent implements OnInit,AfterViewInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<AddDocumentComponent>,
     public doctypeRepositoryService: DoctypeRepositoryService,
+    private cRef: ChangeDetectorRef,
     private fb: FormBuilder
   ) {}
 
@@ -52,7 +53,8 @@ export class AddDocumentComponent implements OnInit,AfterViewInit {
     this.descriptionCtrl.setValue(this.data?.description);
     }      
 
-
+    this.cRef.detectChanges();
+ 
   }
 
   ngOnInit() {
