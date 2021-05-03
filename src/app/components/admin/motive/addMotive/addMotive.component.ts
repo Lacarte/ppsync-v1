@@ -29,6 +29,7 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
   });
 
   stateCtrl = this.formGroup.get("state");
+  descriptionCtrl = this.formGroup.get("description");
   isOneTimeSaving: boolean;
 
   constructor(
@@ -39,7 +40,13 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
-    //this.stateCtrl.setValue();
+    
+    if(this.data){
+    this.stateCtrl.setValue(this.data?.state);
+    this.descriptionCtrl.setValue(this.data?.description);
+    }      
+
+
   }
 
   ngOnInit() {

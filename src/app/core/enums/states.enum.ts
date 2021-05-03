@@ -1,5 +1,4 @@
 export enum STATES {
-    active = 'Actif',
-    inactive = 'Inactif',
-  }
-  
+  actif = "Actif",
+  inactif = "Inactif",
+}

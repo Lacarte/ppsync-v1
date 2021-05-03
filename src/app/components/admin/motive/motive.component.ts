@@ -59,18 +59,6 @@ export class MotiveComponent implements OnInit {
   loadData() {
     this.isLoadingData = true;
     this.motiveRepositoryService.findAll().subscribe((data: any[]) => {
-      let dataTransformed = { ...data };
-
-      for (var i in dataTransformed) {
-        switch (dataTransformed[i].state) {
-          case "active":
-            dataTransformed[i].state = STATES.active;
-            break;
-          case "inactive":
-            dataTransformed[i].state = STATES.inactive;
-            break;
-        }
-      }
       this.dataSource.data = data;
       this.dataSource.paginator = this.paginator;
       this.isLoadingData = false;
