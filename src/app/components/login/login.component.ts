@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
 
-    identifier: new FormControl("carteasy@gmail.com", [
+    identifier: new FormControl("dev.lacarte@gmail.com", [
       Validators.required,
       Validators.minLength(3),
       Validators.pattern(this.emailRegex),
