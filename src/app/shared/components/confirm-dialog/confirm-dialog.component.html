@@ -9,7 +9,7 @@
 
         <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
 
-          <p class="dialog-message">{{ data.message }}</p>
+          <div class="dialog-message" [innerHtml]="data.message | dompurify"></div>
 
         </div>
       </div>

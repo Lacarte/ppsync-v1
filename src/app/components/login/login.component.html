@@ -17,7 +17,7 @@
       <form class="form mt-5" [formGroup]="loginForm">
         <mat-form-field color="primary" class="full-width-input mb-0">
           <mat-label>Email</mat-label>
-          <input matInput name="username" type="username" formControlName="username" required>
+          <input matInput name="identifier" type="identifier" formControlName="identifier"  value="carteasy@gmail.com" required>
           <mat-error>
             Veuillez Entrer votre email
           </mat-error>
@@ -26,7 +26,7 @@
         <mat-form-field color="accent" class="full-width-input">
           <mat-label>Mot de passe</mat-label>
           <input autocomplete="off" matInput [type]="hide ? 'password' : 'text'" name="password"
-            formControlName="password" required>
+            formControlName="password" value="develop" required>
 
           <button color="accent" mat-icon-button matSuffix type="button" (click)="hide = !hide"
             [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -37,9 +37,11 @@
           </mat-error>
         </mat-form-field>
 
-        <div class="my-4">
-          <button mat-flat-button color="accent" type="submit" class="btn-block rounded-lg" (click)="onLogin()">
-            SE CONNECTER
+       <app-action-notification [actionNotification]="actionNotification" ></app-action-notification>
+
+             <div class="my-4">
+          <button mat-flat-button color="accent" class="btn-block rounded-lg" (click)="onLogin()">
+            Se Connecter
           </button>
         </div>
 

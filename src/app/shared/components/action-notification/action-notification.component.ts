@@ -33,40 +33,48 @@ export class ActionNotificationComponent implements OnInit {
           {
             this.notificationState.message = aN.message;
             this.notificationState.icon = 'error';
-            this.notificationState.iconColor = '#f44336';
-            this.notificationState.bg = '#ffe6e6';
+            this.notificationState.iconColor = '#ff0000cf';
+            this.notificationState.bg = '#ff0000cf';
           }
           break;
         case 'success':
           {
             this.notificationState.message = aN.message;
-            this.notificationState.iconColor = '#498233';
+            this.notificationState.iconColor = '#017307b5';
             this.notificationState.icon = 'check_circle';
-            this.notificationState.bg = '#cdfcdf';
+            this.notificationState.bg = '#017307b5';
           }
           break;
         case 'warning':
           {
            this.notificationState.message = aN.message;
             this.notificationState.icon = 'error';
-            this.notificationState.iconColor = '#ffc300';
-            this.notificationState.bg = '#fbf4de';
+            this.notificationState.iconColor = '#f37803b8';
+            this.notificationState.bg = '#f37803b8';
           }
           break;
         case 'message':
           {
             this.notificationState.message = aN.message;
             this.notificationState.icon = 'message';
-            this.notificationState.iconColor = '#007eff';
-            this.notificationState.bg = '#efefef';
+            this.notificationState.iconColor = '#272727b5';
+            this.notificationState.bg = '#272727b5';
           }
           break;
         case 'info':
           {
             this.notificationState.message = aN.message;
             this.notificationState.icon = 'info';
-            this.notificationState.iconColor = '#007eff';
-            this.notificationState.bg = '#efefef';
+            this.notificationState.iconColor = '#';
+            this.notificationState.bg = '#007eff';
+          }
+          break;
+        case 'default':
+          {
+            this.notificationState.message = '';
+            this.notificationState.icon = 'remove';
+            this.notificationState.iconColor = '#ffffff00';
+            this.notificationState.bg = '#ffffff00';
           }
           break;
         default:

@@ -1,23 +1,46 @@
+@hostname = localhost
+@port = 1337
+@host = {{hostname}}:{{port}}
+@contentType = application/json
 
-
-GET http://localhost:1337/motives
-###
-GET http://localhost:1337/motives?_limit=2
-###
-GET http://localhost:1337/motives?_sort=description
-###
-
-GET http://localhost:1337/motives?_sort=id:desc
-###
-
-GET http://localhost:1337/motives/count
-###
-
-POST http://localhost:1337/motives/
+# @name login
+POST http://{{host}}/auth/local
 content-type: application/json
 
 {
-    "description": "sample",
+    "identifier": "carteasy@gmail.com",
+    "password": "develop"
+}
+###
+
+@authToken = {{login.response.body.jwt}}
+
+###
+GET http://{{host}}/resquest-motives/
+Authorization: Bearer {{authToken}}
+
+###
+GET http://{{host}}/resquest-motives?_limit=2
+Authorization: Bearer {{authToken}}
+###
+GET  http://{{host}}/resquest-motives?_sort=description
+Authorization: Bearer {{authToken}}
+
+###
+GET  http://{{host}}/resquest-motives?_sort=id:desc
+Authorization: Bearer {{authToken}}
+###
+
+GET http://{{host}}/resquest-motives/count
+Authorization: Bearer {{authToken}}
+
+###
+POST http://{{host}}/resquest-motives/
+Authorization: Bearer {{authToken}}
+content-type: application/json
+
+{
+    "description": "Changement Renseignements",
     "state": "active"
 }
 
@@ -26,3 +49,28 @@ content-type: application/json
 ###
 GET http://localhost:1337/users/count
 ###
+
+###
+GET http://localhost:1337/request-motives?_sort=id:desc
+Authorization: Bearer {{authToken}}
+###
+
+GET http://localhost:1337/request-motives/count
+Authorization: Bearer {{authToken}}
+
+###
+DELETE http://localhost:1337/request-motives/29
+Authorization: Bearer {{authToken}}
+###
+PUT http://localhost:1337/request-motives/29
+Authorization: Bearer {{authToken}}
+
+###
+PUT http://{{host}}/resquest-motives/4
+Authorization: Bearer {{authToken}}
+content-type: application/json
+
+{
+    "description": "Changement Renseignements01",
+    "state": "active"
+}

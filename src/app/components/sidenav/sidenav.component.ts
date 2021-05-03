@@ -1,15 +1,16 @@
-import { AppInfoComponent } from './../../shared/components/app-info/app-info.component';
-import { FullscreenService } from './../../shared/services/fullscreen/fullscreen.service';
-import { UIService } from './../../shared/services/ui.service';
-import { MenuTogglerService } from './../../shared/services/menu-toggler.service';
-import { Subscription } from 'rxjs';
-import { BreakpointsService } from './../../shared/services/breakpoints.service';
+import { AuthenticationService } from "./../../shared/services/authentication/authentication.service";
+import { AppInfoComponent } from "./../../shared/components/app-info/app-info.component";
+import { FullscreenService } from "./../../shared/services/fullscreen/fullscreen.service";
+import { UIService } from "./../../shared/services/ui.service";
+import { MenuTogglerService } from "./../../shared/services/menu-toggler.service";
+import { Subscription } from "rxjs";
+import { BreakpointsService } from "./../../shared/services/breakpoints.service";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import {
   MatDialog,
   MatDialogRef,
   MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+} from "@angular/material/dialog";
 @Component({
   selector: "app-sidenav",
   templateUrl: "./sidenav.component.html",
@@ -36,26 +37,18 @@ export class SidenavComponent implements OnInit, OnDestroy {
     public menuTogglerService: MenuTogglerService,
     public dialog: MatDialog,
     public uiService: UIService,
-    public fullscreenService:FullscreenService
-  ) {
-    }
-
+    public fullscreenService: FullscreenService,
+    public authenticationService: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
-       this.isLtMdSub = this.uiService.getIsLtMd().subscribe((x) => {
+    this.isLtMdSub = this.uiService.getIsLtMd().subscribe((x) => {
       this.opened = !x;
       this.isLtMd = x;
     });
-
-
- 
-
-  }
-  
-
-  logout(){
   }
 
+  logout() {}
 
   /* 
   openDialog(): void {
@@ -72,6 +65,9 @@ export class SidenavComponent implements OnInit, OnDestroy {
     });
   } */
 
+  disconnect() {
+    this.authenticationService.logout();
+  }
 
   onToggleFullscreen() {
     this.fullscreenService.toggle();
@@ -81,17 +77,16 @@ export class SidenavComponent implements OnInit, OnDestroy {
     this.isLtMdSub.unsubscribe();
   }
 
-  appInfo(){
+  appInfo() {
     const dialogRef = this.dialog.open(AppInfoComponent, {
       panelClass: "app-dialog",
-      width:"480px",
+      width: "480px",
       disableClose: true,
-       });
+    });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (!!result.isRefresh) {
       }
-    }); 
+    });
   }
-
 }

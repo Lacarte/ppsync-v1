@@ -96,7 +96,6 @@ const ELEMENT_DATA: data[] = [
 ];
 
 
-
 export interface data {
   id: number;
   status: string;

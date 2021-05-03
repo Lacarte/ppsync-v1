@@ -1,0 +1,9 @@
+svg path,
+svg rect{
+  fill: #f4c215;
+}
+
+.wrapper {
+    /* background-color: azure; */
+    padding: 2rem;
+}

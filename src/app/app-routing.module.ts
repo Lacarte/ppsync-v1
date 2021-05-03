@@ -1,3 +1,4 @@
+import { AuthGuardService } from './shared/services/authentication/auth-guard.service';
 import { RequestStatusComponent } from './components/admin/request-status/request-status.component';
 import { RequestComponent } from './components/report/request/request.component';
 import { LogComponent } from './components/report/log/log.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        component: WelcomeComponent
+        component: WelcomeComponent, canActivate: [AuthGuardService] 
       },
       { path: "process/register", component: RegisterComponent },
       { path: "process/deliver", component: DeliverComponent },

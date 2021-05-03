@@ -1,8 +1,6 @@
 <!-- {{notificationState | json}} -->
-<div class="wrapper">
-
-
-  <div fxLayout="column" *ngIf="notificationState.isVisible" class="p-3 rounded filter drop-shadow"
+<!-- <div class="wrapper">
+  <div fxLayout="column" *ngIf="notificationState.isVisible" class="p-1 rounded filter drop-shadow"
     [style.background-color]="notificationState.bg">
 
     <div fxLayout="row">
@@ -16,4 +14,15 @@
     </div>
   </div>
 
+</div> -->
+
+<div class="notyf rounded" *ngIf="notificationState.isVisible">
+  <div class="notyf__toast notyf__toast--dismissible notyf__toast--error">
+    <div class="notyf__wrapper">
+      <!-- <mat-icon [style.color]="notificationState.iconColor">{{notificationState.icon}}</mat-icon> -->
+      <div class="notyf__message">{{notificationState.message}}</div>
+      <div class="notyf__dismiss"><button class="notyf__dismiss-btn"  (click)="hide()"></button></div>
+    </div>
+    <div class="notyf__ripple" [style.background-color]="notificationState.bg" ></div>
+  </div>
 </div>

@@ -1,4 +1,6 @@
-import { LogPublishersService } from './services/log-publishers/log-publishers.service';
+import { PreventDoubleClickDirective } from './directives/prevent-double-click.directive';
+import { JwtInterceptor } from "./interceptors/jwt.interceptor";
+import { LogPublishersService } from "./services/log-publishers/log-publishers.service";
 import { LogService } from "./services/log-publishers/log.service";
 import { ConfirmDialogService } from "./services/confirm-dialog.service";
 import { LoaderInterceptor } from "./services/loader.interceptor";
@@ -18,9 +20,11 @@ import { ActionNotificationComponent } from "./components/action-notification/ac
 import { LoadingComponentComponent } from "./components/loading-component/loading-component.component";
 import { getFrenchPaginatorIntl } from "./components/utils/french-paginator-intl";
 import { ConfirmDialogComponent } from "./components/confirm-dialog/confirm-dialog.component";
-  
+import { DataLoaderComponent } from "./components/data-loader/data-loader.component";
+import { NgDompurifyModule } from "@tinkoff/ng-dompurify";
+
 @NgModule({
-  imports: [CommonModule, MaterialModule, FlexLayoutModule],
+  imports: [CommonModule, MaterialModule, FlexLayoutModule,NgDompurifyModule],
   exports: [
     MaterialModule,
     FlexLayoutModule,
@@ -28,13 +32,17 @@ import { ConfirmDialogComponent } from "./components/confirm-dialog/confirm-dial
     ActionNotificationComponent,
     LoadingComponentComponent,
     ConfirmDialogComponent,
+    DataLoaderComponent,
+    NgDompurifyModule,
+    PreventDoubleClickDirective
   ],
   declarations: [
-    LoaderComponent,
     LoaderComponent,
     ActionNotificationComponent,
     LoadingComponentComponent,
     ConfirmDialogComponent,
+    DataLoaderComponent,
+    PreventDoubleClickDirective
   ],
   entryComponents: [ConfirmDialogComponent],
   providers: [
@@ -47,6 +55,7 @@ import { ConfirmDialogComponent } from "./components/confirm-dialog/confirm-dial
     LogService,
     LogPublishersService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl() },
   ],
 })

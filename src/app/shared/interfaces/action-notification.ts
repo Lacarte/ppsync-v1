@@ -1,5 +1,5 @@
 export interface ActionNotification {
   isVisible: boolean;
-  messageType: string;
+  messageType:    "info" | "message" | "warning" | "success" | "error" | "default";
   message: string;
 }

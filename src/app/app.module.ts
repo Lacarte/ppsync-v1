@@ -1,3 +1,5 @@
+import { MotiveRepositoryService } from './components/admin/motive/repository/motive-repository.service';
+import { LoginRepositoryService } from './components/login/repository/login-repository.service';
 import { TestComponent } from './experimental/test/test.component';
 import { AppInfoComponent } from "./shared/components/app-info/app-info.component";
 import { AddProfileComponent } from "./components/admin/profile/addProfile/addProfile.component";
@@ -70,8 +72,9 @@ import { HttpClientModule } from "@angular/common/http";
     AddRequestStatusComponent,
     TestComponent,
     FilterProfile,
-    AppInfoComponent
-
+    AppInfoComponent,
+    
+    
     
   ],
   entryComponents: [
@@ -87,6 +90,8 @@ import { HttpClientModule } from "@angular/common/http";
   providers: [
     { provide: LOCALE_ID, useValue: "fr-FR" },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
+    LoginRepositoryService,
+    MotiveRepositoryService
   ],
   bootstrap: [AppComponent],
 })
