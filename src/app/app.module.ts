@@ -55,7 +55,7 @@ import { NgDompurifyModule } from '@tinkoff/ng-dompurify';
     AppComponent,
     LoginComponent,
     WelcomeComponent,
-    ShellComponent,
+    ShellComponent, 
     RegisterComponent,
     SidenavComponent,
     OutletWrapperComponent,

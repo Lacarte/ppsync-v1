@@ -261,7 +261,7 @@ mat-panel-title mat-icon {
   background: #a70d00;
 } */
 
-// /deep/ .mat-expansion-indicator::after, .mat-expansion-panel-header-description { color: red;}
+// ::ng-deep .mat-expansion-indicator::after, .mat-expansion-panel-header-description { color: red;}
 /* 
 a.ui-menuitem-link {
   color: gray;
