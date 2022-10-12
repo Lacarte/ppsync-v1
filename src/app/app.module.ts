@@ -37,6 +37,7 @@ import { FilterProfile } from "./pipes/ListFilter.pipe";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { RequestStatusRepositoryService } from './components/admin/request-status/repository/request-status-repository.service';
+import { NgDompurifyModule } from '@tinkoff/ng-dompurify';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { RequestStatusRepositoryService } from './components/admin/request-statu
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    NgDompurifyModule,
     HttpClientModule
   ],
   declarations: [

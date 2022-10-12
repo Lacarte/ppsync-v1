@@ -7,45 +7,48 @@
     <div fxLayout="column">
 
 
-      <div fxLayout="row" fxLayoutGap="16px"  fxLayoutAlign="space-between center">
-        
+      <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+
         <div fxLayoutGap="10px" fxLayout="row" fxLayout.lt-sm="column">
-          <button mat-stroked-button color="secondary"   (click)="addRequest()">
-              <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-plus"></mat-icon>
+          <button mat-stroked-button color="secondary" (click)="addRequest()">
+            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-plus"></mat-icon>
             CRÉER UNE REQUÊTE
-              </button>
-          <button mat-stroked-button color="secondary"  matTooltip="IMPORTER UNE LISTE DE REQUÊTE (CSV, EXCEL)" matTooltipPosition="above">
-              <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-upload"></mat-icon>
-              IMPORTER
-            </button>
-          <button mat-stroked-button color="secondary"  matTooltip="EXPORTER UNE LISTE DE REQUÊTE (CSV, EXCEL)" matTooltipPosition="above">
-              <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-file-export"></mat-icon>
-              EXPORTER
-            </button>
-          <button mat-stroked-button color="secondary"   (click)="searchRequest()" matTooltip="EFFECTUER UNE RECHERCHE" matTooltipPosition="above">
-              <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-search"></mat-icon>
-              </button>
+          </button>
+          <button mat-stroked-button color="secondary" matTooltip="IMPORTER UNE LISTE DE REQUÊTE (CSV, EXCEL)"
+            matTooltipPosition="above">
+            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-upload"></mat-icon>
+            IMPORTER
+          </button>
+          <button mat-stroked-button color="secondary" matTooltip="EXPORTER UNE LISTE DE REQUÊTE (CSV, EXCEL)"
+            matTooltipPosition="above">
+            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-file-export"></mat-icon>
+            EXPORTER
+          </button>
+          <button mat-stroked-button color="secondary" (click)="searchRequest()" matTooltip="EFFECTUER UNE RECHERCHE"
+            matTooltipPosition="above">
+            <mat-icon suffix class="fa" fontSet="fas" fontIcon="fa-search"></mat-icon>
+          </button>
         </div>
 
-   
+
         <div>
-          
+
           <button mat-stroked-button color="secondary" [matMenuTriggerFor]="menu">
-             <mat-icon>more_vert</mat-icon> 
+            <mat-icon>more_vert</mat-icon>
           </button>
 
           <mat-menu #menu="matMenu">
-          
+
             <button mat-menu-item>
               <mat-icon>published_with_changes</mat-icon>
               <span>CHANGEMENT D'ÉTAT</span>
             </button>
-          
-            <button mat-menu-item  color="warn">
+
+            <button mat-menu-item color="warn">
               <mat-icon color="warn">delete_outline</mat-icon>
               <span>ANNULER</span>
             </button>
-            
+
           </mat-menu>
 
         </div>
@@ -57,100 +60,125 @@
       <div fxLayout="column">
 
 
-        <mat-form-field class="pt-2">
-          <mat-label>Filtrer</mat-label>
-          <input  autocomplete="off" matInput (keyup)="applyFilter($event)"  #input>
-        </mat-form-field>
+
+        <div class="filter-wrapper" fxLayout="row" fxLayoutGap="20px" class="pt-2">
+          <mat-form-field fxFlex="80">
+            <mat-label>Filtrer</mat-label>
+            <input autocomplete="off" matInput (keyup)="applyFilter($event)" #input>
+          </mat-form-field>
+
+          <mat-form-field fxFlex color="accent" fxFlex="20">
+            <mat-label>Visualiser</mat-label>
+            <mat-select>
+              <mat-option>
+                Tout
+              </mat-option>
+              <mat-option>
+                Requête Envoyée Washington
+              </mat-option>
+              <mat-option>
+                Passport Livré
+              </mat-option>
+              <mat-option>
+                Passport Abandonné
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+
 
         <div class="table-shell">
 
-        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z0 table">
+          <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z0 table">
 
-          <ng-container matColumnDef="select">
+            <ng-container matColumnDef="select">
 
-            <th mat-header-cell *matHeaderCellDef>
-              <mat-checkbox class="check-box" (change)="$event ? masterToggle() : null"
-                [checked]="selection.hasValue() && isAllSelected()"
-                [indeterminate]="selection.hasValue() && !isAllSelected()" >
-              </mat-checkbox>
-            </th>
+              <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox class="check-box" (change)="$event ? masterToggle() : null"
+                  [checked]="selection.hasValue() && isAllSelected()"
+                  [indeterminate]="selection.hasValue() && !isAllSelected()">
+                </mat-checkbox>
+              </th>
 
-            <td mat-cell *matCellDef="let row" >
-              <mat-checkbox class="check-box" (click)="$event.stopPropagation()" (change)="$event ? singleSelection(row)  : null"
-                [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)"
->
-              </mat-checkbox>
-            </td>
-          </ng-container>
+              <td mat-cell *matCellDef="let row">
+                <mat-checkbox class="check-box" (click)="$event.stopPropagation()"
+                  (change)="$event ? singleSelection(row)  : null" [checked]="selection.isSelected(row)"
+                  [aria-label]="checkboxLabel(row)">
+                </mat-checkbox>
+              </td>
+            </ng-container>
 
-          <ng-container matColumnDef="formId">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> &#8470; Formulaire </th>
-            <td mat-cell *matCellDef="let element"> {{element.formId}} </td>
-          </ng-container>
+            <ng-container matColumnDef="formId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> &#8470; Formulaire </th>
+              <td mat-cell *matCellDef="let element"> {{element.formId}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="passport">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> &#8470; Passport </th>
-            <td mat-cell *matCellDef="let element"> {{element.passport}} </td>
-          </ng-container>
+            <ng-container matColumnDef="passport">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> &#8470; Passport </th>
+              <td mat-cell *matCellDef="let element"> {{element.passport}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="req_date">
-            <th mat-header-cell *matHeaderCellDef> Date de la Requête </th>
-            <td mat-cell *matCellDef="let element"> {{element.req_date}} </td>
-          </ng-container>
+            <ng-container matColumnDef="req_date">
+              <th mat-header-cell *matHeaderCellDef> Date de la Requête </th>
+              <td mat-cell *matCellDef="let element"> {{element.req_date}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="lastName">
-            <th mat-header-cell *matHeaderCellDef> Nom </th>
-            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
-          </ng-container>
+            <ng-container matColumnDef="lastName">
+              <th mat-header-cell *matHeaderCellDef> Nom </th>
+              <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="firstName">
-            <th mat-header-cell *matHeaderCellDef> Prénom </th>
-            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
-          </ng-container>
+            <ng-container matColumnDef="firstName">
+              <th mat-header-cell *matHeaderCellDef> Prénom </th>
+              <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="nif">
-            <th mat-header-cell *matHeaderCellDef> NIF </th>
-            <td mat-cell *matCellDef="let element"> {{element.nif}} </td>
-          </ng-container>
-
-
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> État </th>
-            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-          </ng-container>
+            <ng-container matColumnDef="nif">
+              <th mat-header-cell *matHeaderCellDef> NIF </th>
+              <td mat-cell *matCellDef="let element"> {{element.nif}} </td>
+            </ng-container>
 
 
-          <ng-container matColumnDef="tel">
-            <th mat-header-cell *matHeaderCellDef> Téléphone </th>
-            <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
-          </ng-container>
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> État </th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let element">
-              <button mat-icon-button  matTooltip="DETAILS" matTooltipPosition="above">
-                                              <mat-icon>description</mat-icon>            </button>
-              <button mat-icon-button matTooltip="EDITER" matTooltipPosition="above">
-                <mat-icon >edit</mat-icon>
-            </button>
-              <button  mat-icon-button color="warn" matTooltip="ANNULER" matTooltipPosition="above">
-                <mat-icon>delete_outline</mat-icon>
-            </button>
-            </td>
 
-          </ng-container>
+            <ng-container matColumnDef="tel">
+              <th mat-header-cell *matHeaderCellDef> Téléphone </th>
+              <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
+            </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button matTooltip="DETAILS" matTooltipPosition="above">
+                  <mat-icon>description</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="EDITER" matTooltipPosition="above">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" matTooltip="ANNULER" matTooltipPosition="above">
+                  <mat-icon>delete_outline</mat-icon>
+                </button>
+              </td>
 
-          <!-- Row shown when there is no matching data. -->
-          <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="4">---</td>
-          </tr>
-        </table>
-      </div>
+            </ng-container>
 
-        <mat-paginator  [ngClass]="{'hide':data.length < 10}" [pageSizeOptions]="[ 10,5,2, 20,50,100,200]"></mat-paginator>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">---</td>
+            </tr>
+          </table>
+        </div>
+
+        <mat-paginator [ngClass]="{'hide':data.length < 10}" [pageSizeOptions]="[ 10,5,2, 20,50,100,200]">
+        </mat-paginator>
 
 
       </div>

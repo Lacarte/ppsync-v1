@@ -8,7 +8,7 @@ POST http://{{host}}/auth/local
 content-type: application/json
 
 {
-    "identifier": "carteasy@gmail.com",
+    "identifier": "dev.lacarte@gmail.com",
     "password": "develop"
 }
 ###
@@ -62,8 +62,6 @@ Authorization: Bearer {{authToken}}
 DELETE http://localhost:1337/request-motives/29
 Authorization: Bearer {{authToken}}
 ###
-PUT http://localhost:1337/request-motives/29
-Authorization: Bearer {{authToken}}
 
 ###
 PUT http://{{host}}/resquest-motives/4
@@ -74,3 +72,35 @@ content-type: application/json
     "description": "Changement Renseignements01",
     "state": "active"
 }
+### to register
+POST http://{{host}}/auth/local/register
+Authorization: Bearer {{authToken}}
+content-type: application/json
+
+{
+    "username": "e",
+    "email": "e@strapi.io",
+    "password": "strapiPassword"
+}
+
+### 
+GET http://{{host}}/request-statuses/countx
+Authorization: Bearer {{authToken}}
+
+### 
+GET http://{{host}}/request-statuses/
+Authorization: Bearer {{authToken}}
+
+###
+GET http://localhost:1337/doctypes/count
+Authorization: Bearer {{authToken}}
+
+###
+GET http://localhost:1337/doctypes
+Authorization: Bearer {{authToken}}
+###
+GET http://localhost:1337/test
+Authorization: Bearer {{authToken}}
+###
+GET http://localhost:1337/users
+Authorization: Bearer {{authToken}}
