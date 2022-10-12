@@ -6,7 +6,7 @@ describe('MotiveRepositoryService', () => {
   let service: MotiveRepositoryService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({ teardown: { destroyAfterEach: false } });
     service = TestBed.inject(MotiveRepositoryService);
   });
 

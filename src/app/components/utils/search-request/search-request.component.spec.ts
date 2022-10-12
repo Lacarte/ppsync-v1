@@ -11,8 +11,9 @@ describe('SearchRequestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchRequestComponent ]
-    })
+    declarations: [SearchRequestComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

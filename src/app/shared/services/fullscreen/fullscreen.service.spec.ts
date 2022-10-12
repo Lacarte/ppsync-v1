@@ -6,8 +6,9 @@ import { FullscreenService } from './fullscreen.service';
 describe('Service: Fullscreen', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FullscreenService]
-    });
+    providers: [FullscreenService],
+    teardown: { destroyAfterEach: false }
+});
   });
 
   it('should ...', inject([FullscreenService], (service: FullscreenService) => {

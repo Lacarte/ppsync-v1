@@ -24,39 +24,38 @@ import { DataLoaderComponent } from "./components/data-loader/data-loader.compon
 import { NgDompurifyModule } from "@tinkoff/ng-dompurify";
 
 @NgModule({
-  imports: [CommonModule, MaterialModule, FlexLayoutModule,NgDompurifyModule],
-  exports: [
-    MaterialModule,
-    FlexLayoutModule,
-    LoaderComponent,
-    ActionNotificationComponent,
-    LoadingComponentComponent,
-    ConfirmDialogComponent,
-    DataLoaderComponent,
-    NgDompurifyModule,
-    PreventDoubleClickDirective
-  ],
-  declarations: [
-    LoaderComponent,
-    ActionNotificationComponent,
-    LoadingComponentComponent,
-    ConfirmDialogComponent,
-    DataLoaderComponent,
-    PreventDoubleClickDirective
-  ],
-  entryComponents: [ConfirmDialogComponent],
-  providers: [
-    LoaderService,
-    UIService,
-    MenuTogglerService,
-    FullscreenService,
-    BreakpointsService,
-    ConfirmDialogService,
-    LogService,
-    LogPublishersService,
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl() },
-  ],
+    imports: [CommonModule, MaterialModule, FlexLayoutModule, NgDompurifyModule],
+    exports: [
+        MaterialModule,
+        FlexLayoutModule,
+        LoaderComponent,
+        ActionNotificationComponent,
+        LoadingComponentComponent,
+        ConfirmDialogComponent,
+        DataLoaderComponent,
+        NgDompurifyModule,
+        PreventDoubleClickDirective
+    ],
+    declarations: [
+        LoaderComponent,
+        ActionNotificationComponent,
+        LoadingComponentComponent,
+        ConfirmDialogComponent,
+        DataLoaderComponent,
+        PreventDoubleClickDirective
+    ],
+    providers: [
+        LoaderService,
+        UIService,
+        MenuTogglerService,
+        FullscreenService,
+        BreakpointsService,
+        ConfirmDialogService,
+        LogService,
+        LogPublishersService,
+        { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: MatPaginatorIntl, useValue: getFrenchPaginatorIntl() },
+    ]
 })
 export class SharedModule {}

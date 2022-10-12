@@ -8,8 +8,9 @@ describe('DataLoaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataLoaderComponent ]
-    })
+    declarations: [DataLoaderComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

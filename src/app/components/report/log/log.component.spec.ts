@@ -11,8 +11,9 @@ describe('LogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogComponent ]
-    })
+    declarations: [LogComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

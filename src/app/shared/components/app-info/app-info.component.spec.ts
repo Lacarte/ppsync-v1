@@ -11,8 +11,9 @@ describe('AppInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppInfoComponent ]
-    })
+    declarations: [AppInfoComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

@@ -11,8 +11,9 @@ describe('RequestStatusComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RequestStatusComponent ]
-    })
+    declarations: [RequestStatusComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

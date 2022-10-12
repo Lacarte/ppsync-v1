@@ -11,8 +11,9 @@ describe('AddMotiveComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddMotiveComponent ]
-    })
+    declarations: [AddMotiveComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 
