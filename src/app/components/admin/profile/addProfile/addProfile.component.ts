@@ -1,10 +1,10 @@
 import { UserProfileRepositoryService } from './../repository/user-profile-repository.service';
 import { ConfirmDialogService } from "./../../../../shared/services/confirm-dialog.service";
 import {
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   Validators,
-  FormArray,
+  UntypedFormArray,
   AbstractControl,
 } from "@angular/forms";
 import { AfterViewInit, Component,ChangeDetectorRef, Inject, OnInit } from "@angular/core";
@@ -26,12 +26,12 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
 
   
 
-  public formGroup: FormGroup = this.fb.group({
+  public formGroup: UntypedFormGroup = this.fb.group({
     description: ["", [Validators.required]],
     state: [this.statekeys[0], Validators.required],
   });
 
-  public menuForm: FormGroup = this.fb.group({
+  public menuForm: UntypedFormGroup = this.fb.group({
     menuFields: this.fb.array([]),
   });
 
@@ -42,7 +42,7 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
 
 
 
-  menuFields: FormArray = new FormArray([]);
+  menuFields: UntypedFormArray = new UntypedFormArray([]);
 
   actionNotification = {
     isVisible: false,
@@ -144,7 +144,7 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
     public dialogRef: MatDialogRef<AddProfileComponent>,
     private confirmDialogService: ConfirmDialogService,
     private userProfileRepositoryService: UserProfileRepositoryService,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private cRef: ChangeDetectorRef,
 
   ) {}
@@ -181,7 +181,7 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
   });
   }
 
-  createMenu(): FormGroup {
+  createMenu(): UntypedFormGroup {
     return this.fb.group({
       id: 0,
       isSelected: [true],
@@ -192,7 +192,7 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
   }
 
   addMenu(): void {
-    this.menuFields = this.menuForm.get("menuFields") as FormArray;
+    this.menuFields = this.menuForm.get("menuFields") as UntypedFormArray;
     this.menuFields.push(this.createMenu());
 
     this.menuForm
@@ -238,7 +238,7 @@ export class AddProfileComponent implements OnInit, AfterViewInit {
     }
   }
 
-  setField(data: any[], formArray: FormArray): FormArray {
+  setField(data: any[], formArray: UntypedFormArray): UntypedFormArray {
     console.log("data", data);
     data.forEach((element) => {
       console.log("element", element);

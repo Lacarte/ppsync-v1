@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { MotiveRepositoryService } from "./../repository/motive-repository.service";
 import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit } from "@angular/core";
 
@@ -24,7 +24,7 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
   };
   
 
-  public formGroup: FormGroup = this.fb.group({
+  public formGroup: UntypedFormGroup = this.fb.group({
     description: ["", [Validators.required]],
     state: [this.statekeys[0], Validators.required],
   });
@@ -37,7 +37,7 @@ export class AddMotiveComponent implements OnInit, AfterViewInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<AddMotiveComponent>,
     public motiveRepositoryService: MotiveRepositoryService,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private cRef: ChangeDetectorRef,
   ) {}
 

@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { ChangeDetectorRef, Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { RequestStatusRepositoryService } from "../repository/request-status-repository.service";
@@ -22,7 +22,7 @@ export class AddRequestStatusComponent implements OnInit {
     message: "Savegardé avec succès.",
   };
 
-  public formGroup: FormGroup = this.fb.group({
+  public formGroup: UntypedFormGroup = this.fb.group({
     description: ["", [Validators.required]],
     state: [this.statekeys[0], Validators.required],
   });
@@ -35,7 +35,7 @@ export class AddRequestStatusComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<AddRequestStatusComponent>,
     public requestStatusRepositoryService: RequestStatusRepositoryService,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private cRef: ChangeDetectorRef,
 
   ) {}

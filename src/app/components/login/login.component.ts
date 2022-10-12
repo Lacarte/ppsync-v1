@@ -4,11 +4,11 @@ import { ActionNotification } from "./../../shared/interfaces/action-notificatio
 import { LoginRepositoryService } from "./repository/login-repository.service";
 import { Component, OnInit } from "@angular/core";
 import {
-  FormGroup,
-  FormControl,
+  UntypedFormGroup,
+  UntypedFormControl,
   Validators,
   NgForm,
-  FormBuilder,
+  UntypedFormBuilder,
 } from "@angular/forms";
 import {
   MatBottomSheet,
@@ -52,22 +52,22 @@ export class LoginComponent implements OnInit {
   // form: FormGroup;
   private formSubmitAttempt: boolean;
 
-  public loginForm: FormGroup = new FormGroup({
-    $key: new FormControl(null),
+  public loginForm: UntypedFormGroup = new UntypedFormGroup({
+    $key: new UntypedFormControl(null),
 
-    identifier: new FormControl("dev.lacarte@gmail.com", [
+    identifier: new UntypedFormControl("dev.lacarte@gmail.com", [
       Validators.required,
       Validators.minLength(3),
       Validators.pattern(this.emailRegex),
     ]),
-    password: new FormControl("develop", [
+    password: new UntypedFormControl("develop", [
       Validators.required,
       Validators.minLength(3),
     ]),
   });
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     public authenticationService: AuthenticationService,
     // private uiService: UIService,
     // private dataService: DataService,
