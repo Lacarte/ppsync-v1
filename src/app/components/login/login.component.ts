@@ -107,7 +107,7 @@ export class LoginComponent implements OnInit {
   public onLogin() {
     if (this.loginForm.valid) {
       this.loginRepositoryService.login(this.loginForm.value).subscribe(
-        (data:AppUserAuth) => {
+        (data:any) => {
           console.log("data", data);
           this.authenticationService.login(data)
         },

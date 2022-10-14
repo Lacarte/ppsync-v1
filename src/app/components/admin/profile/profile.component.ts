@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
 
   loadData() {
     this.isLoadingData = true;
-    this.userProfileRepositoryService.findAll().subscribe((data: any[]) => {
+    this.userProfileRepositoryService.findAll().subscribe((data: any) => {
       this.dataSource.data = data;
       this.data = data;
       this.dataSource.paginator = this.paginator;

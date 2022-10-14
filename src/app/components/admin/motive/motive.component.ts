@@ -59,7 +59,7 @@ export class MotiveComponent implements OnInit {
 
   loadData() {
     this.isLoadingData = true;
-    this.motiveRepositoryService.findAll().subscribe((data: any[]) => {
+    this.motiveRepositoryService.findAll().subscribe((data: any) => {
       this.dataSource.data = data;
       this.data = data;
       this.dataSource.paginator = this.paginator;

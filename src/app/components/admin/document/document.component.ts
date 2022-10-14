@@ -63,7 +63,7 @@ export class DocumentComponent implements OnInit {
 
   loadData() {
     this.isLoadingData = true;
-    this.doctypeRepositoryService.findAll().subscribe((data: any[]) => {
+    this.doctypeRepositoryService.findAll().subscribe((data: any) => {
       this.dataSource.data = data;
       this.data = data;
       this.dataSource.paginator = this.paginator;

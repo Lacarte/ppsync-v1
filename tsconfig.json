@@ -1,27 +1,41 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    //TODO to remove noImplicitOverride": true modified by LCRT
+    "noImplicitOverride": false,
+    "noPropertyAccessFromIndexSignature": true,
+    //TODO to remove"noImplicitReturns": false modified by LCRT
+    "noImplicitReturns": false,
+    //TODO to remove "noImplicitAny": false added by LCRT
+    "noImplicitAny": false,
+    //TODO to remove  "strictPropertyInitialization": false added by LCRT
+    "strictPropertyInitialization": false,
+    //TODO to remove  strictNullChecks":false added by LCRT
+    "strictNullChecks": false,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "module": "es2020",
     "lib": [
-      "es2018",
+      "es2020",
       "dom"
     ]
   },
   "angularCompilerOptions": {
-    "enableIvy": false,
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    //TODO to change  "strictTemplates": false modified by LCRT
+    "strictTemplates": false
   }
 }

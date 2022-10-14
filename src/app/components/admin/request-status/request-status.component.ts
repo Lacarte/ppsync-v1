@@ -62,7 +62,7 @@ export class RequestStatusComponent implements OnInit {
 
   loadData() {
     this.isLoadingData = true;
-    this.requestStatusRepositoryService.findAll().subscribe((data: any[]) => {
+    this.requestStatusRepositoryService.findAll().subscribe((data: any) => {
       this.dataSource.data = data;
       this.data = data;
       this.dataSource.paginator = this.paginator;
