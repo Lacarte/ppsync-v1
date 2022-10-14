@@ -1,11 +1,11 @@
 import { DoctypeRepositoryService } from './../repository/doctype-repository.service';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
-import { STATES } from "src/app/core/enums/states.enum";
 import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
 import {
   MatDialogRef,
   MAT_DIALOG_DATA
 } from '@angular/material/dialog';
+import { STATES } from 'src/app/shared/enums/states.enum';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { AppUserAuth } from './../../shared/interfaces/app-user-auth';
 import { AuthenticationService } from './../../shared/services/authentication/authentication.service';
 import { ActionNotification } from "./../../shared/interfaces/action-notification";
-import { LoginRepositoryService } from "./repository/login-repository.service";
+import { LoginRepositoryService } from "./login-repository.service";
 import { Component, OnInit } from "@angular/core";
 import {
   UntypedFormGroup,
@@ -15,9 +15,9 @@ import {
   MatBottomSheetRef,
 } from "@angular/material/bottom-sheet";
 import { environment } from "../../../environments/environment";
-import { Login } from "../../interfaces/login";
 import { Router } from "@angular/router";
 import { debounceTime, tap } from "rxjs/operators";
+import { Login } from 'src/app/shared/interfaces/login';
 
 // import { AuthService } from '../../services/auth.service';
 // import { SidenavService } from '../sidenav/sidenav.service';

@@ -3,7 +3,7 @@ import { MotiveRepositoryService } from "./../repository/motive-repository.servi
 import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit } from "@angular/core";
 
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { STATES } from "src/app/core/enums/states.enum";
+import { STATES } from "src/app/shared/enums/states.enum";
 
 @Component({
   selector: "app-addMotive",

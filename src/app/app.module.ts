@@ -1,7 +1,7 @@
 import { UserProfileRepositoryService } from './components/admin/profile/repository/user-profile-repository.service';
 import { DoctypeRepositoryService } from './components/admin/document/repository/doctype-repository.service';
 import { MotiveRepositoryService } from './components/admin/motive/repository/motive-repository.service';
-import { LoginRepositoryService } from './components/login/repository/login-repository.service';
+import { LoginRepositoryService } from './components/login/login-repository.service';
 import { TestComponent } from './experimental/test/test.component';
 import { AppInfoComponent } from "./shared/components/app-info/app-info.component";
 import { AddProfileComponent } from "./components/admin/profile/addProfile/addProfile.component";
@@ -33,11 +33,11 @@ import { OutletWrapperComponent } from "./components/outlet-wrapper/outlet-wrapp
 import { RegisterComponent } from "./components/process/register/register.component";
 import { DeliverComponent } from "./components/process/deliver/deliver.component";
 import { AddRequestComponent } from "./components/process/register/add-request/add-request.component";
-import { FilterProfile } from "./pipes/ListFilter.pipe";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { RequestStatusRepositoryService } from './components/admin/request-status/repository/request-status-repository.service';
 import { NgDompurifyModule } from '@tinkoff/ng-dompurify';
+import { FilterProfile } from './shared/pipes/listFilter.pipe';
 
 @NgModule({
     imports: [
