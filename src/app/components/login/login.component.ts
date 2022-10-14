@@ -106,10 +106,20 @@ export class LoginComponent implements OnInit {
 
   public onLogin() {
     if (this.loginForm.valid) {
-      this.loginRepositoryService.login(this.loginForm.value).subscribe(
+      this.loginRepositoryService.login().subscribe(
         (data:any) => {
+
           console.log("data", data);
-          this.authenticationService.login(data)
+         const username =  this.loginForm.value.identifier;
+         const password  =  this.loginForm.value.password;
+
+         if(data?.length > 0){
+         const user = data.find(user => user.username === username);
+         if(user != null && user?.username === username && user?.password === password){
+          this.authenticationService.login(user)
+         }
+
+}
         },
         (error) => {
           if (sessionStorage.getItem("currentUser") !== null) {

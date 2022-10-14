@@ -10,14 +10,16 @@ const apiUrl = environment.apiUrl;
 })
 export class LoginRepositoryService {
   constructor(private httpClient: HttpClient){
-
   }
 
 
-  login(formData :any) {
-    return this.httpClient.post(
-      `${apiUrl}/auth/local`,formData
-    ); 
+  login() {
+    return this.httpClient.get(
+      `${apiUrl}/users`
+    );
   }
+
+
+
 
 }

@@ -1,3 +1,5 @@
+import { DataService } from './experimental/datas/data.service';
+import { environment } from './../environments/environment';
 import { UserProfileRepositoryService } from './components/admin/profile/repository/user-profile-repository.service';
 import { DoctypeRepositoryService } from './components/admin/document/repository/doctype-repository.service';
 import { MotiveRepositoryService } from './components/admin/motive/repository/motive-repository.service';
@@ -22,14 +24,10 @@ import { LOCALE_ID, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./components/login/login.component";
-import { WelcomeComponent } from "./components/welcome/welcome.component";
-import { ShellComponent } from "./components/shell/shell.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { SidenavComponent } from "./components/sidenav/sidenav.component";
 import { SharedModule } from "./shared/shared.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { OutletWrapperComponent } from "./components/outlet-wrapper/outlet-wrapper.component";
 import { RegisterComponent } from "./components/process/register/register.component";
 import { DeliverComponent } from "./components/process/deliver/deliver.component";
 import { AddRequestComponent } from "./components/process/register/add-request/add-request.component";
@@ -38,56 +36,65 @@ import { HttpClientModule } from "@angular/common/http";
 import { RequestStatusRepositoryService } from './components/admin/request-status/repository/request-status-repository.service';
 import { NgDompurifyModule } from '@tinkoff/ng-dompurify';
 import { FilterProfile } from './shared/pipes/listFilter.pipe';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ShellComponent } from './components/layout/shell/shell.component';
+import { SidenavComponent } from './components/layout/sidenav/sidenav.component';
+import { OutletWrapperComponent } from './components/layout/outlet-wrapper/outlet-wrapper.component';
+import { WelcomeComponent } from './components/layout/welcome/welcome.component';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        FormsModule,
-        AppRoutingModule,
-        SharedModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgDompurifyModule,
-        HttpClientModule
-    ],
-    declarations: [
-        AppComponent,
-        LoginComponent,
-        WelcomeComponent,
-        ShellComponent,
-        RegisterComponent,
-        SidenavComponent,
-        OutletWrapperComponent,
-        DeliverComponent,
-        AddRequestComponent,
-        SearchRequestComponent,
-        DashboardComponent,
-        MotiveComponent,
-        UserComponent,
-        ProfileComponent,
-        DocumentComponent,
-        AddUserComponent,
-        RequestComponent,
-        LogComponent,
-        RequestStatusComponent,
-        AddMotiveComponent,
-        AddDocumentComponent,
-        AddProfileComponent,
-        AddRequestStatusComponent,
-        TestComponent,
-        FilterProfile,
-        AppInfoComponent,
-    ],
-    providers: [
-        { provide: LOCALE_ID, useValue: "fr-FR" },
-        { provide: LocationStrategy, useClass: HashLocationStrategy },
-        LoginRepositoryService,
-        RequestStatusRepositoryService,
-        MotiveRepositoryService,
-        DoctypeRepositoryService,
-        UserProfileRepositoryService
-    ],
-    bootstrap: [AppComponent]
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    SharedModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgDompurifyModule,
+    HttpClientModule,
+    environment.production ?
+      [] : HttpClientInMemoryWebApiModule.forRoot(DataService, {
+        delay: 2500, passThruUnknownUrl: true
+      })
+  ],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    WelcomeComponent,
+    ShellComponent,
+    RegisterComponent,
+    OutletWrapperComponent,
+    DeliverComponent,
+    AddRequestComponent,
+    SearchRequestComponent,
+    DashboardComponent,
+    MotiveComponent,
+    UserComponent,
+    ProfileComponent,
+    DocumentComponent,
+    AddUserComponent,
+    RequestComponent,
+    LogComponent,
+    RequestStatusComponent,
+    AddMotiveComponent,
+    AddDocumentComponent,
+    AddProfileComponent,
+    AddRequestStatusComponent,
+    TestComponent,
+    FilterProfile,
+    AppInfoComponent,
+    SidenavComponent
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: "fr-FR" },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    LoginRepositoryService,
+    RequestStatusRepositoryService,
+    MotiveRepositoryService,
+    DoctypeRepositoryService,
+    UserProfileRepositoryService
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

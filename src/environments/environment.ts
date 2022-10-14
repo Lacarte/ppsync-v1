@@ -7,7 +7,7 @@ export const environment = {
   projectName: 'PPSYNC',
   projectVersion: 'V1.0',
   propertyOf: 'AMBASSADE D\'HAÏTI AU CHILI',
-  apiUrl: 'http://localhost:1337'
+  apiUrl: 'api'
   };
 
 /*

@@ -12,9 +12,9 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
 import { DeliverComponent } from "./components/process/deliver/deliver.component";
 import { RegisterComponent } from "./components/process/register/register.component";
-import { ShellComponent } from "./components/shell/shell.component";
 import { TestComponent } from "./experimental/test/test.component";
-import { WelcomeComponent } from "./components/welcome/welcome.component";
+import { WelcomeComponent } from './components/layout/welcome/welcome.component';
+import { ShellComponent } from './components/layout/shell/shell.component';
 const routes: Routes = [
   {
     path: "",
@@ -22,7 +22,7 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        component: WelcomeComponent, canActivate: [AuthGuardService] 
+        component: WelcomeComponent, canActivate: [AuthGuardService]
       },
       { path: "process/register", component: RegisterComponent },
       { path: "process/deliver", component: DeliverComponent },
